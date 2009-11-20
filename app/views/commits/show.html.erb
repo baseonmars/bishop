@@ -1,0 +1,6 @@
+
+	<%= render :partial => 'commit', :locals => { :commit => @commit} %>
+	
+
+<%= link_to 'Edit', edit_release_commit_path(@release, @commit) %> |
+<%= link_to 'Back', release_commits_path(@release) %>

@@ -1,0 +1,19 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  revision: 1
+  user: MyString
+  date: 2008-05-27 17:17:12
+  files: MyText
+  comments: MyText
+  status: unset
+  release_id: 1
+
+two:
+  revision: 123
+  user: MyString
+  date: 2008-05-27 17:17:12
+  files: MyText
+  comments: MyText
+  status: goes_in
+  release_id: 1

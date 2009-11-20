@@ -1,0 +1,211 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+	<title>Commits: <%= controller.action_name %></title>
+	<%= stylesheet_link_tag 'scaffold' %>
+	<%= stylesheet_link_tag 'screen' %>
+	<%= javascript_include_tag :defaults %>
+
+</head>
+<body>
+
+	<p style="color: green"><%= flash[:notice] %></p>
+
+	<%= yield  %>
+
+	<script type="text/javascript">
+	
+	var Handlers = function () {
+		//private functions
+		var getSubmit = function(evt) { 
+			return $( evt.target.parentNode.parentNode ).getElementsByClassName( 'c-t-save-button' )[0];
+		};
+		
+		var getCommentEl = function(input) {
+			while ( input ) {
+				if ( input.className === 'comments') {
+					return input;
+				} else {
+					input = input.parentNode;
+				}
+			}
+			return false;
+		};
+	
+		var getFileEl = function(evt) {
+			if ( /files/i.test(evt.target.className) ) {
+				// clicking on a .files element
+				return evt.target;
+			} else {
+				// try and find files element
+				return $(evt.target).ancestors().find( function( el ) {
+					return (el.className.indexOf('files') > -1 );
+				} );
+			}
+		};
+
+		// make copy-paste buttons
+		var makeButtons = function() {
+			var pasteHandler = function(evt) {
+				var container = this.parentNode;
+				var commentEl = container.commentEl;
+				var text = container.selText;
+				var type = /(testing|changes)/.exec(this.id)[1];
+				var revNo = container.revNo;				
+
+				$(type+ '_text' + revNo).value += text;
+				$(this.parentNode).hide();
+			};
+			var closePasteHandler = function(evt) {
+				$(this.parentNode).hide();
+			};
+			popUp = document.createElement('div');
+			popUp.id = 'copy-paste';
+			popUp.className = 'buttons';
+			popUp.style.position = 'absolute';
+			popUp.changesButton = document.createElement('button');
+			popUp.changesButton.innerHTML = 'Changes';
+			popUp.changesButton.id = 'paste-to-changes';
+			popUp.testingButton = document.createElement('button');
+			popUp.testingButton.innerHTML = 'Testing';
+			popUp.testingButton.id = 'paste-to-testing';
+			popUp.closeButton = document.createElement('button');
+			popUp.closeButton.className = 'negative';
+			popUp.closeButton.innerHTML = 'x';
+			popUp.closeButton.id = 'paste-to-close';
+			Element.insert(popUp, popUp.changesButton);
+			Element.insert(popUp, popUp.testingButton);
+			Element.insert(popUp, popUp.closeButton);
+			Element.insert(document.body, popUp);
+			$('paste-to-testing').observe('click', pasteHandler);
+			$('paste-to-changes').observe('click', pasteHandler);
+			$('paste-to-close').observe('click', closePasteHandler);
+
+			return popUp;
+		};
+		
+		var getRevNo = function(commentEl) {
+			var commitEl = $( commentEl ).ancestors().find(function(el) {
+				if (el.className.indexOf('commit') > -1 ){
+					return true;
+				}
+			});
+			return /commit(\d+)/.exec(commitEl.id)[1];
+		};
+
+		var displayButtons = function(left, top, text, commentEl) {
+			if ( typeof popUp === 'undefined') {
+				popUp = makeButtons();
+			} else {
+				popUp = document.getElementById('copy-paste');
+			}
+			
+			popUp.commentEl = commentEl;
+			popUp.selText = text;
+			popUp.revNo = getRevNo(commentEl);
+			popUp.style.top = top + 12 + 'px';
+			popUp.style.left = left + 'px';
+
+			$(popUp).show();
+		};
+
+		// main object
+		return {
+			changeHandler: function( evt ) {
+				if ( /textarea/i.match(evt.target.nodeName) ) {
+					$( getSubmit(evt) ).show( );
+				}
+
+			},
+			revInsertHandler: function( evt ) {
+				var selection = new Selection( evt.target );
+				var rev = 'r' + evt.target.id.split( 'text' )[1];
+				selection.setText( rev );
+			},
+			keyPressHandler: function(evt) {
+				// check it's happening in a text area
+				if ( !/textarea/i.test( evt.target.nodeName ) ) {
+					return;
+				} 
+				var cc = evt.charCode;
+				// detect ctrl r in firefox || safari
+				if ( evt.ctrlKey === true && ( cc === 114 || cc === 18 ) ) {
+					handlers.revInsertHandler( evt );
+				}
+
+				// non-printable characters return 0
+				if ( cc !== 0 ) {
+					handlers.changeHandler( evt );
+				}
+				return false;
+			},
+			selectionHandler: function( evt ) {
+				// decide if we have a selection in a relevent part of the doc
+				// TODO Refactor correct target pattern, it's used in a few places
+				var commentsEl = (evt.target.className === 'comments') ? evt.target : $(evt.target).ancestors().find(function(el) {
+					if (el.className === 'comments') {
+						return true;
+					}
+				});
+				
+				if ( typeof commentsEl === 'undefined' ) {
+					return;
+				}
+				var sel = window.getSelection();
+
+				if ( typeof sel.anchorNode !== 'undefined' && sel.anchorNode ) {				
+					var focus = getCommentEl( sel.focusNode );
+					var anchor = getCommentEl( sel.anchorNode );
+					var text = sel.toString();
+					if ( text !== '' && focus && anchor ) {
+						// we have a relevent selection
+						// create the buttons
+						var x = evt.pageX;
+						var y = evt.pageY;
+						displayButtons( x,y, text, focus );
+					}
+				}	else {
+					return;
+				}
+			},
+			filesHandler: function( evt ) {
+				var fileEl = getFileEl(evt);
+				if (typeof fileEl === 'undefined') {
+					return;
+				}
+				//return a closure so that we can keep track of mhs to perform the toggle
+				return function( fileEl ) {
+					if ( typeof fileEl.max === 'undefined' ) { 
+						fileEl.max = true; 
+					}
+					fileEl.style.maxHeight = fileEl.max ? '10000px' : '5.5em';
+					fileEl.className = fileEl.max ? 'files maximized' : 'files';
+					fileEl.max = !fileEl.max;					
+				}( fileEl );
+			},
+			commitSubmitHandler: function( evt ) {
+				if (evt.target.className.indexOf('c-t-save-button') > -1 ) {
+					$(evt.target).hide();
+				}
+			}
+		};
+	};
+	
+	//hide all the .c-t-save-buttons
+	$$( '.c-t-save-button' ).each( Element.hide );
+	
+	handlers = new Handlers();
+	
+	Event.observe( document, 'change', handlers.changeHandler);
+	Event.observe( document, 'keypress', handlers.keyPressHandler );
+	Event.observe( document, 'click', handlers.filesHandler );
+	Event.observe( document, 'click', handlers.commitSubmitHandler );
+	Event.observe( document, 'mouseup', handlers.selectionHandler);
+
+	</script>
+
+</body>
+</html>

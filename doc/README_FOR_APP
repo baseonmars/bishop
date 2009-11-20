@@ -1,0 +1,5 @@
+Morning release meetings are a pain in the butt. biggest pain being editing the file. lots of copy and pasting, lots of moving around.
+
+This app aims to speed the process along by providing an optimised interface around the task.
+
+initial version works around reading the output produced by svnmerge avail -l, which is inserted via a simple form.

@@ -1,0 +1,20 @@
+<h1>New commit</h1>
+
+<p><a href="#bulk">Bulk add commits</a> from an svn log output.</p>
+
+<h2>Add individually</h2>
+
+<%= render :partial => 'form' %>
+
+
+<h2 id="bulk">Batch add Commits</h2>
+<p>Paste in the svnmerge avail -l output into this here big box o' magic...</p>
+
+<% form_tag bulk_load_release_commits_url(@release) do -%>
+  
+	<p><%= text_area_tag "svn_log", nil, :size =>"52x10" %></p>
+
+	<p><%= submit_tag "Process" %></p>
+<% end -%>
+
+<%= link_to 'Back', release_commits_path(@release) %>

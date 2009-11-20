@@ -1,0 +1,9 @@
+<h1>Release <%= @release.name %></h1>
+
+<p><strong>approved:</strong> <%= @approved.collect { |a| a.revision }.join(', ') %></p>
+
+<p><strong>blocked:</strong> <%= @blocked.collect { |a| a.revision }.join(', ') %></p>
+
+<p><strong>unprocessed:</strong> <%= @release.commits.unset.collect { |u| u.revision }.join(', ') %></p>
+
+<%= link_to "Back to listing", release_commits_path(@release) %>

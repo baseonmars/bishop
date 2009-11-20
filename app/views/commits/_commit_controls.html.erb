@@ -1,0 +1,5 @@
+<% for control in commit_status_controls(commit) %>
+	<% remote_form_for [@release,commit] do |f| %>
+		<%= control %>
+	<% end %>
+<% end %>

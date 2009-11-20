@@ -1,0 +1,40 @@
+<p><%= link_to "SVN merge commands", :controller => "releases", :action => "svn_commands", :id => @release.id %></p>
+
+<% if flash[:log] %><div class="notice"><%= flash[:log] %></div><% end %>
+
+<h2><%= @release.name %></h2>
+<%= render :partial => 'releases/stat_graphy', :locals => { :stats => @stats } %>
+
+<div id="stats">
+	Total Commits <%= @stats[:total].to_i %>
+</div>
+<div id="commits">
+
+<% for commit in @commits -%>
+	<%= render :partial => 'commit', :locals => { :commit => commit} %>
+<% end -%>
+</div>
+
+<h3>Changes and testing for approved commits</h3>
+<div id="changes">
+	<h2>Changes</h2>
+	<ul>
+	<% for commit in @commits_going_in -%>
+		<% unless commit.changes_text.blank? -%>
+			<li><a href="#commit<%= h commit.revision %>"><%= h commit.changes_text %></a></li>
+		<% end -%>
+	<% end -%>
+	</ul>
+</div>
+<div id="testing">
+	<h2>Testing</h2>
+	<ul>
+	<% for commit in @commits_going_in -%>
+		<% unless commit.testing_text.blank? -%>
+			<li><a href="#commit<%= h commit.revision %>"><%= h commit.revision %> - <%= h commit.testing_text %></a></li>
+		<% end -%>
+	<% end -%>
+	</ul>
+</div>
+
+<p><%= link_to 'Add commit', new_release_commit_path(@release) %></p>

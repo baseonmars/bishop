@@ -1,0 +1,3223 @@
+------------------------------------------------------------------------
+r9367 | dan | 2008-05-06 12:05:37 +0100 (Tue, 06 May 2008) | 3 lines
+Changed paths:
+   M /trunk/sitemaker/perl/Sitemaker-Data/lib/Sitemaker/Render/HTML/TextboxV4.pm
+   M /trunk/sitemaker/perl/Sitemaker-Data/lib/Sitemaker/Render/HTML/Widget/Comment.pm
+   M /trunk/sitemaker/perl/Sitemaker-Data/lib/Sitemaker/Render/HTML.pm
+   M /trunk/sitemaker/perl/modules/Sitemaker/Handler/Comment.pm
+   M /trunk/sitemaker/res/html/common/CommentWidget.xhtml
+
+Update to comments widget to make it w3c complient.
+Refactor of HTML's strip_tag function
+
+------------------------------------------------------------------------
+r9368 | chris | 2008-05-06 12:16:43 +0100 (Tue, 06 May 2008) | 7 lines
+Changed paths:
+   M /trunk/flash/media/widgets/src/fla/widgets.flp
+   M /trunk/flash/media/widgets/src/fla/widgets_fr.flp
+
+Adding popupgallery_ico to the build
+
+widgets.flp:
+  Added popupgallery_ico.fla
+widgets_fr.flp:
+  Added popupgallery_ico.fla
+
+------------------------------------------------------------------------
+r9369 | Ian | 2008-05-06 12:34:02 +0100 (Tue, 06 May 2008) | 1 line
+Changed paths:
+   M /trunk/flash/framework/components/src/as/com/greekattic/components/skinnable/AbstractListBoxRenderer.as
+   M /trunk/flash/framework/components/src/as/com/greekattic/components/skinnable/ListBox.as
+   M /trunk/flash/framework/components/src/as/com/greekattic/components/skinnable/ListItemList.as
+
+CHANGES: (Skinnable) ListBox no longer resets scroll offset when selection is cleared.
+------------------------------------------------------------------------
+r9370 | Ian | 2008-05-06 15:37:45 +0100 (Tue, 06 May 2008) | 1 line
+Changed paths:
+   M /trunk/flash/media/IWidget/src/as/com/greekattic/widgets/forum/view/PostView.as
+   M /trunk/flash/media/IWidget/src/as/com/greekattic/widgets/forum/view/SearchResultView.as
+
+Bug 2320 - Site links on forum search aren't clickable.
+
+------------------------------------------------------------------------
+r9372 | Ian | 2008-05-06 16:04:13 +0100 (Tue, 06 May 2008) | 1 line
+Changed paths:
+   M /trunk/flash/framework/components/src/as/com/greekattic/components/LocalImageSource.as
+
+Bug 2335 - Alternate icons don't show when adding post to Forum
+
+------------------------------------------------------------------------
+r9375 | dan | 2008-05-06 18:09:01 +0100 (Tue, 06 May 2008) | 7 lines
+Changed paths:
+   M /trunk/sitemaker/perl/Sitemaker-Data/lib/Sitemaker/Render/HTML.pm
+   M /trunk/sitemaker/perl/modules/Sitemaker/Handler/RSS/CommentWidget.pm
+   M /trunk/sitemaker/perl/modules/Sitemaker/Handler/RSS/IForumTopic.pm
+   M /trunk/sitemaker/perl/modules/Sitewide.pm
+   M /trunk/sitemaker/res/html/common/CommentRSS.xhtml
+   M /trunk/sitemaker/res/html/common/TopicRSS.xhtml
+
+Bug 2330 Comments rendering the apostrophe as &apos; in RSS
+
+applied same fix to Topic's RSS feed.
+
+Also refactored fixup_entities so it's available through sitewide seeing as HTML
+and RSS want to use it.
+
+
+------------------------------------------------------------------------
+r9377 | josh | 2008-05-07 10:36:11 +0100 (Wed, 07 May 2008) | 2 lines
+Changed paths:
+   M /trunk/CHANGES
+
+R4.21.3-RC1 CHANGES
+
+------------------------------------------------------------------------
+r9378 | gruff | 2008-05-07 10:55:12 +0100 (Wed, 07 May 2008) | 1 line
+Changed paths:
+   A /trunk/sitemaker/db/alter/30_down.sql
+   A /trunk/sitemaker/db/alter/30_up.sql
+
+Up and down scripts for sp_add_user_session that restore (or reverse) the updates on users and communities tables for last login and last accessed dates.
+------------------------------------------------------------------------
+r9379 | dan | 2008-05-07 11:45:59 +0100 (Wed, 07 May 2008) | 1 line
+Changed paths:
+   M /trunk/sitemaker/perl/Sitemaker-Data/lib/Sitemaker/Render/HTML/TextboxV4.pm
+
+Fixing warning for double declaration of variable using 'my'
+------------------------------------------------------------------------
+r9380 | dan | 2008-05-07 11:58:00 +0100 (Wed, 07 May 2008) | 2 lines
+Changed paths:
+   M /trunk/sitemaker/perl/modules/Component/Serialise.pm
+
+Bug 2380 Under certain conditions Grouping code causes elements to be duplicated
+
+------------------------------------------------------------------------
+r9381 | gruff | 2008-05-07 12:31:11 +0100 (Wed, 07 May 2008) | 1 line
+Changed paths:
+   M /trunk/sitemaker/db/sitemaker.pdm
+
+Added primary key information to most tables that were missing it.
+------------------------------------------------------------------------
+r9382 | gruff | 2008-05-07 12:33:05 +0100 (Wed, 07 May 2008) | 1 line
+Changed paths:
+   A /trunk/sitemaker/db/alter/WIP/primary_keys
+   A /trunk/sitemaker/db/alter/WIP/primary_keys/add_pk_information.sql
+
+Adds missing pk information to many tables missing it.  PKs are 'documentation' not real keys.  The constraints are still enforced by existing unique indexes.
+------------------------------------------------------------------------
+r9383 | gruff | 2008-05-07 13:22:59 +0100 (Wed, 07 May 2008) | 1 line
+Changed paths:
+   A /trunk/sitemaker/db/alter/31_up.sql
+
+Adds 'data' as an option to DB Versioning so that pure data/configuration changes can be recorded in up scripts.
+------------------------------------------------------------------------
+r9384 | gruff | 2008-05-07 13:31:37 +0100 (Wed, 07 May 2008) | 1 line
+Changed paths:
+   A /trunk/sitemaker/db/alter/32_up.sql
+
+Restores primary key information to the syskeys tables for most sitemaker1 tables (documentation only - provides no extra RI but helps tools work properly)
+------------------------------------------------------------------------
+r9385 | kevin | 2008-05-07 13:34:01 +0100 (Wed, 07 May 2008) | 2 lines
+Changed paths:
+   M /trunk/partner/en/moonfruit/config/designCategories.xml
+
+bug 2383: changed Bubble usertemplate author to 'by Jake'
+
+------------------------------------------------------------------------
+r9386 | adam | 2008-05-07 14:49:03 +0100 (Wed, 07 May 2008) | 3 lines
+Changed paths:
+   M /trunk/sitemaker/perl/modules/Sitemaker/Handler/Support.pm
+   M /trunk/sitemaker/perl/scripts/faqindex.pl
+   A /trunk/sitemaker/perl/test/faq.t
+
+Migrate faq search to Lucene (size/speed/rationalise)
+** Indexes need rebuilding
+
+------------------------------------------------------------------------
+r9387 | gruff | 2008-05-07 15:58:03 +0100 (Wed, 07 May 2008) | 1 line
+Changed paths:
+   M /trunk/sitemaker/db/alter/31_up.sql
+
+Added a utility sproc to remove DB version info (e.g. for use if version numbers change.)
+------------------------------------------------------------------------
+r9388 | gruff | 2008-05-07 16:01:31 +0100 (Wed, 07 May 2008) | 1 line
+Changed paths:
+   M /trunk/sitemaker/db/alter/31_up.sql
+
+Added missing conditional drop
+------------------------------------------------------------------------
+r9389 | dan | 2008-05-07 16:04:35 +0100 (Wed, 07 May 2008) | 4 lines
+Changed paths:
+   M /trunk/sitemaker/perl/Sitemaker-Data/lib/Sitemaker/Data/Image.pm
+   M /trunk/sitemaker/perl/Sitemaker-Data/lib/Sitemaker/Data/ImageV3.pm
+   M /trunk/sitemaker/perl/Sitemaker-Data/lib/Sitemaker/Data/LinkButton.pm
+   M /trunk/sitemaker/perl/Sitemaker-Data/lib/Sitemaker/Data/Widget/Comment.pm
+   M /trunk/sitemaker/perl/Sitemaker-Data/lib/Sitemaker/Data/Widget/Gallery.pm
+   M /trunk/sitemaker/perl/Sitemaker-Data/lib/Sitemaker/Data/Widget/IForum.pm
+   M /trunk/sitemaker/perl/Sitemaker-Data/lib/Sitemaker/Data/Widget/Table.pm
+   M /trunk/sitemaker/perl/Sitemaker-Data/lib/Sitemaker/Data.pm
+   M /trunk/sitemaker/perl/modules/Component/Serialise.pm
+
+Bug 2362 Use of uninitialized value in numeric...
+
+Implements width and height methods on our Data classes, this should stop all these errors. i've used default values of 100 for width and height but it'd be good to go back and put in real defaults where possible. 
+
+------------------------------------------------------------------------
+r9390 | gruff | 2008-05-07 16:05:50 +0100 (Wed, 07 May 2008) | 1 line
+Changed paths:
+   M /trunk/sitemaker/db/Database & Models Versions Active.xls
+
+Updated to reflect DB states
+
+------------------------------------------------------------------------
+r9392 | adam | 2008-05-07 17:05:13 +0100 (Wed, 07 May 2008) | 2 lines
+Changed paths:
+   M /trunk/sitemaker/perl/HTML-Tidy-1.06/lib/HTML/Tidy/Message.pm
+   M /trunk/sitemaker/perl/HTML-Tidy-1.06/lib/HTML/Tidy.pm
+   M /trunk/sitemaker/perl/Sitemaker/lib/Sitemaker.pm
+   M /trunk/sitemaker/perl/Sitemaker-API-Crypt/lib/Sitemaker/API/Crypt.pm
+   M /trunk/sitemaker/perl/Sitemaker-AdminTool/lib/Sitemaker/AdminTool.pm
+   M /trunk/sitemaker/perl/Sitemaker-CharDecompose/lib/Sitemaker/CharDecompose.pm
+   M /trunk/sitemaker/perl/Sitemaker-Config/lib/Sitemaker/Config.pm
+   M /trunk/sitemaker/perl/Sitemaker-DAO/lib/Sitemaker/AdminNotesDAO.pm
+   M /trunk/sitemaker/perl/Sitemaker-DAO/lib/Sitemaker/AdsenseDAO.pm
+   M /trunk/sitemaker/perl/Sitemaker-DAO/lib/Sitemaker/CommunityDAO.pm
+   M /trunk/sitemaker/perl/Sitemaker-DAO/lib/Sitemaker/ComponentDAO.pm
+   M /trunk/sitemaker/perl/Sitemaker-DAO/lib/Sitemaker/DAOFactory.pm
+   M /trunk/sitemaker/perl/Sitemaker-DAO/lib/Sitemaker/DomainAccountDAO.pm
+   M /trunk/sitemaker/perl/Sitemaker-DAO/lib/Sitemaker/DomainBillingDAO.pm
+   M /trunk/sitemaker/perl/Sitemaker-DAO/lib/Sitemaker/DomainOrderDAO.pm
+   M /trunk/sitemaker/perl/Sitemaker-DAO/lib/Sitemaker/DomainProductDAO.pm
+   M /trunk/sitemaker/perl/Sitemaker-DAO/lib/Sitemaker/ForumDAO.pm
+   M /trunk/sitemaker/perl/Sitemaker-DAO/lib/Sitemaker/GroupDAO.pm
+   M /trunk/sitemaker/perl/Sitemaker-DAO/lib/Sitemaker/IForumDAO.pm
+   M /trunk/sitemaker/perl/Sitemaker-DAO/lib/Sitemaker/MiscDAO.pm
+   M /trunk/sitemaker/perl/Sitemaker-DAO/lib/Sitemaker/NodeDAO.pm
+   M /trunk/sitemaker/perl/Sitemaker-DAO/lib/Sitemaker/SessionDAO.pm
+   M /trunk/sitemaker/perl/Sitemaker-DAO/lib/Sitemaker/SybaseDAOFactory.pm
+   M /trunk/sitemaker/perl/Sitemaker-DAO/lib/Sitemaker/TopicsDAO.pm
+   M /trunk/sitemaker/perl/Sitemaker-DAO/lib/Sitemaker/UserDAO.pm
+   M /trunk/sitemaker/perl/Sitemaker-DAO/lib/Sitemaker/UserfileDAO.pm
+   M /trunk/sitemaker/perl/Sitemaker-DAO/lib/Sitemaker/WidgetDAO.pm
+   M /trunk/sitemaker/perl/Sitemaker-Data/lib/Sitemaker/Data.pm
+   M /trunk/sitemaker/perl/Sitemaker-Data/lib/Sitemaker/Render.pm
+   M /trunk/sitemaker/perl/Sitemaker-Domains/lib/Sitemaker/Domains.pm
+   M /trunk/sitemaker/perl/Sitemaker-Exception/lib/Sitemaker/Exception.pm
+   M /trunk/sitemaker/perl/Sitemaker-Fragment/lib/Sitemaker/Fragment.pm
+   M /trunk/sitemaker/perl/Sitemaker-Handler-Partner-API/t/lib/Community.pm
+   M /trunk/sitemaker/perl/Sitemaker-Handler-Partner-API/t/lib/Session.pm
+   M /trunk/sitemaker/perl/Sitemaker-Handler-Partner-API/t/lib/Sitewide.pm
+   M /trunk/sitemaker/perl/Sitemaker-Handler-Partner-API/t/lib/User.pm
+   M /trunk/sitemaker/perl/Sitemaker-Model/t/MyModel.pm
+   M /trunk/sitemaker/perl/modules/AdSense.pm
+   M /trunk/sitemaker/perl/modules/Admin.pm
+   M /trunk/sitemaker/perl/modules/Autoemail_petal.pm
+   M /trunk/sitemaker/perl/modules/ClientPaths.pm
+   M /trunk/sitemaker/perl/modules/Component/Serialise.pm
+   M /trunk/sitemaker/perl/modules/Component/Unserialise.pm
+   M /trunk/sitemaker/perl/modules/Component.pm
+   M /trunk/sitemaker/perl/modules/Email.pm
+   M /trunk/sitemaker/perl/modules/FileTypes.pm
+   M /trunk/sitemaker/perl/modules/Fonts.pm
+   M /trunk/sitemaker/perl/modules/Futurepay.pm
+   M /trunk/sitemaker/perl/modules/GandiAPI.pm
+   M /trunk/sitemaker/perl/modules/HashtoHTML.pm
+   M /trunk/sitemaker/perl/modules/Lucene/IForum.pm
+   M /trunk/sitemaker/perl/modules/Media.pm
+   M /trunk/sitemaker/perl/modules/Motd.pm
+   M /trunk/sitemaker/perl/modules/Node.pm
+   M /trunk/sitemaker/perl/modules/Portal.pm
+   M /trunk/sitemaker/perl/modules/Searchengines.pm
+   M /trunk/sitemaker/perl/modules/Serialise.pm
+   M /trunk/sitemaker/perl/modules/Sitemaker/Lang.pm
+   M /trunk/sitemaker/perl/modules/Sitemaker/ProxyFixupHandler.pm
+   M /trunk/sitemaker/perl/modules/Sitewide.pm
+   M /trunk/sitemaker/perl/modules/User/Settings.pm
+   M /trunk/sitemaker/perl/modules/Userfile/Image.pm
+   M /trunk/sitemaker/perl/modules/Userfile.pm
+   M /trunk/sitemaker/perl/modules/serverspecific.pm
+   M /trunk/sitemaker/perl/test/TestSMCGI.pm
+
+Ensure eol-native is set on perl modules
+
+------------------------------------------------------------------------
+r9393 | gruff | 2008-05-07 17:39:04 +0100 (Wed, 07 May 2008) | 1 line
+Changed paths:
+   M /trunk/sitemaker/db/alter/32_up.sql
+
+Added additional tidy up: drops tmp_user_community and temp_invalids 
+------------------------------------------------------------------------
+r9394 | adam | 2008-05-07 17:39:14 +0100 (Wed, 07 May 2008) | 2 lines
+Changed paths:
+   M /trunk/sitemaker/perl/modules/Motd.pm
+
+Tidyup: perltidy, perlcritic, keywords, revision on Motd.pm
+
+
+------------------------------------------------------------------------
+r9396 | adam | 2008-05-07 18:04:32 +0100 (Wed, 07 May 2008) | 2 lines
+Changed paths:
+   M /trunk/sitemaker/perl/modules/AdSense.pm
+   M /trunk/sitemaker/perl/modules/Admin.pm
+   M /trunk/sitemaker/perl/modules/Autoemail_petal.pm
+   M /trunk/sitemaker/perl/modules/ClientPaths.pm
+   M /trunk/sitemaker/perl/modules/Community.pm
+   M /trunk/sitemaker/perl/modules/Component.pm
+   M /trunk/sitemaker/perl/modules/Email.pm
+   M /trunk/sitemaker/perl/modules/FileTypes.pm
+   M /trunk/sitemaker/perl/modules/Fonts.pm
+   M /trunk/sitemaker/perl/modules/Futurepay.pm
+   M /trunk/sitemaker/perl/modules/GandiAPI.pm
+   M /trunk/sitemaker/perl/modules/Group.pm
+   M /trunk/sitemaker/perl/modules/HashtoHTML.pm
+   M /trunk/sitemaker/perl/modules/Media.pm
+   M /trunk/sitemaker/perl/modules/Motd.pm
+   M /trunk/sitemaker/perl/modules/Node.pm
+   M /trunk/sitemaker/perl/modules/Portal.pm
+   M /trunk/sitemaker/perl/modules/Questions.pm
+   M /trunk/sitemaker/perl/modules/Searchengines.pm
+   M /trunk/sitemaker/perl/modules/Serialise.pm
+   M /trunk/sitemaker/perl/modules/Session.pm
+   M /trunk/sitemaker/perl/modules/Sitewide.pm
+   M /trunk/sitemaker/perl/modules/User.pm
+   M /trunk/sitemaker/perl/modules/Userfile.pm
+   M /trunk/sitemaker/perl/modules/serverspecific.pm
+
+Tidyup: ensure modules have warnings, VERSION etc.
+
+------------------------------------------------------------------------
+r9397 | adam | 2008-05-07 18:07:35 +0100 (Wed, 07 May 2008) | 2 lines
+Changed paths:
+   M /trunk/sitemaker/perl/modules/Component/Serialise.pm
+   M /trunk/sitemaker/perl/modules/Component/Unserialise.pm
+   M /trunk/sitemaker/perl/modules/Lucene/IForum.pm
+   M /trunk/sitemaker/perl/modules/Sitemaker/Lang.pm
+   M /trunk/sitemaker/perl/modules/Sitemaker/ProxyFixupHandler.pm
+   M /trunk/sitemaker/perl/modules/User/Settings.pm
+   M /trunk/sitemaker/perl/modules/Userfile/Image.pm
+   M /trunk/sitemaker/perl/modules/t/DBTestConfig.pm
+
+Tidyup - version/keywords etc
+
+
+------------------------------------------------------------------------
+r9399 | adam | 2008-05-07 18:29:51 +0100 (Wed, 07 May 2008) | 2 lines
+Changed paths:
+   M /trunk/sitemaker/perl/modules/Sitemaker/Handler/Affiliate.pm
+   M /trunk/sitemaker/perl/modules/Sitemaker/Handler/Comment.pm
+   M /trunk/sitemaker/perl/modules/Sitemaker/Handler/Community.pm
+   M /trunk/sitemaker/perl/modules/Sitemaker/Handler/Confirm.pm
+   M /trunk/sitemaker/perl/modules/Sitemaker/Handler/Container.pm
+   M /trunk/sitemaker/perl/modules/Sitemaker/Handler/Corefunc.pm
+   M /trunk/sitemaker/perl/modules/Sitemaker/Handler/Custom.pm
+   M /trunk/sitemaker/perl/modules/Sitemaker/Handler/Directory.pm
+   M /trunk/sitemaker/perl/modules/Sitemaker/Handler/Dispatcher.pm
+   M /trunk/sitemaker/perl/modules/Sitemaker/Handler/Download.pm
+   M /trunk/sitemaker/perl/modules/Sitemaker/Handler/Email.pm
+   M /trunk/sitemaker/perl/modules/Sitemaker/Handler/Events.pm
+   M /trunk/sitemaker/perl/modules/Sitemaker/Handler/Fax.pm
+   M /trunk/sitemaker/perl/modules/Sitemaker/Handler/Forum.pm
+   M /trunk/sitemaker/perl/modules/Sitemaker/Handler/GenHTML.pm
+   M /trunk/sitemaker/perl/modules/Sitemaker/Handler/Getmark.pm
+   M /trunk/sitemaker/perl/modules/Sitemaker/Handler/IDomainService.pm
+   M /trunk/sitemaker/perl/modules/Sitemaker/Handler/IForm2Service.pm
+   M /trunk/sitemaker/perl/modules/Sitemaker/Handler/IForumService.pm
+   M /trunk/sitemaker/perl/modules/Sitemaker/Handler/Index.pm
+   M /trunk/sitemaker/perl/modules/Sitemaker/Handler/Login.pm
+   M /trunk/sitemaker/perl/modules/Sitemaker/Handler/Media.pm
+   M /trunk/sitemaker/perl/modules/Sitemaker/Handler/Motd.pm
+   M /trunk/sitemaker/perl/modules/Sitemaker/Handler/News.pm
+   M /trunk/sitemaker/perl/modules/Sitemaker/Handler/Page.pm
+   M /trunk/sitemaker/perl/modules/Sitemaker/Handler/Partner.pm
+   M /trunk/sitemaker/perl/modules/Sitemaker/Handler/Password.pm
+   M /trunk/sitemaker/perl/modules/Sitemaker/Handler/Payments.pm
+   M /trunk/sitemaker/perl/modules/Sitemaker/Handler/RSSFactory.pm
+   M /trunk/sitemaker/perl/modules/Sitemaker/Handler/Sitecount.pm
+   M /trunk/sitemaker/perl/modules/Sitemaker/Handler/Sitemap.pm
+   M /trunk/sitemaker/perl/modules/Sitemaker/Handler/Support.pm
+   M /trunk/sitemaker/perl/modules/Sitemaker/Handler/Unsubscribe.pm
+   M /trunk/sitemaker/perl/modules/Sitemaker/Handler/Upload.pm
+   M /trunk/sitemaker/perl/modules/Sitemaker/Handler/User.pm
+   M /trunk/sitemaker/perl/modules/Sitemaker/Handler/Widget.pm
+   M /trunk/sitemaker/perl/modules/Sitemaker/Handler/Wizard.pm
+
+Perl tidying: versions/warnings etc
+
+------------------------------------------------------------------------
+r9400 | dan | 2008-05-12 15:30:39 +0100 (Mon, 12 May 2008) | 2 lines
+Changed paths:
+   A /trunk/partner/en/moonfruit/html/adwords-terms.html
+   M /trunk/partner/en/moonfruit/html/terms.html
+
+Google AdWords terms and Conditions for Moonfruit.com
+
+
+------------------------------------------------------------------------
+r9403 | adam | 2008-05-12 17:23:11 +0100 (Mon, 12 May 2008) | 5 lines
+Changed paths:
+   M /trunk/sitemaker/perl/modules/GandiAPI.pm
+   M /trunk/sitemaker/perl/modules/Sitemaker/Handler/IDomainService.pm
+   M /trunk/sitemaker/perl/test/IDomainService.t
+
+Bug 2351 - updating contact details does not persist.
+
+NOTE: Update is NOT INSTANT - needs to go through Gandi's
+operation queue. Should take less than a minute, but no guarantees...
+
+
+------------------------------------------------------------------------
+r9405 | ossie | 2008-05-13 11:56:21 +0100 (Tue, 13 May 2008) | 8 lines
+Changed paths:
+   M /trunk/flash/buildCodeLibraries.xml
+   M /trunk/flash/sitemaker/portal/src/as/com/greekattic/portal/PortalServices.as
+
+Trac 54 Move the CGIRequestFactory initialisation up to PortalServices
+---
+
+* PortalService.as
+ - Now initialising the CGIRequestFactory and adding it into the Service Registry
+
+* buildCodeLibraries.xml
+ - Added the path classpath tools/src/as so that the build can find classes needed by CGIRequestFactory.as brought in by changes to PortalService.as
+------------------------------------------------------------------------
+r9406 | kevin | 2008-05-13 15:04:20 +0100 (Tue, 13 May 2008) | 1 line
+Changed paths:
+   A /trunk/partner/en/moonfruit/html/images/promoGoogleVoucher.jpg
+
+new mf.com promo for Google AdWords Vouchers.
+
+------------------------------------------------------------------------
+r9408 | adam | 2008-05-13 16:53:39 +0100 (Tue, 13 May 2008) | 2 lines
+Changed paths:
+   M /trunk/sitemaker/perl/modules/t/GandiAPI.t
+
+Update GandiAPI test to confirm changing password works
+
+
+------------------------------------------------------------------------
+r9411 | Ian | 2008-05-14 13:18:00 +0100 (Wed, 14 May 2008) | 3 lines
+Changed paths:
+   M /trunk/flash/framework/components/src/as/com/greekattic/components/skinnable/FileInput.as
+   M /trunk/flash/media/IWidget/src/as/com/greekattic/panels/form2/EmailSetupView.as
+   M /trunk/flash/media/IWidget/src/as/com/greekattic/panels/form2/SelectView.as
+   M /trunk/flash/media/IWidget/src/as/com/greekattic/panels/form2/SetupPanel.as
+   A /trunk/flash/media/IWidget/src/as/com/greekattic/panels/form2/UploadSetupView.as
+   M /trunk/flash/media/IWidget/src/as/com/greekattic/widgets/form2/Form2Widget.as
+   M /trunk/flash/media/IWidget/src/as/com/greekattic/widgets/form2/IForm2Model.as
+   M /trunk/flash/media/IWidget/src/as/com/greekattic/widgets/form2/IForm2Widget.as
+   A /trunk/flash/media/IWidget/src/as/com/greekattic/widgets/form2/model/File.as
+   A /trunk/flash/media/IWidget/src/as/com/greekattic/widgets/form2/model/FileUploadRef.as
+   M /trunk/flash/media/IWidget/src/as/com/greekattic/widgets/form2/model/Form2Model.as
+   M /trunk/flash/media/IWidget/src/as/com/greekattic/widgets/form2/model/IForm2Service.as
+   A /trunk/flash/media/IWidget/src/as/com/greekattic/widgets/form2/view/FileView.as
+   M /trunk/flash/media/IWidget/src/as/com/greekattic/widgets/form2/view/Form2ItemViewFactory.as
+   M /trunk/flash/media/IWidget/src/as/com/greekattic/widgets/form2/view/Form2View.as
+   M /trunk/flash/media/IWidget/src/as/com/greekattic/widgets/form2/view/FormState.as
+   A /trunk/flash/media/IWidget/src/as/com/greekattic/widgets/form2/view/UploadState.as
+   M /trunk/flash/media/IWidget/src/etc/textBundle/en/Form2Widget.xml
+   M /trunk/flash/media/IWidget/src/fla/form2Field.fla
+   M /trunk/flash/media/IWidget/src/fla/form2Setup.fla
+   M /trunk/flash/media/skins/src/as/com/greekattic/skin/classic/Classic.as
+   M /trunk/flash/util/src/as/com/greekattic/util/FileSizeFormatter.as
+   M /trunk/sitemaker/perl/modules/Sitemaker/Handler/IForm2Service.pm
+
+Implemented User Story #11 : As a Page Editor I can add a file upload field to a form.
+
+ * TODO - A method for users to specify file type filters.
+------------------------------------------------------------------------
+r9412 | adam | 2008-05-14 14:50:34 +0100 (Wed, 14 May 2008) | 2 lines
+Changed paths:
+   M /trunk/sitemaker/perl/HTML-Tidy-1.06/t/00-load.t
+   M /trunk/sitemaker/perl/HTML-Tidy-1.06/t/extra-quote.t
+   M /trunk/sitemaker/perl/HTML-Tidy-1.06/t/ignore-text.t
+   M /trunk/sitemaker/perl/HTML-Tidy-1.06/t/ignore.t
+   M /trunk/sitemaker/perl/HTML-Tidy-1.06/t/levels.t
+   M /trunk/sitemaker/perl/HTML-Tidy-1.06/t/message.t
+   M /trunk/sitemaker/perl/HTML-Tidy-1.06/t/perfect.t
+   M /trunk/sitemaker/perl/HTML-Tidy-1.06/t/pod-coverage.t
+   M /trunk/sitemaker/perl/HTML-Tidy-1.06/t/pod.t
+   M /trunk/sitemaker/perl/HTML-Tidy-1.06/t/segfault-form.t
+   M /trunk/sitemaker/perl/HTML-Tidy-1.06/t/simple.t
+   M /trunk/sitemaker/perl/HTML-Tidy-1.06/t/too-many-titles.t
+   M /trunk/sitemaker/perl/HTML-Tidy-1.06/t/venus.t
+   M /trunk/sitemaker/perl/Sitemaker/t/boilerplate.t
+   M /trunk/sitemaker/perl/Sitemaker/t/pod-coverage.t
+   M /trunk/sitemaker/perl/Sitemaker/t/pod.t
+   M /trunk/sitemaker/perl/Sitemaker-CharDecompose/t/00-load.t
+   M /trunk/sitemaker/perl/Sitemaker-CharDecompose/t/boilerplate.t
+   M /trunk/sitemaker/perl/Sitemaker-CharDecompose/t/decompose.t
+   M /trunk/sitemaker/perl/Sitemaker-CharDecompose/t/pod-coverage.t
+   M /trunk/sitemaker/perl/Sitemaker-CharDecompose/t/pod.t
+   M /trunk/sitemaker/perl/Sitemaker-DAO/t/00-load.t
+   M /trunk/sitemaker/perl/Sitemaker-DAO/t/boilerplate.t
+   M /trunk/sitemaker/perl/Sitemaker-DAO/t/pod-coverage.t
+   M /trunk/sitemaker/perl/Sitemaker-DAO/t/pod.t
+   M /trunk/sitemaker/perl/Sitemaker-Data/t/00-load.t
+   M /trunk/sitemaker/perl/Sitemaker-Data/t/boilerplate.t
+   M /trunk/sitemaker/perl/Sitemaker-Data/t/pod-coverage.t
+   M /trunk/sitemaker/perl/Sitemaker-Data/t/pod.t
+   M /trunk/sitemaker/perl/Sitemaker-Domains/t/00-load.t
+   M /trunk/sitemaker/perl/Sitemaker-Domains/t/boilerplate.t
+   M /trunk/sitemaker/perl/Sitemaker-Domains/t/pod.t
+   M /trunk/sitemaker/perl/Sitemaker-Exception/t/00-load.t
+   M /trunk/sitemaker/perl/Sitemaker-Exception/t/boilerplate.t
+   M /trunk/sitemaker/perl/Sitemaker-Exception/t/pod-coverage.t
+   M /trunk/sitemaker/perl/Sitemaker-Exception/t/pod.t
+   M /trunk/sitemaker/perl/Sitemaker-Fragment/t/00-load.t
+   M /trunk/sitemaker/perl/Sitemaker-Fragment/t/boilerplate.t
+   M /trunk/sitemaker/perl/Sitemaker-Fragment/t/pod-coverage.t
+   M /trunk/sitemaker/perl/Sitemaker-Fragment/t/pod.t
+   M /trunk/sitemaker/perl/Sitemaker-Model-DesignMedia/t/00-load.t
+   M /trunk/sitemaker/perl/Sitemaker-Model-DesignMedia/t/boilerplate.t
+   M /trunk/sitemaker/perl/Sitemaker-Model-DesignMedia/t/pod-coverage.t
+   M /trunk/sitemaker/perl/Sitemaker-Model-DesignMedia/t/pod.t
+   M /trunk/sitemaker/perl/Sitemaker-UUID/t/00-load.t
+   M /trunk/sitemaker/perl/Sitemaker-UUID/t/Uuid.t
+   M /trunk/sitemaker/perl/Sitemaker-UUID/t/boilerplate.t
+   M /trunk/sitemaker/perl/Sitemaker-UUID/t/pod-coverage.t
+   M /trunk/sitemaker/perl/Sitemaker-UUID/t/pod.t
+
+Remove -T from shebag line to make EPIC/eclipse happier
+
+------------------------------------------------------------------------
+r9413 | eirik | 2008-05-15 09:24:33 +0100 (Thu, 15 May 2008) | 2 lines
+Changed paths:
+   D /trunk/sitemaker/perl/HTML-Tidy-1.06
+
+Removed HTML-Tidy.
+No longer used, and patched external libraries are now stored as srpm's in the sysadmin repository
+------------------------------------------------------------------------
+r9414 | eirik | 2008-05-15 09:30:08 +0100 (Thu, 15 May 2008) | 1 line
+Changed paths:
+   M /trunk/sitemaker/perl/Sitemaker/t/SitemakerGandiAPIOperations.t
+
+DEV: Clean errors about undefined constants
+------------------------------------------------------------------------
+r9415 | dan | 2008-05-15 09:30:37 +0100 (Thu, 15 May 2008) | 1 line
+Changed paths:
+   M /trunk/sitemaker/build.xml
+
+Re-enabled javascript minification.
+------------------------------------------------------------------------
+r9416 | adam | 2008-05-15 09:32:57 +0100 (Thu, 15 May 2008) | 2 lines
+Changed paths:
+   M /trunk/sitemaker/perl/Sitemaker/t/SitemakerGandiAPIOperations.t
+
+Hmmm.
+
+------------------------------------------------------------------------
+r9417 | eirik | 2008-05-15 09:37:35 +0100 (Thu, 15 May 2008) | 1 line
+Changed paths:
+   M /trunk/sitemaker/perl/Sitemaker-API-Crypt/t/00-load.t
+   M /trunk/sitemaker/perl/Sitemaker-API-Crypt/t/pod-coverage.t
+   M /trunk/sitemaker/perl/Sitemaker-API-Crypt/t/pod.t
+
+Dev: Cleaning errors from Eclipse (-T on shebang again)
+------------------------------------------------------------------------
+r9418 | chris | 2008-05-15 11:03:14 +0100 (Thu, 15 May 2008) | 14 lines
+Changed paths:
+   M /trunk/flash/buildSWFimportFLAtext.xml
+   A /trunk/flash/util/src/xslt/poTMX.xslt (from /trunk/flash/util/src/xslt/poFLAtext.xslt:9405)
+
+Added a translation memory (TMX) to PO target to buildSWFimportFLAtext.xml.
+
+TODO: Break out into own ant file and move out of 'flash' directory
+TODO: Verify that new translations can be added into translation memory
+
+buildSWFimportFLAtext.xml:
+  Added TMXgeneratePO macro and target
+poTMX.xslt:
+  Built from poFLAtext.xslt
+  Outputs msgid from seg's in en tuv
+  Outputs msgstr from seg's in fr tuv
+    Arguably msgstr should be empty
+  Outputs #. comment with tuid and creationdate
+
+------------------------------------------------------------------------
+r9419 | adam | 2008-05-15 12:56:28 +0100 (Thu, 15 May 2008) | 3 lines
+Changed paths:
+   A /trunk/sitemaker/perl/Sitemaker-DAO/lib/Sitemaker/AdWordsVoucherDAO.pm
+   A /trunk/sitemaker/perl/Sitemaker-DAO/lib/Sitemaker/SybaseDAO/AdWordsVoucher.pm
+   M /trunk/sitemaker/perl/Sitemaker-DAO/lib/Sitemaker/SybaseDAOFactory.pm
+   M /trunk/sitemaker/perl/modules/Sitemaker/Handler/Dispatcher.pm
+   A /trunk/sitemaker/perl/modules/Sitemaker/Handler/IAdWordsService.pm
+   A /trunk/sitemaker/perl/test/IAdWordsService.t
+   M /trunk/sitemaker/perl/test/TestSMCGI.pm
+
+AdWords voucher perl layer
+Trac 41, 42, 44
+
+------------------------------------------------------------------------
+r9420 | eirik | 2008-05-15 13:05:41 +0100 (Thu, 15 May 2008) | 1 line
+Changed paths:
+   D /trunk/sitemaker/perl/Sitemaker-API-Crypt/.cvsignore
+   M /trunk/sitemaker/perl/Sitemaker-API-Crypt/Build.PL
+   M /trunk/sitemaker/perl/Sitemaker-API-Crypt/Changes
+   M /trunk/sitemaker/perl/Sitemaker-API-Crypt/MANIFEST
+   M /trunk/sitemaker/perl/Sitemaker-API-Crypt/META.yml
+   M /trunk/sitemaker/perl/Sitemaker-API-Crypt/README
+   M /trunk/sitemaker/perl/Sitemaker-API-Crypt/t/00-load.t
+   M /trunk/sitemaker/perl/Sitemaker-API-Crypt/t/01-encryptDecrypt.t
+   M /trunk/sitemaker/perl/Sitemaker-API-Crypt/t/pod-coverage.t
+   M /trunk/sitemaker/perl/Sitemaker-API-Crypt/t/pod.t
+
+DEV: Fixed svn:eol-style to native
+------------------------------------------------------------------------
+r9421 | eirik | 2008-05-15 13:13:03 +0100 (Thu, 15 May 2008) | 1 line
+Changed paths:
+   M /trunk/sitemaker/perl/Sitemaker-Model-Partner/Build.PL
+   M /trunk/sitemaker/perl/Sitemaker-Model-Partner/Changes
+   M /trunk/sitemaker/perl/Sitemaker-Model-Partner/MANIFEST
+   M /trunk/sitemaker/perl/Sitemaker-Model-Partner/README
+   M /trunk/sitemaker/perl/Sitemaker-Model-Partner/lib/Sitemaker/Model/Partner.pm
+   M /trunk/sitemaker/perl/Sitemaker-Model-Partner/lib/Sitemaker/Model/PartnerCategory.pm
+   M /trunk/sitemaker/perl/Sitemaker-Model-Partner/lib/Sitemaker/Model/PartnerCurrency.pm
+   M /trunk/sitemaker/perl/Sitemaker-Model-Partner/lib/Sitemaker/Model/PartnerDomain.pm
+   M /trunk/sitemaker/perl/Sitemaker-Model-Partner/lib/Sitemaker/Model/PartnerSubCategory.pm
+   M /trunk/sitemaker/perl/Sitemaker-Model-Partner/lib/Sitemaker/Model/PartnerTopSite.pm
+   M /trunk/sitemaker/perl/Sitemaker-Model-Partner/t/Sitemaker-Model-Partner.t
+   M /trunk/sitemaker/perl/Sitemaker-Model-Partner/t/pod-coverage.t
+   M /trunk/sitemaker/perl/Sitemaker-Model-Partner/t/pod.t
+
+DEV: Fixed svn:eol-style to native
+------------------------------------------------------------------------
+r9422 | eirik | 2008-05-15 13:15:54 +0100 (Thu, 15 May 2008) | 1 line
+Changed paths:
+   M /trunk/sitemaker/perl/Sitemaker-Model-Pricing/Build.PL
+   M /trunk/sitemaker/perl/Sitemaker-Model-Pricing/Changes
+   M /trunk/sitemaker/perl/Sitemaker-Model-Pricing/MANIFEST
+   M /trunk/sitemaker/perl/Sitemaker-Model-Pricing/README
+   M /trunk/sitemaker/perl/Sitemaker-Model-Pricing/lib/Sitemaker/Model/Price.pm
+   M /trunk/sitemaker/perl/Sitemaker-Model-Pricing/lib/Sitemaker/Model/PriceGroup.pm
+   M /trunk/sitemaker/perl/Sitemaker-Model-Pricing/lib/Sitemaker/Model/PriceGroupPrices.pm
+   M /trunk/sitemaker/perl/Sitemaker-Model-Pricing/t/00-load.t
+   M /trunk/sitemaker/perl/Sitemaker-Model-Pricing/t/01-pricegroup.t
+   M /trunk/sitemaker/perl/Sitemaker-Model-Pricing/t/02-product.t
+   M /trunk/sitemaker/perl/Sitemaker-Model-Pricing/t/03-price.t
+   M /trunk/sitemaker/perl/Sitemaker-Model-Pricing/t/pod-coverage.t
+   M /trunk/sitemaker/perl/Sitemaker-Model-Pricing/t/pod.t
+
+DEV: Fixed svn:eol-style to native, fixed -T warnings in EPIC
+------------------------------------------------------------------------
+r9423 | kevin | 2008-05-15 13:17:02 +0100 (Thu, 15 May 2008) | 1 line
+Changed paths:
+   M /trunk/flash/media/IWidget/src/fla/form2Field.fla
+   M /trunk/flash/media/IWidget/src/fla/form2Setup.fla
+
+tweaked layout of Form 2 Editor panels
+------------------------------------------------------------------------
+r9424 | eirik | 2008-05-15 13:20:18 +0100 (Thu, 15 May 2008) | 1 line
+Changed paths:
+   M /trunk/sitemaker/perl/Sitemaker-Handler-Partner-API/Build.PL
+   M /trunk/sitemaker/perl/Sitemaker-Handler-Partner-API/Changes
+   M /trunk/sitemaker/perl/Sitemaker-Handler-Partner-API/MANIFEST
+   M /trunk/sitemaker/perl/Sitemaker-Handler-Partner-API/META.yml
+   M /trunk/sitemaker/perl/Sitemaker-Handler-Partner-API/README
+   M /trunk/sitemaker/perl/Sitemaker-Handler-Partner-API/t/01-basic.t
+   M /trunk/sitemaker/perl/Sitemaker-Handler-Partner-API/t/02-getMark.t
+   M /trunk/sitemaker/perl/Sitemaker-Handler-Partner-API/t/03-createAccount.t
+   M /trunk/sitemaker/perl/Sitemaker-Handler-Partner-API/t/04-updateAccount.t
+   M /trunk/sitemaker/perl/Sitemaker-Handler-Partner-API/t/05-cancelAccount.t
+   M /trunk/sitemaker/perl/Sitemaker-Handler-Partner-API/t/06-uncancelAccount.t
+   M /trunk/sitemaker/perl/Sitemaker-Handler-Partner-API/t/07-updateAccountPackage.t
+   M /trunk/sitemaker/perl/Sitemaker-Handler-Partner-API/t/08-lockSite.t
+   M /trunk/sitemaker/perl/Sitemaker-Handler-Partner-API/t/09-unlockSite.t
+   M /trunk/sitemaker/perl/Sitemaker-Handler-Partner-API/t/10-getAccountInfo.t
+   M /trunk/sitemaker/perl/Sitemaker-Handler-Partner-API/t/conf/extra.conf.in
+   M /trunk/sitemaker/perl/Sitemaker-Handler-Partner-API/t/lib/Sitemaker/Model/Partner.pm
+   M /trunk/sitemaker/perl/Sitemaker-Handler-Partner-API/t/lib/Sitemaker/Model/Price.pm
+   M /trunk/sitemaker/perl/Sitemaker-Handler-Partner-API/t/lib/Sitemaker/Model/PriceGroup.pm
+   M /trunk/sitemaker/perl/Sitemaker-Handler-Partner-API/t/lib/Sitemaker/Model/Product.pm
+   M /trunk/sitemaker/perl/Sitemaker-Handler-Partner-API/t/pod-coverage.t
+   M /trunk/sitemaker/perl/Sitemaker-Handler-Partner-API/t/pod.t
+
+DEV: Fixed svn:eol-style to native
+------------------------------------------------------------------------
+r9425 | eirik | 2008-05-15 13:22:00 +0100 (Thu, 15 May 2008) | 1 line
+Changed paths:
+   M /trunk/sitemaker/perl/Sitemaker-Model/Build.PL
+   M /trunk/sitemaker/perl/Sitemaker-Model/Changes
+   M /trunk/sitemaker/perl/Sitemaker-Model/MANIFEST
+   M /trunk/sitemaker/perl/Sitemaker-Model/README
+   M /trunk/sitemaker/perl/Sitemaker-Model/t/00-setup.t
+   M /trunk/sitemaker/perl/Sitemaker-Model/t/01-crud.t
+   M /trunk/sitemaker/perl/Sitemaker-Model/t/pod-coverage.t
+   M /trunk/sitemaker/perl/Sitemaker-Model/t/pod.t
+
+DEV: Fixed svn:eol-style to native, fixed -T warnings in EPIC
+------------------------------------------------------------------------
+r9426 | eirik | 2008-05-15 13:22:52 +0100 (Thu, 15 May 2008) | 1 line
+Changed paths:
+   M /trunk/sitemaker/perl/Sitemaker-Model-DesignMedia/.cvsignore
+   M /trunk/sitemaker/perl/Sitemaker-Model-DesignMedia/Build.PL
+   M /trunk/sitemaker/perl/Sitemaker-Model-DesignMedia/Changes
+   M /trunk/sitemaker/perl/Sitemaker-Model-DesignMedia/MANIFEST
+   M /trunk/sitemaker/perl/Sitemaker-Model-DesignMedia/README
+   M /trunk/sitemaker/perl/Sitemaker-Model-DesignMedia/lib/Sitemaker/Model/DesignMedia.pm
+   M /trunk/sitemaker/perl/Sitemaker-Model-DesignMedia/lib/Sitemaker/Model/DesignMediaSettings.pm
+   M /trunk/sitemaker/perl/Sitemaker-Model-DesignMedia/t/00-load.t
+   M /trunk/sitemaker/perl/Sitemaker-Model-DesignMedia/t/DMSettings.t
+   M /trunk/sitemaker/perl/Sitemaker-Model-DesignMedia/t/DesignMedia.t
+   M /trunk/sitemaker/perl/Sitemaker-Model-DesignMedia/t/boilerplate.t
+   M /trunk/sitemaker/perl/Sitemaker-Model-DesignMedia/t/pod-coverage.t
+   M /trunk/sitemaker/perl/Sitemaker-Model-DesignMedia/t/pod.t
+
+DEV: Fixed svn:eol-style to native
+------------------------------------------------------------------------
+r9427 | eirik | 2008-05-15 13:24:37 +0100 (Thu, 15 May 2008) | 1 line
+Changed paths:
+   M /trunk/sitemaker/perl/Sitemaker-Model-PartnerStats/Build.PL
+   M /trunk/sitemaker/perl/Sitemaker-Model-PartnerStats/Changes
+   M /trunk/sitemaker/perl/Sitemaker-Model-PartnerStats/MANIFEST
+   M /trunk/sitemaker/perl/Sitemaker-Model-PartnerStats/README
+   M /trunk/sitemaker/perl/Sitemaker-Model-PartnerStats/lib/Sitemaker/Model/PartnerStats.pm
+   M /trunk/sitemaker/perl/Sitemaker-Model-PartnerStats/lib/Sitemaker/Model/PartnerStatsBilling.pm
+   M /trunk/sitemaker/perl/Sitemaker-Model-PartnerStats/lib/Sitemaker/Model/PartnerStatsNew.pm
+   M /trunk/sitemaker/perl/Sitemaker-Model-PartnerStats/lib/Sitemaker/Model/PartnerStatsTotal.pm
+   M /trunk/sitemaker/perl/Sitemaker-Model-PartnerStats/t/00-load.t
+   M /trunk/sitemaker/perl/Sitemaker-Model-PartnerStats/t/Sitemaker-Model-PartnerStats.t
+   M /trunk/sitemaker/perl/Sitemaker-Model-PartnerStats/t/pod-coverage.t
+   M /trunk/sitemaker/perl/Sitemaker-Model-PartnerStats/t/pod.t
+
+DEV: Fixed svn:eol-style to native, fixed -T warnings in EPIC
+------------------------------------------------------------------------
+r9428 | adam | 2008-05-15 14:19:12 +0100 (Thu, 15 May 2008) | 2 lines
+Changed paths:
+   M /trunk/sitemaker/perl/Sitemaker-Domains/MANIFEST
+
+Update Domains manifest
+
+------------------------------------------------------------------------
+r9429 | adam | 2008-05-15 15:08:16 +0100 (Thu, 15 May 2008) | 2 lines
+Changed paths:
+   M /trunk/sitemaker/perl/Sitemaker-Model-Partner/lib/Sitemaker/Model/Partner.pm
+   M /trunk/sitemaker/perl/Sitemaker-Model-Pricing/lib/Sitemaker/Model/Product.pm
+
+Update partners and products tables to include new AdWords Vouchers info
+
+------------------------------------------------------------------------
+r9430 | adam | 2008-05-15 15:11:18 +0100 (Thu, 15 May 2008) | 2 lines
+Changed paths:
+   M /trunk/sitemaker/perl/Sitemaker-Model-Pricing/lib/Sitemaker/Model/Product.pm
+
+perltidy
+
+------------------------------------------------------------------------
+r9431 | adam | 2008-05-15 15:54:49 +0100 (Thu, 15 May 2008) | 2 lines
+Changed paths:
+   M /trunk/sitemaker/perl/Sitemaker/lib/Sitemaker.pm
+   M /trunk/sitemaker/perl/Sitemaker-API-Crypt/lib/Sitemaker/API/Crypt.pm
+   M /trunk/sitemaker/perl/Sitemaker-AdminTool/lib/Sitemaker/AdminTool.pm
+   M /trunk/sitemaker/perl/Sitemaker-CharDecompose/lib/Sitemaker/CharDecompose.pm
+   M /trunk/sitemaker/perl/Sitemaker-Config/lib/Sitemaker/Config.pm
+   M /trunk/sitemaker/perl/Sitemaker-DAO/lib/Sitemaker/SybaseDAO/Session.pm
+   M /trunk/sitemaker/perl/Sitemaker-Data/lib/Sitemaker/Data.pm
+   M /trunk/sitemaker/perl/Sitemaker-Data/lib/Sitemaker/Render.pm
+   M /trunk/sitemaker/perl/Sitemaker-Exception/lib/Sitemaker/Exception.pm
+   M /trunk/sitemaker/perl/Sitemaker-Fragment/lib/Sitemaker/Fragment.pm
+   M /trunk/sitemaker/perl/Sitemaker-Model/lib/Sitemaker/Model.pm
+   M /trunk/sitemaker/perl/Sitemaker-Model/t/MyModel.pm
+   M /trunk/sitemaker/perl/Sitemaker-UUID/lib/Sitemaker/UUID.pm
+
+adding svn keywords. Internal only; no changes, no block
+
+------------------------------------------------------------------------
+r9432 | adam | 2008-05-15 15:55:37 +0100 (Thu, 15 May 2008) | 2 lines
+Changed paths:
+   M /trunk/sitemaker/perl/Sitemaker-Handler-Partner-API/t/lib/Community.pm
+   M /trunk/sitemaker/perl/Sitemaker-Handler-Partner-API/t/lib/Session.pm
+   M /trunk/sitemaker/perl/Sitemaker-Handler-Partner-API/t/lib/Sitewide.pm
+   M /trunk/sitemaker/perl/Sitemaker-Handler-Partner-API/t/lib/User.pm
+
+svn keywords update
+
+------------------------------------------------------------------------
+r9433 | adam | 2008-05-15 15:56:45 +0100 (Thu, 15 May 2008) | 2 lines
+Changed paths:
+   M /trunk/sitemaker/perl/Sitemaker-DAO/lib/Sitemaker/SessionDAO.pm
+
+svn keywords
+
+------------------------------------------------------------------------
+r9434 | chris | 2008-05-15 17:39:27 +0100 (Thu, 15 May 2008) | 11 lines
+Changed paths:
+   A /trunk/sitemaker/perl/pc-fake
+   A /trunk/sitemaker/perl/pc-fake/lib
+   A /trunk/sitemaker/perl/pc-fake/lib/Lucene.pm
+   A /trunk/sitemaker/perl/pc-fake/lib/Net
+   A /trunk/sitemaker/perl/pc-fake/lib/Net/Interface.pm
+   A /trunk/sitemaker/perl/pc-fake/lib/Sys
+   A /trunk/sitemaker/perl/pc-fake/lib/Sys/Syslog.pm
+
+Add pc-fake/lib to your perl include path when running eclipse/epic on a PC platform to provide fake modules that are not available for the PC platform.
+
+Lucene.pm:
+ Fake Lucene PC installation
+Net/Interface.pm:
+  Fake Net::Interface
+  Includes a totally fake new subroutine
+    But not sure if necessary
+Sys/Syslog.pm:
+  Fake Sys::Sys/Syslog
+
+
+------------------------------------------------------------------------
+r9438 | eirik | 2008-05-15 18:00:24 +0100 (Thu, 15 May 2008) | 2 lines
+Changed paths:
+   M /trunk/sitemaker/perl/test/AdSenseAPI.t
+   M /trunk/sitemaker/perl/test/IAdWordsService.t
+   M /trunk/sitemaker/perl/test/IDomainService.t
+   M /trunk/sitemaker/perl/test/IForm2Service.t
+   M /trunk/sitemaker/perl/test/IForumService.t
+   M /trunk/sitemaker/perl/test/TestSMCGI.pm
+   M /trunk/sitemaker/perl/test/TestSMCGI.t
+   M /trunk/sitemaker/perl/test/comment.pl
+   M /trunk/sitemaker/perl/test/community.t
+   M /trunk/sitemaker/perl/test/corefunc.t
+   M /trunk/sitemaker/perl/test/email.t
+   M /trunk/sitemaker/perl/test/faq.t
+   M /trunk/sitemaker/perl/test/media.t
+   M /trunk/sitemaker/perl/test/news.t
+   M /trunk/sitemaker/perl/test/payments.t
+   M /trunk/sitemaker/perl/test/upload.t
+   M /trunk/sitemaker/perl/test/user.t
+   M /trunk/sitemaker/perl/test/wizard.t
+
+DEV: Refactored TestSMCGI so that you must explicityly session_init if using the session cgi's (removes errors from EPIC)
+Also fixed failed tests in media.t
+------------------------------------------------------------------------
+r9439 | josh | 2008-05-15 18:20:53 +0100 (Thu, 15 May 2008) | 1 line
+Changed paths:
+   M /trunk/CHANGES
+
+R4.21.5 CHANGES
+------------------------------------------------------------------------
+r9440 | eirik | 2008-05-15 18:33:03 +0100 (Thu, 15 May 2008) | 1 line
+Changed paths:
+   M /trunk/utils/webstats/hitcount.pl
+
+DEV: Fix warnings
+------------------------------------------------------------------------
+r9441 | ossie | 2008-05-15 19:24:16 +0100 (Thu, 15 May 2008) | 33 lines
+Changed paths:
+   M /trunk/flash/sitemaker/account/src/as/com/greekattic/accounts/AccountsController.as
+   M /trunk/flash/sitemaker/account/src/as/com/greekattic/accounts/AccountsModel.as
+   M /trunk/flash/sitemaker/account/src/as/com/greekattic/accounts/AccountsModule.as
+   M /trunk/flash/sitemaker/account/src/as/com/greekattic/accounts/AccountsModuleView.as
+   M /trunk/flash/sitemaker/account/src/as/com/greekattic/accounts/CheckForExpiredAccount.as
+   M /trunk/flash/sitemaker/account/src/as/com/greekattic/accounts/ExtrasController.as
+   M /trunk/flash/sitemaker/account/src/as/com/greekattic/accounts/ExtrasModule.as
+   M /trunk/flash/sitemaker/account/src/as/com/greekattic/accounts/ExtrasView.as
+   A /trunk/flash/sitemaker/account/src/as/com/greekattic/accounts/IAdWordsService.as
+   M /trunk/flash/sitemaker/account/src/as/com/greekattic/accounts/IExtrasModule.as
+   M /trunk/flash/sitemaker/account/src/as/com/greekattic/accounts/UpdateUserAction.as
+   A /trunk/flash/sitemaker/account/src/as/com/greekattic/accounts/adwords
+   A /trunk/flash/sitemaker/account/src/as/com/greekattic/accounts/adwords/AdWordsVoucher.as
+   A /trunk/flash/sitemaker/account/src/as/com/greekattic/accounts/adwords/CheckGoogleVoucher.as
+   A /trunk/flash/sitemaker/account/src/as/com/greekattic/accounts/adwords/ClaimAdWordsVoucher.as
+   A /trunk/flash/sitemaker/account/src/as/com/greekattic/accounts/adwords/ClaimedGoogleVoucherView.as
+   A /trunk/flash/sitemaker/account/src/as/com/greekattic/accounts/adwords/GetAdWordsVoucher.as
+   A /trunk/flash/sitemaker/account/src/as/com/greekattic/accounts/adwords/LaunchGoogleAdWordsInfo.as
+   A /trunk/flash/sitemaker/account/src/as/com/greekattic/accounts/adwords/LaunchGoogleAdwordsTerms.as
+   A /trunk/flash/sitemaker/account/src/as/com/greekattic/accounts/adwords/UnclaimedGoogleVoucherView.as
+   M /trunk/flash/sitemaker/account/src/fla/AccountExtras.fla
+
+As a paid up Sitemaker Subscriber, I can claim my adwords voucher
+---
+
+* AccountsController.as
+  - re-configured state to allow module to start in Extras panel upon startup or login if user can claim voucher
+
+* AccountsModel.as
+  - nows holds information about Google AdWords voucher
+
+* AccountsModule.as
+  - Now checks if user can make a claim and starts module in Extras panel
+
+* AccountsModuleView.as
+  - passing AccountsModel into Extras module
+
+* CheckForExpiredAccount.as
+  - Now checks if user has a claimable AdWordsVoucher and dispatches event to go to that state
+
+* ExtrasModule.as and IExtrasModule.as
+  - Now receives AccountsModel to pass to controller
+
+* ExtrasController.as
+  - Receives AccountsModel
+  - Initialises and adds AdWords related actions to the Extras State
+
+* IAdWordsService.as
+  - Changed name and capitalised 'w' in AdWords
+
+* UpdateUserAction.as
+  - Code tidy
+
+* AccountExtras.fla
+  - Added new views to the fla
+
+------------------------------------------------------------------------
+r9444 | adam | 2008-05-16 11:29:02 +0100 (Fri, 16 May 2008) | 3 lines
+Changed paths:
+   M /trunk/sitemaker/perl/modules/GandiAPI.pm
+   M /trunk/sitemaker/perl/modules/t/GandiAPI.t
+
+Implement Gandi mail forwarding api.
+Some refactoring courtesy of Dan :-)
+
+
+------------------------------------------------------------------------
+r9447 | adam | 2008-05-16 12:29:36 +0100 (Fri, 16 May 2008) | 3 lines
+Changed paths:
+   M /trunk/sitemaker/perl/modules/t/GandiAPI.t
+
+Additional tests for Gandi email API.
+Deactivating gandimail does *not* remove existing forwards
+
+------------------------------------------------------------------------
+r9448 | adam | 2008-05-16 14:22:01 +0100 (Fri, 16 May 2008) | 3 lines
+Changed paths:
+   M /trunk/sitemaker/perl/modules/Sitemaker/Handler/IDomainService.pm
+
+Domains email forwarding WIP.
+Need to discuss interface with Ossie before proceeding
+
+------------------------------------------------------------------------
+r9449 | gruff | 2008-05-16 14:35:53 +0100 (Fri, 16 May 2008) | 1 line
+Changed paths:
+   M /trunk/sitemaker/db/alter/27_up.sql
+
+corrected an error in data setup for ".eu"
+------------------------------------------------------------------------
+r9450 | gruff | 2008-05-16 14:37:54 +0100 (Fri, 16 May 2008) | 1 line
+Changed paths:
+   M /trunk/sitemaker/db/alter/WIP/adwords_vouchers/NN_up_adwords_vouchers.sql
+   A /trunk/sitemaker/db/alter/WIP/adwords_vouchers/import_vouchers.xls
+   M /trunk/sitemaker/db/alter/WIP/adwords_vouchers/test_adwords_vouchers.sql
+
+WIP: 1st cut attempt at adwords vouchers model.
+------------------------------------------------------------------------
+r9451 | gruff | 2008-05-16 15:53:52 +0100 (Fri, 16 May 2008) | 2 lines
+Changed paths:
+   M /trunk/sitemaker/db/alter/WIP/adwords_vouchers/NN_up_adwords_vouchers.sql
+
+WIP: AdWords vouchers
+New approach that properly manages the 1:1 relationship between vouchers and users.
+------------------------------------------------------------------------
+r9452 | eirik | 2008-05-16 16:40:29 +0100 (Fri, 16 May 2008) | 1 line
+Changed paths:
+   A /trunk/partner/fr/webliberte
+   A /trunk/partner/fr/webliberte/build.properties
+   A /trunk/partner/fr/webliberte/config
+   A /trunk/partner/fr/webliberte/config/partner.css
+   A /trunk/partner/fr/webliberte/config/webliberte.sql
+
+New partner
+
+------------------------------------------------------------------------
+r9455 | dan | 2008-05-16 17:37:55 +0100 (Fri, 16 May 2008) | 3 lines
+Changed paths:
+   M /trunk/sitemaker/perl/modules/Sitemaker/Handler/Index.pm
+
+Fixes potential javascript injection through page title by encoding double-quotes
+Fixes dotlinks so they now call the correct javascript and fall back to correct href, which now includes the pageId.
+
+------------------------------------------------------------------------
+r9456 | adam | 2008-05-16 17:48:30 +0100 (Fri, 16 May 2008) | 2 lines
+Changed paths:
+   M /trunk/sitemaker/perl/test/IForm2Service.t
+   M /trunk/sitemaker/perl/test/IForumService.t
+   M /trunk/sitemaker/perl/test/cgi/P1085_build_site.pl
+   M /trunk/sitemaker/perl/test/cgi/P1113_comment.pl
+   M /trunk/sitemaker/perl/test/comment.pl
+   M /trunk/sitemaker/perl/test/email.t
+
+Migrate to JSON::XS in remaining perl files to remove EPIC/eclipse dependency
+
+------------------------------------------------------------------------
+r9457 | adam | 2008-05-16 17:55:33 +0100 (Fri, 16 May 2008) | 2 lines
+Changed paths:
+   M /trunk/sitemaker/perl/Sitemaker-Domains/lib/Sitemaker/Domains/TLD.pm
+
+oops - TLD trying to use Voucher to make accessors...
+
+------------------------------------------------------------------------
+r9458 | adam | 2008-05-16 17:57:47 +0100 (Fri, 16 May 2008) | 2 lines
+Changed paths:
+   M /trunk/sitemaker/perl/test/faq.t
+
+Fix warning on faq test
+
+------------------------------------------------------------------------
+r9459 | eirik | 2008-05-16 19:23:15 +0100 (Fri, 16 May 2008) | 1 line
+Changed paths:
+   M /trunk/partner/fr/webliberte/config/webliberte.sql
+
+Fixed webliberte config script
+------------------------------------------------------------------------
+r9460 | chris | 2008-05-19 08:59:48 +0100 (Mon, 19 May 2008) | 2 lines
+Changed paths:
+   M /trunk/flash/buildSWF.xml
+
+buildSWF.xml: Updated swf.tar target to use app.rev and fla.language.code in the tgz file name
+
+------------------------------------------------------------------------
+r9461 | gruff | 2008-05-19 11:24:57 +0100 (Mon, 19 May 2008) | 1 line
+Changed paths:
+   A /trunk/sitemaker/db/alter/33_up_adwords_vouchers.sql
+
+AdWords Vouchers up script
+------------------------------------------------------------------------
+r9462 | chris | 2008-05-19 12:01:37 +0100 (Mon, 19 May 2008) | 60 lines
+Changed paths:
+   M /trunk/flash/sitemaker/common/src/as/com/greekattic/sitemaker/IContainer.as
+   M /trunk/flash/sitemaker/common/src/as/com/greekattic/sitemaker/IPage.as
+   M /trunk/flash/sitemaker/media/src/as/com/greekattic/media/NavMenu.as
+   M /trunk/flash/sitemaker/pages/src/asinc/pageSettings.T1.code.F1.as
+   M /trunk/flash/sitemaker/pages/src/asinc/pages.LaddressInfo.actions.F5.as
+   M /trunk/flash/sitemaker/pages/src/asinc/pages.LmenuItem.actions.F1.as
+   M /trunk/flash/sitemaker/pages/src/asinc/pages.T1.actions.F2.as
+   M /trunk/flash/sitemaker/render/src/as/Community.as
+   M /trunk/flash/sitemaker/render/src/as/Page.as
+   M /trunk/flash/sitemaker/render/src/as/com/greekattic/render/ContainerInit.as
+   M /trunk/flash/sitemaker/render/src/as/com/greekattic/render/ContainerRender.as
+
+Transparent change: Updated hideMenu, hidePageMaster, vis, toLogin as boolean, joinSettings, accessSettings, daysLeft as Number
+
+TESTING: 
+  Hiding of menu, page master and individual pages from menu
+  Types of Joining process - levels of membership
+  Page access controls
+  Days left in package, correct actions
+
+IContainer.as:
+  Added types to doCGI, refreshSite arguments
+  Added result type to doLink
+IPage.as:
+  Converted getHidePageMaster, get HideMenu to Boolean result
+NavMenu.as:
+  Updated hideMenu from String to Boolean
+  Applied types to arguments and variables
+pages.LaddressInfo.actions.F5.as:
+  Updated selectedVis from String to Boolean
+pages.LmenuItem.actions.F1.as:
+  Updated switchVisible to change vis from String to Boolean
+pages.T1.actions.F2.as:
+  Updated vis from String to Boolean
+pageSettings.T1.code.F1.as:
+  Updated vis from String to Boolean
+ContainerInit.as:
+  Applied types to arguments and variables
+  Updated toLogin from String to Boolean
+  Updated comments
+  Updated branding from String to Boolean
+  Updated vis from String to Boolean
+  Updated joinSettings to Number
+  Updated accessSettings to Number
+  Updated daysLeft to Number
+  Added createStandardFontsArray from ContainerRender
+ContainerRender.as:
+  Applied types to arguments, variables and accessors
+  Updated m_vn to Number
+  Updated branding to Boolean
+  Updated toLogin from String to Boolean
+  Removed unused m_menuStartObj
+  Added types to doCGI arguments
+  Updated logging to getLogWhere
+  Moved createStandardFontsArray to ContainertInit
+  Added types to refreshSite arguments
+Community.as:
+  Applied types to arguments and variables
+  Updated accessSettings to Number
+  Updated joinSettings to Number
+  Updated joinPending to String
+  Updated adminLocked to String
+  Updated daysLeft to Number
+  Updated cc to String
+Page.as:
+  Updated pageNumber to Number
+  Updated vis to Boolean
+  Updated hideMenu to Boolean
+  Updated hidePageMaster to Boolean
+  Applied types to arguments and variables
+  Replaced _level3 with LevelDependencySubjectTarget.EditPanel
+
+------------------------------------------------------------------------
+r9463 | chris | 2008-05-19 12:04:21 +0100 (Mon, 19 May 2008) | 38 lines
+Changed paths:
+   M /trunk/flash/media/widgets/src/as/PointerThumbnailLoader.as
+   M /trunk/flash/sitemaker/domains/src/as/com/greekattic/domains/manage/action/CheckWebmailDetails.as
+   M /trunk/flash/sitemaker/domains/src/as/com/greekattic/domains/register/view/DomainsList.as
+   M /trunk/flash/sitemaker/domains/src/as/com/greekattic/domains/register/view/PrimaryDetails.as
+   M /trunk/flash/sitemaker/domains/src/as/com/greekattic/domains/register/view/SecondaryDetails.as
+   M /trunk/flash/sitemaker/edit/src/as/com/greekattic/sitemaker/edit/commands/SavePromptCommand.as
+   M /trunk/flash/sitemaker/media/src/as/com/greekattic/media/Background.as
+   M /trunk/flash/sitemaker/media/src/as/com/greekattic/media/TextBox.as
+   M /trunk/flash/sitemaker/render/src/as/Partner.as
+   M /trunk/flash/sitemaker/render/src/as/User.as
+   M /trunk/flash/sitemaker/render/src/as/com/greekattic/render/ContainerMain.as
+   M /trunk/flash/sitemaker/render/src/as/com/greekattic/render/EditDependencyLoad.as
+   M /trunk/flash/sitemaker/render/src/as/com/greekattic/render/LoggerMain.as
+   M /trunk/flash/sitemaker/render/src/as/com/greekattic/render/RenderResources.as
+   M /trunk/flash/sitemaker/render/src/as/com/greekattic/render/SiteDependencyLoad.as
+
+Actionscript Updates to reduce FDT's reported errors including typing more function arguments and variables
+
+PointerThumbnailLoader.as:
+  Added type Function to m_onLoadErrorEvent
+CheckWebmailDetails.as:
+  Fixed syntax - missing semi-colons
+DomainsList.as:
+  Fixed syntax - missing semi-colons
+PrimaryDetails.as:
+  Fixed syntax - missing semi-colons
+SecondaryDetails.as:
+  Fixed syntax - missing semi-colons
+SavePromptCommand.as:
+  Commented out unused variables
+Background.as:
+  Applied types to arguments and variables
+TextBox.as:
+  Applied types to arguments and variables
+ContainerMain.as:
+  Removed inactive code
+  Applied types to arguments and variables
+EditDependencyLoad.as:
+  Removed inactive code
+  Applied types to arguments and variables
+LoggerMain.as:
+  Removed inactive code
+  Applied types to arguments and variables
+  Added initLCLogger and initSOSLogger
+RenderResources.as:
+  Removed unused import
+SiteDependencyLoad.as:
+  Removed inactive code
+  Applied types to arguments and variables
+Partner.as:
+  Applied types to arguments and variables
+User.as:
+  Applied types to arguments and variables
+
+------------------------------------------------------------------------
+r9464 | adam | 2008-05-19 14:56:28 +0100 (Mon, 19 May 2008) | 2 lines
+Changed paths:
+   M /trunk/sitemaker/perl/modules/Component.pm
+
+Fix warning over undef pagelength
+
+------------------------------------------------------------------------
+r9465 | adam | 2008-05-19 15:01:14 +0100 (Mon, 19 May 2008) | 2 lines
+Changed paths:
+   M /trunk/sitemaker/perl/modules/Email.pm
+   M /trunk/sitemaker/perl/modules/Session.pm
+   M /trunk/sitemaker/perl/modules/Sitemaker/Handler/Affiliate.pm
+   M /trunk/sitemaker/perl/modules/Sitemaker/Handler/Confirm.pm
+   M /trunk/sitemaker/perl/modules/Sitemaker/Handler/Corefunc.pm
+   M /trunk/sitemaker/perl/modules/Sitemaker/Handler/Custom.pm
+   M /trunk/sitemaker/perl/modules/Sitemaker/Handler/Directory.pm
+   M /trunk/sitemaker/perl/modules/Sitemaker/Handler/Download.pm
+   M /trunk/sitemaker/perl/modules/Sitemaker/Handler/Email.pm
+   M /trunk/sitemaker/perl/modules/Sitemaker/Handler/Events.pm
+   M /trunk/sitemaker/perl/modules/Sitemaker/Handler/Fax.pm
+   M /trunk/sitemaker/perl/modules/Sitemaker/Handler/Forum.pm
+   M /trunk/sitemaker/perl/modules/Sitemaker/Handler/GenHTML.pm
+   M /trunk/sitemaker/perl/modules/Sitemaker/Handler/Index.pm
+   M /trunk/sitemaker/perl/modules/Sitemaker/Handler/Login.pm
+   M /trunk/sitemaker/perl/modules/Sitemaker/Handler/Motd.pm
+   M /trunk/sitemaker/perl/modules/Sitemaker/Handler/News.pm
+   M /trunk/sitemaker/perl/modules/Sitemaker/Handler/Page.pm
+   M /trunk/sitemaker/perl/modules/Sitemaker/Handler/Partner.pm
+   M /trunk/sitemaker/perl/modules/Sitemaker/Handler/Password.pm
+   M /trunk/sitemaker/perl/modules/Sitemaker/Handler/Payments.pm
+   M /trunk/sitemaker/perl/modules/Sitemaker/Handler/User.pm
+   M /trunk/sitemaker/perl/modules/Sitemaker/Handler/Wizard.pm
+   M /trunk/sitemaker/perl/modules/serverspecific.pm
+
+Remove "use CGI::Carp" - not used.
+
+------------------------------------------------------------------------
+r9466 | adam | 2008-05-19 15:32:41 +0100 (Mon, 19 May 2008) | 2 lines
+Changed paths:
+   M /trunk/sitemaker/perl/modules/Community.pm
+
+Fix perl warning in Community.pm
+
+------------------------------------------------------------------------
+r9467 | adam | 2008-05-19 15:47:41 +0100 (Mon, 19 May 2008) | 2 lines
+Changed paths:
+   M /trunk/sitemaker/perl/modules/Sitemaker/Handler/Dispatcher.pm
+
+Dispatcher: don't use CGI::Carp; fix undef warning
+
+------------------------------------------------------------------------
+r9468 | adam | 2008-05-19 15:48:06 +0100 (Mon, 19 May 2008) | 2 lines
+Changed paths:
+   M /trunk/sitemaker/perl/modules/ClientPaths.pm
+
+Avoid undef warning on ClientPaths
+
+------------------------------------------------------------------------
+r9469 | adam | 2008-05-19 15:48:30 +0100 (Mon, 19 May 2008) | 2 lines
+Changed paths:
+   M /trunk/sitemaker/perl/modules/Sitemaker/Handler/Container.pm
+   M /trunk/sitemaker/perl/modules/Sitemaker/Handler/Unsubscribe.pm
+   M /trunk/sitemaker/perl/modules/Sitemaker/Handler/Widget.pm
+
+Remove CGI::Carp from more modules
+
+------------------------------------------------------------------------
+r9470 | adam | 2008-05-19 15:49:03 +0100 (Mon, 19 May 2008) | 2 lines
+Changed paths:
+   M /trunk/sitemaker/perl/modules/Sitewide.pm
+
+Migrate "use MD5" to "use Digest::MD5" in Sitewide.pm
+
+------------------------------------------------------------------------
+r9471 | adam | 2008-05-19 16:18:43 +0100 (Mon, 19 May 2008) | 2 lines
+Changed paths:
+   M /trunk/sitemaker/perl/modules/Sitemaker/Handler/Community.pm
+
+Community.pm - remove deprecated main(). No user CGI::Carp, tidy
+
+------------------------------------------------------------------------
+r9472 | adam | 2008-05-19 16:32:43 +0100 (Mon, 19 May 2008) | 2 lines
+Changed paths:
+   M /trunk/sitemaker/perl/modules/Sitemaker/Handler/Community.pm
+
+oops on Community.pm
+
+------------------------------------------------------------------------
+r9473 | adam | 2008-05-19 16:38:32 +0100 (Mon, 19 May 2008) | 2 lines
+Changed paths:
+   M /trunk/sitemaker/perl/Sitemaker-API-Crypt/lib/Sitemaker/API/Crypt.pm
+   M /trunk/sitemaker/perl/Sitemaker-Handler-Partner-API/t/lib/Sitewide.pm
+   M /trunk/sitemaker/perl/Sitemaker-Model/lib/Sitemaker/Model/Constants.pm
+   M /trunk/sitemaker/perl/cgi/private/media_html.cgi
+   M /trunk/sitemaker/perl/cgi/public/usercgi.cgi
+   M /trunk/sitemaker/perl/modules/Node.pm
+   M /trunk/sitemaker/perl/modules/Sitewide.pm
+
+Reove 'use vars', standardise on using Exporter as base class, no CGI::Carp
+
+------------------------------------------------------------------------
+r9474 | adam | 2008-05-19 17:08:37 +0100 (Mon, 19 May 2008) | 2 lines
+Changed paths:
+   M /trunk/sitemaker/perl/modules/Searchengines.pm
+   M /trunk/sitemaker/perl/modules/Sitemaker/Handler/Support.pm
+   M /trunk/sitemaker/perl/modules/Sitemaker/Handler/Widget.pm
+   M /trunk/sitemaker/perl/scripts/se_submit.pl
+
+Standardise on URI::Escape::uri_escape rather than CGI::Util::Escape
+
+------------------------------------------------------------------------
+r9475 | adam | 2008-05-19 17:41:58 +0100 (Mon, 19 May 2008) | 2 lines
+Changed paths:
+   M /trunk/sitemaker/perl/Sitemaker-Fragment/lib/Sitemaker/Fragment/CommentRSS.pm
+   M /trunk/sitemaker/perl/Sitemaker-Fragment/lib/Sitemaker/Fragment/CommentWidget.pm
+   M /trunk/sitemaker/perl/Sitemaker-Fragment/lib/Sitemaker/Fragment/GoogleAd.pm
+   M /trunk/sitemaker/perl/Sitemaker-Fragment/lib/Sitemaker/Fragment/Topic.pm
+   M /trunk/sitemaker/perl/Sitemaker-Fragment/lib/Sitemaker/Fragment/TopicRSS.pm
+
+Standardise on Class::Accessor::Fast rather than Class::MakeMethods::Standard::Hash
+
+------------------------------------------------------------------------
+r9476 | adam | 2008-05-20 09:16:35 +0100 (Tue, 20 May 2008) | 2 lines
+Changed paths:
+   M /trunk/sitemaker/perl/modules/GandiAPI.pm
+
+Create new contacts with english as preferred language
+
+------------------------------------------------------------------------
+r9477 | chris | 2008-05-20 11:52:50 +0100 (Tue, 20 May 2008) | 15 lines
+Changed paths:
+   M /trunk/flash/media/IWidget/src/fla/ImageEffectsWidget.fla
+   M /trunk/flash/media/widgets/src/fla/galleryPopupWindow.fla
+   M /trunk/flash/media/widgets/src/fla/slideShow.fla
+
+Updated to target Flash Player 8, cf bug 2386
+
+TESTING:
+  Comfirm PNG and GIF can be displayed
+  Check that image smoothing is active
+
+Related to bug 2386: Images effects do not display PNG or GIF files
+
+ImageEffectsWidget.fla:
+  Updated publish profile to target Flash Player 8
+galleryPopupWindow.fla:
+  Updated publish profile to target Flash Player 8
+slideShow.fla:
+  Updated publish profile to target Flash Player 8
+
+------------------------------------------------------------------------
+r9478 | chris | 2008-05-20 12:22:27 +0100 (Tue, 20 May 2008) | 3 lines
+Changed paths:
+   A /trunk/flash/media/frames/src/asinc
+   M /trunk/flash/media/frames/src/fla/button.fla
+   M /trunk/flash/media/frames/src/fla/button_heart.fla
+   M /trunk/flash/media/frames/src/fla/button_square.fla
+   M /trunk/flash/media/frames/src/fla/circle_frames_fr.fla
+   M /trunk/flash/media/frames/src/fla/laptop.fla
+   M /trunk/flash/media/frames/src/fla/oval_frames_fr.fla
+   M /trunk/flash/media/frames/src/fla/ovalwide_frames_fr.fla
+   M /trunk/flash/media/frames/src/fla/photo_horizontal.fla
+   M /trunk/flash/media/frames/src/fla/photo_passport.fla
+   M /trunk/flash/media/frames/src/fla/photo_perforated_horizontal.fla
+   M /trunk/flash/media/frames/src/fla/photo_perforated_vertical.fla
+   M /trunk/flash/media/frames/src/fla/photo_rippededge_horizontal.fla
+   M /trunk/flash/media/frames/src/fla/photo_rippededge_vertical.fla
+   M /trunk/flash/media/frames/src/fla/photo_vertical.fla
+   M /trunk/flash/media/frames/src/fla/photo_withcorners_horizontal.fla
+   M /trunk/flash/media/frames/src/fla/photo_withcorners_vertical.fla
+   M /trunk/flash/media/frames/src/fla/polaroid_frame_fr.fla
+   M /trunk/flash/media/frames/src/fla/roundedsquare_frames_fr.fla
+   M /trunk/flash/media/frames/src/fla/simple_panoramic_horizontal.fla
+   M /trunk/flash/media/frames/src/fla/simple_small_horizontal.fla
+   M /trunk/flash/media/frames/src/fla/simple_small_vertical.fla
+   M /trunk/flash/media/frames/src/fla/simple_wide_horizontal.fla
+   M /trunk/flash/media/frames/src/fla/square_frames_fr.fla
+   M /trunk/flash/media/frames/src/fla/star_frames_fr.fla
+
+Extracted ActionScript code from media/frames French versions, main timeline, all frames, all layers
+
+
+------------------------------------------------------------------------
+r9479 | chris | 2008-05-20 12:32:29 +0100 (Tue, 20 May 2008) | 5 lines
+Changed paths:
+   A /trunk/flash/media/frames/src/asinc/button.T1.code.F1.as
+   A /trunk/flash/media/frames/src/asinc/button.T1.code.F13.as
+   A /trunk/flash/media/frames/src/asinc/button.T1.code.F2.as
+   A /trunk/flash/media/frames/src/asinc/button.T1.code.F9.as
+   A /trunk/flash/media/frames/src/asinc/button.T1.code.decode.as
+   A /trunk/flash/media/frames/src/asinc/button.T1.code.decodeloop.as
+   A /trunk/flash/media/frames/src/asinc/button.T1.code.display.as
+   A /trunk/flash/media/frames/src/asinc/button.T1.code.dodata.as
+   A /trunk/flash/media/frames/src/asinc/button.T1.code.editoff.as
+   A /trunk/flash/media/frames/src/asinc/button.T1.code.init.as
+   A /trunk/flash/media/frames/src/asinc/button.T1.code.load.as
+   A /trunk/flash/media/frames/src/asinc/button.T1.code.loadimage.as
+   A /trunk/flash/media/frames/src/asinc/button.T1.code.loadloop.as
+   A /trunk/flash/media/frames/src/asinc/button.T1.code.repoon.as
+   A /trunk/flash/media/frames/src/asinc/button.T1.code.reset.as
+   A /trunk/flash/media/frames/src/asinc/button.T1.code.savedat.as
+   A /trunk/flash/media/frames/src/asinc/button.T1.code.setup.as
+   A /trunk/flash/media/frames/src/asinc/button.T1.code.updatestyle.as
+   A /trunk/flash/media/frames/src/asinc/button_heart.T1.code.F1.as
+   A /trunk/flash/media/frames/src/asinc/button_heart.T1.code.F13.as
+   A /trunk/flash/media/frames/src/asinc/button_heart.T1.code.F2.as
+   A /trunk/flash/media/frames/src/asinc/button_heart.T1.code.F9.as
+   A /trunk/flash/media/frames/src/asinc/button_heart.T1.code.decode.as
+   A /trunk/flash/media/frames/src/asinc/button_heart.T1.code.decodeloop.as
+   A /trunk/flash/media/frames/src/asinc/button_heart.T1.code.display.as
+   A /trunk/flash/media/frames/src/asinc/button_heart.T1.code.dodata.as
+   A /trunk/flash/media/frames/src/asinc/button_heart.T1.code.editoff.as
+   A /trunk/flash/media/frames/src/asinc/button_heart.T1.code.init.as
+   A /trunk/flash/media/frames/src/asinc/button_heart.T1.code.load.as
+   A /trunk/flash/media/frames/src/asinc/button_heart.T1.code.loadimage.as
+   A /trunk/flash/media/frames/src/asinc/button_heart.T1.code.loadloop.as
+   A /trunk/flash/media/frames/src/asinc/button_heart.T1.code.repoon.as
+   A /trunk/flash/media/frames/src/asinc/button_heart.T1.code.reset.as
+   A /trunk/flash/media/frames/src/asinc/button_heart.T1.code.savedat.as
+   A /trunk/flash/media/frames/src/asinc/button_heart.T1.code.setup.as
+   A /trunk/flash/media/frames/src/asinc/button_heart.T1.code.updatestyle.as
+   A /trunk/flash/media/frames/src/asinc/button_square.T1.code.F1.as
+   A /trunk/flash/media/frames/src/asinc/button_square.T1.code.F13.as
+   A /trunk/flash/media/frames/src/asinc/button_square.T1.code.F2.as
+   A /trunk/flash/media/frames/src/asinc/button_square.T1.code.F9.as
+   A /trunk/flash/media/frames/src/asinc/button_square.T1.code.decode.as
+   A /trunk/flash/media/frames/src/asinc/button_square.T1.code.decodeloop.as
+   A /trunk/flash/media/frames/src/asinc/button_square.T1.code.display.as
+   A /trunk/flash/media/frames/src/asinc/button_square.T1.code.dodata.as
+   A /trunk/flash/media/frames/src/asinc/button_square.T1.code.editoff.as
+   A /trunk/flash/media/frames/src/asinc/button_square.T1.code.init.as
+   A /trunk/flash/media/frames/src/asinc/button_square.T1.code.load.as
+   A /trunk/flash/media/frames/src/asinc/button_square.T1.code.loadimage.as
+   A /trunk/flash/media/frames/src/asinc/button_square.T1.code.loadloop.as
+   A /trunk/flash/media/frames/src/asinc/button_square.T1.code.repoon.as
+   A /trunk/flash/media/frames/src/asinc/button_square.T1.code.reset.as
+   A /trunk/flash/media/frames/src/asinc/button_square.T1.code.savedat.as
+   A /trunk/flash/media/frames/src/asinc/button_square.T1.code.setup.as
+   A /trunk/flash/media/frames/src/asinc/button_square.T1.code.updatestyle.as
+   A /trunk/flash/media/frames/src/asinc/circle_frames.T1.code.F1.as
+   A /trunk/flash/media/frames/src/asinc/circle_frames.T1.code.F13.as
+   A /trunk/flash/media/frames/src/asinc/circle_frames.T1.code.F2.as
+   A /trunk/flash/media/frames/src/asinc/circle_frames.T1.code.F9.as
+   A /trunk/flash/media/frames/src/asinc/circle_frames.T1.code.decode.as
+   A /trunk/flash/media/frames/src/asinc/circle_frames.T1.code.decodeloop.as
+   A /trunk/flash/media/frames/src/asinc/circle_frames.T1.code.display.as
+   A /trunk/flash/media/frames/src/asinc/circle_frames.T1.code.dodata.as
+   A /trunk/flash/media/frames/src/asinc/circle_frames.T1.code.editoff.as
+   A /trunk/flash/media/frames/src/asinc/circle_frames.T1.code.init.as
+   A /trunk/flash/media/frames/src/asinc/circle_frames.T1.code.load.as
+   A /trunk/flash/media/frames/src/asinc/circle_frames.T1.code.loadimage.as
+   A /trunk/flash/media/frames/src/asinc/circle_frames.T1.code.loadloop.as
+   A /trunk/flash/media/frames/src/asinc/circle_frames.T1.code.repoon.as
+   A /trunk/flash/media/frames/src/asinc/circle_frames.T1.code.reset.as
+   A /trunk/flash/media/frames/src/asinc/circle_frames.T1.code.savedat.as
+   A /trunk/flash/media/frames/src/asinc/circle_frames.T1.code.setup.as
+   A /trunk/flash/media/frames/src/asinc/circle_frames.T1.code.updatestyle.as
+   A /trunk/flash/media/frames/src/asinc/circle_frames_fr.T1.code.F1.as
+   A /trunk/flash/media/frames/src/asinc/circle_frames_fr.T1.code.F13.as
+   A /trunk/flash/media/frames/src/asinc/circle_frames_fr.T1.code.F2.as
+   A /trunk/flash/media/frames/src/asinc/circle_frames_fr.T1.code.F9.as
+   A /trunk/flash/media/frames/src/asinc/circle_frames_fr.T1.code.decode.as
+   A /trunk/flash/media/frames/src/asinc/circle_frames_fr.T1.code.decodeloop.as
+   A /trunk/flash/media/frames/src/asinc/circle_frames_fr.T1.code.display.as
+   A /trunk/flash/media/frames/src/asinc/circle_frames_fr.T1.code.dodata.as
+   A /trunk/flash/media/frames/src/asinc/circle_frames_fr.T1.code.editoff.as
+   A /trunk/flash/media/frames/src/asinc/circle_frames_fr.T1.code.init.as
+   A /trunk/flash/media/frames/src/asinc/circle_frames_fr.T1.code.load.as
+   A /trunk/flash/media/frames/src/asinc/circle_frames_fr.T1.code.loadimage.as
+   A /trunk/flash/media/frames/src/asinc/circle_frames_fr.T1.code.loadloop.as
+   A /trunk/flash/media/frames/src/asinc/circle_frames_fr.T1.code.repoon.as
+   A /trunk/flash/media/frames/src/asinc/circle_frames_fr.T1.code.reset.as
+   A /trunk/flash/media/frames/src/asinc/circle_frames_fr.T1.code.savedat.as
+   A /trunk/flash/media/frames/src/asinc/circle_frames_fr.T1.code.setup.as
+   A /trunk/flash/media/frames/src/asinc/circle_frames_fr.T1.code.updatestyle.as
+   A /trunk/flash/media/frames/src/asinc/laptop.T1.code.F1.as
+   A /trunk/flash/media/frames/src/asinc/laptop.T1.code.F13.as
+   A /trunk/flash/media/frames/src/asinc/laptop.T1.code.F2.as
+   A /trunk/flash/media/frames/src/asinc/laptop.T1.code.F9.as
+   A /trunk/flash/media/frames/src/asinc/laptop.T1.code.decode.as
+   A /trunk/flash/media/frames/src/asinc/laptop.T1.code.decodeloop.as
+   A /trunk/flash/media/frames/src/asinc/laptop.T1.code.display.as
+   A /trunk/flash/media/frames/src/asinc/laptop.T1.code.dodata.as
+   A /trunk/flash/media/frames/src/asinc/laptop.T1.code.editoff.as
+   A /trunk/flash/media/frames/src/asinc/laptop.T1.code.init.as
+   A /trunk/flash/media/frames/src/asinc/laptop.T1.code.load.as
+   A /trunk/flash/media/frames/src/asinc/laptop.T1.code.loadimage.as
+   A /trunk/flash/media/frames/src/asinc/laptop.T1.code.loadloop.as
+   A /trunk/flash/media/frames/src/asinc/laptop.T1.code.repoon.as
+   A /trunk/flash/media/frames/src/asinc/laptop.T1.code.reset.as
+   A /trunk/flash/media/frames/src/asinc/laptop.T1.code.savedat.as
+   A /trunk/flash/media/frames/src/asinc/laptop.T1.code.setup.as
+   A /trunk/flash/media/frames/src/asinc/laptop.T1.code.updatestyle.as
+   A /trunk/flash/media/frames/src/asinc/oval_frames.T1.code.F1.as
+   A /trunk/flash/media/frames/src/asinc/oval_frames.T1.code.F13.as
+   A /trunk/flash/media/frames/src/asinc/oval_frames.T1.code.F2.as
+   A /trunk/flash/media/frames/src/asinc/oval_frames.T1.code.F9.as
+   A /trunk/flash/media/frames/src/asinc/oval_frames.T1.code.decode.as
+   A /trunk/flash/media/frames/src/asinc/oval_frames.T1.code.decodeloop.as
+   A /trunk/flash/media/frames/src/asinc/oval_frames.T1.code.display.as
+   A /trunk/flash/media/frames/src/asinc/oval_frames.T1.code.dodata.as
+   A /trunk/flash/media/frames/src/asinc/oval_frames.T1.code.editoff.as
+   A /trunk/flash/media/frames/src/asinc/oval_frames.T1.code.init.as
+   A /trunk/flash/media/frames/src/asinc/oval_frames.T1.code.load.as
+   A /trunk/flash/media/frames/src/asinc/oval_frames.T1.code.loadimage.as
+   A /trunk/flash/media/frames/src/asinc/oval_frames.T1.code.loadloop.as
+   A /trunk/flash/media/frames/src/asinc/oval_frames.T1.code.repoon.as
+   A /trunk/flash/media/frames/src/asinc/oval_frames.T1.code.reset.as
+   A /trunk/flash/media/frames/src/asinc/oval_frames.T1.code.savedat.as
+   A /trunk/flash/media/frames/src/asinc/oval_frames.T1.code.setup.as
+   A /trunk/flash/media/frames/src/asinc/oval_frames.T1.code.updatestyle.as
+   A /trunk/flash/media/frames/src/asinc/oval_frames_fr.T1.code.F1.as
+   A /trunk/flash/media/frames/src/asinc/oval_frames_fr.T1.code.F13.as
+   A /trunk/flash/media/frames/src/asinc/oval_frames_fr.T1.code.F2.as
+   A /trunk/flash/media/frames/src/asinc/oval_frames_fr.T1.code.F9.as
+   A /trunk/flash/media/frames/src/asinc/oval_frames_fr.T1.code.decode.as
+   A /trunk/flash/media/frames/src/asinc/oval_frames_fr.T1.code.decodeloop.as
+   A /trunk/flash/media/frames/src/asinc/oval_frames_fr.T1.code.display.as
+   A /trunk/flash/media/frames/src/asinc/oval_frames_fr.T1.code.dodata.as
+   A /trunk/flash/media/frames/src/asinc/oval_frames_fr.T1.code.editoff.as
+   A /trunk/flash/media/frames/src/asinc/oval_frames_fr.T1.code.init.as
+   A /trunk/flash/media/frames/src/asinc/oval_frames_fr.T1.code.load.as
+   A /trunk/flash/media/frames/src/asinc/oval_frames_fr.T1.code.loadimage.as
+   A /trunk/flash/media/frames/src/asinc/oval_frames_fr.T1.code.loadloop.as
+   A /trunk/flash/media/frames/src/asinc/oval_frames_fr.T1.code.repoon.as
+   A /trunk/flash/media/frames/src/asinc/oval_frames_fr.T1.code.reset.as
+   A /trunk/flash/media/frames/src/asinc/oval_frames_fr.T1.code.savedat.as
+   A /trunk/flash/media/frames/src/asinc/oval_frames_fr.T1.code.setup.as
+   A /trunk/flash/media/frames/src/asinc/oval_frames_fr.T1.code.updatestyle.as
+   A /trunk/flash/media/frames/src/asinc/ovalwide_frames.T1.code.F1.as
+   A /trunk/flash/media/frames/src/asinc/ovalwide_frames.T1.code.F13.as
+   A /trunk/flash/media/frames/src/asinc/ovalwide_frames.T1.code.F2.as
+   A /trunk/flash/media/frames/src/asinc/ovalwide_frames.T1.code.F9.as
+   A /trunk/flash/media/frames/src/asinc/ovalwide_frames.T1.code.decode.as
+   A /trunk/flash/media/frames/src/asinc/ovalwide_frames.T1.code.decodeloop.as
+   A /trunk/flash/media/frames/src/asinc/ovalwide_frames.T1.code.display.as
+   A /trunk/flash/media/frames/src/asinc/ovalwide_frames.T1.code.dodata.as
+   A /trunk/flash/media/frames/src/asinc/ovalwide_frames.T1.code.editoff.as
+   A /trunk/flash/media/frames/src/asinc/ovalwide_frames.T1.code.init.as
+   A /trunk/flash/media/frames/src/asinc/ovalwide_frames.T1.code.load.as
+   A /trunk/flash/media/frames/src/asinc/ovalwide_frames.T1.code.loadimage.as
+   A /trunk/flash/media/frames/src/asinc/ovalwide_frames.T1.code.loadloop.as
+   A /trunk/flash/media/frames/src/asinc/ovalwide_frames.T1.code.repoon.as
+   A /trunk/flash/media/frames/src/asinc/ovalwide_frames.T1.code.reset.as
+   A /trunk/flash/media/frames/src/asinc/ovalwide_frames.T1.code.savedat.as
+   A /trunk/flash/media/frames/src/asinc/ovalwide_frames.T1.code.setup.as
+   A /trunk/flash/media/frames/src/asinc/ovalwide_frames.T1.code.updatestyle.as
+   A /trunk/flash/media/frames/src/asinc/ovalwide_frames_fr.T1.code.F1.as
+   A /trunk/flash/media/frames/src/asinc/ovalwide_frames_fr.T1.code.F13.as
+   A /trunk/flash/media/frames/src/asinc/ovalwide_frames_fr.T1.code.F2.as
+   A /trunk/flash/media/frames/src/asinc/ovalwide_frames_fr.T1.code.F9.as
+   A /trunk/flash/media/frames/src/asinc/ovalwide_frames_fr.T1.code.decode.as
+   A /trunk/flash/media/frames/src/asinc/ovalwide_frames_fr.T1.code.decodeloop.as
+   A /trunk/flash/media/frames/src/asinc/ovalwide_frames_fr.T1.code.display.as
+   A /trunk/flash/media/frames/src/asinc/ovalwide_frames_fr.T1.code.dodata.as
+   A /trunk/flash/media/frames/src/asinc/ovalwide_frames_fr.T1.code.editoff.as
+   A /trunk/flash/media/frames/src/asinc/ovalwide_frames_fr.T1.code.init.as
+   A /trunk/flash/media/frames/src/asinc/ovalwide_frames_fr.T1.code.load.as
+   A /trunk/flash/media/frames/src/asinc/ovalwide_frames_fr.T1.code.loadimage.as
+   A /trunk/flash/media/frames/src/asinc/ovalwide_frames_fr.T1.code.loadloop.as
+   A /trunk/flash/media/frames/src/asinc/ovalwide_frames_fr.T1.code.repoon.as
+   A /trunk/flash/media/frames/src/asinc/ovalwide_frames_fr.T1.code.reset.as
+   A /trunk/flash/media/frames/src/asinc/ovalwide_frames_fr.T1.code.savedat.as
+   A /trunk/flash/media/frames/src/asinc/ovalwide_frames_fr.T1.code.setup.as
+   A /trunk/flash/media/frames/src/asinc/ovalwide_frames_fr.T1.code.updatestyle.as
+   A /trunk/flash/media/frames/src/asinc/photo_horizontal.T1.code.F1.as
+   A /trunk/flash/media/frames/src/asinc/photo_horizontal.T1.code.F13.as
+   A /trunk/flash/media/frames/src/asinc/photo_horizontal.T1.code.F2.as
+   A /trunk/flash/media/frames/src/asinc/photo_horizontal.T1.code.F9.as
+   A /trunk/flash/media/frames/src/asinc/photo_horizontal.T1.code.decode.as
+   A /trunk/flash/media/frames/src/asinc/photo_horizontal.T1.code.decodeloop.as
+   A /trunk/flash/media/frames/src/asinc/photo_horizontal.T1.code.display.as
+   A /trunk/flash/media/frames/src/asinc/photo_horizontal.T1.code.dodata.as
+   A /trunk/flash/media/frames/src/asinc/photo_horizontal.T1.code.editoff.as
+   A /trunk/flash/media/frames/src/asinc/photo_horizontal.T1.code.init.as
+   A /trunk/flash/media/frames/src/asinc/photo_horizontal.T1.code.load.as
+   A /trunk/flash/media/frames/src/asinc/photo_horizontal.T1.code.loadimage.as
+   A /trunk/flash/media/frames/src/asinc/photo_horizontal.T1.code.loadloop.as
+   A /trunk/flash/media/frames/src/asinc/photo_horizontal.T1.code.repoon.as
+   A /trunk/flash/media/frames/src/asinc/photo_horizontal.T1.code.reset.as
+   A /trunk/flash/media/frames/src/asinc/photo_horizontal.T1.code.savedat.as
+   A /trunk/flash/media/frames/src/asinc/photo_horizontal.T1.code.setup.as
+   A /trunk/flash/media/frames/src/asinc/photo_horizontal.T1.code.updatestyle.as
+   A /trunk/flash/media/frames/src/asinc/photo_passport.T1.code.F1.as
+   A /trunk/flash/media/frames/src/asinc/photo_passport.T1.code.F13.as
+   A /trunk/flash/media/frames/src/asinc/photo_passport.T1.code.F2.as
+   A /trunk/flash/media/frames/src/asinc/photo_passport.T1.code.F9.as
+   A /trunk/flash/media/frames/src/asinc/photo_passport.T1.code.decode.as
+   A /trunk/flash/media/frames/src/asinc/photo_passport.T1.code.decodeloop.as
+   A /trunk/flash/media/frames/src/asinc/photo_passport.T1.code.display.as
+   A /trunk/flash/media/frames/src/asinc/photo_passport.T1.code.dodata.as
+   A /trunk/flash/media/frames/src/asinc/photo_passport.T1.code.editoff.as
+   A /trunk/flash/media/frames/src/asinc/photo_passport.T1.code.init.as
+   A /trunk/flash/media/frames/src/asinc/photo_passport.T1.code.load.as
+   A /trunk/flash/media/frames/src/asinc/photo_passport.T1.code.loadimage.as
+   A /trunk/flash/media/frames/src/asinc/photo_passport.T1.code.loadloop.as
+   A /trunk/flash/media/frames/src/asinc/photo_passport.T1.code.repoon.as
+   A /trunk/flash/media/frames/src/asinc/photo_passport.T1.code.reset.as
+   A /trunk/flash/media/frames/src/asinc/photo_passport.T1.code.savedat.as
+   A /trunk/flash/media/frames/src/asinc/photo_passport.T1.code.setup.as
+   A /trunk/flash/media/frames/src/asinc/photo_passport.T1.code.updatestyle.as
+   A /trunk/flash/media/frames/src/asinc/photo_perforated_horizontal.T1.code.F1.as
+   A /trunk/flash/media/frames/src/asinc/photo_perforated_horizontal.T1.code.F13.as
+   A /trunk/flash/media/frames/src/asinc/photo_perforated_horizontal.T1.code.F2.as
+   A /trunk/flash/media/frames/src/asinc/photo_perforated_horizontal.T1.code.F9.as
+   A /trunk/flash/media/frames/src/asinc/photo_perforated_horizontal.T1.code.decode.as
+   A /trunk/flash/media/frames/src/asinc/photo_perforated_horizontal.T1.code.decodeloop.as
+   A /trunk/flash/media/frames/src/asinc/photo_perforated_horizontal.T1.code.display.as
+   A /trunk/flash/media/frames/src/asinc/photo_perforated_horizontal.T1.code.dodata.as
+   A /trunk/flash/media/frames/src/asinc/photo_perforated_horizontal.T1.code.editoff.as
+   A /trunk/flash/media/frames/src/asinc/photo_perforated_horizontal.T1.code.init.as
+   A /trunk/flash/media/frames/src/asinc/photo_perforated_horizontal.T1.code.load.as
+   A /trunk/flash/media/frames/src/asinc/photo_perforated_horizontal.T1.code.loadimage.as
+   A /trunk/flash/media/frames/src/asinc/photo_perforated_horizontal.T1.code.loadloop.as
+   A /trunk/flash/media/frames/src/asinc/photo_perforated_horizontal.T1.code.repoon.as
+   A /trunk/flash/media/frames/src/asinc/photo_perforated_horizontal.T1.code.reset.as
+   A /trunk/flash/media/frames/src/asinc/photo_perforated_horizontal.T1.code.savedat.as
+   A /trunk/flash/media/frames/src/asinc/photo_perforated_horizontal.T1.code.setup.as
+   A /trunk/flash/media/frames/src/asinc/photo_perforated_horizontal.T1.code.updatestyle.as
+   A /trunk/flash/media/frames/src/asinc/photo_perforated_vertical.T1.code.F1.as
+   A /trunk/flash/media/frames/src/asinc/photo_perforated_vertical.T1.code.F13.as
+   A /trunk/flash/media/frames/src/asinc/photo_perforated_vertical.T1.code.F2.as
+   A /trunk/flash/media/frames/src/asinc/photo_perforated_vertical.T1.code.F9.as
+   A /trunk/flash/media/frames/src/asinc/photo_perforated_vertical.T1.code.decode.as
+   A /trunk/flash/media/frames/src/asinc/photo_perforated_vertical.T1.code.decodeloop.as
+   A /trunk/flash/media/frames/src/asinc/photo_perforated_vertical.T1.code.display.as
+   A /trunk/flash/media/frames/src/asinc/photo_perforated_vertical.T1.code.dodata.as
+   A /trunk/flash/media/frames/src/asinc/photo_perforated_vertical.T1.code.editoff.as
+   A /trunk/flash/media/frames/src/asinc/photo_perforated_vertical.T1.code.init.as
+   A /trunk/flash/media/frames/src/asinc/photo_perforated_vertical.T1.code.load.as
+   A /trunk/flash/media/frames/src/asinc/photo_perforated_vertical.T1.code.loadimage.as
+   A /trunk/flash/media/frames/src/asinc/photo_perforated_vertical.T1.code.loadloop.as
+   A /trunk/flash/media/frames/src/asinc/photo_perforated_vertical.T1.code.repoon.as
+   A /trunk/flash/media/frames/src/asinc/photo_perforated_vertical.T1.code.reset.as
+   A /trunk/flash/media/frames/src/asinc/photo_perforated_vertical.T1.code.savedat.as
+   A /trunk/flash/media/frames/src/asinc/photo_perforated_vertical.T1.code.setup.as
+   A /trunk/flash/media/frames/src/asinc/photo_perforated_vertical.T1.code.updatestyle.as
+   A /trunk/flash/media/frames/src/asinc/photo_rippededge_horizontal.T1.code.F1.as
+   A /trunk/flash/media/frames/src/asinc/photo_rippededge_horizontal.T1.code.F13.as
+   A /trunk/flash/media/frames/src/asinc/photo_rippededge_horizontal.T1.code.F2.as
+   A /trunk/flash/media/frames/src/asinc/photo_rippededge_horizontal.T1.code.F9.as
+   A /trunk/flash/media/frames/src/asinc/photo_rippededge_horizontal.T1.code.decode.as
+   A /trunk/flash/media/frames/src/asinc/photo_rippededge_horizontal.T1.code.decodeloop.as
+   A /trunk/flash/media/frames/src/asinc/photo_rippededge_horizontal.T1.code.display.as
+   A /trunk/flash/media/frames/src/asinc/photo_rippededge_horizontal.T1.code.dodata.as
+   A /trunk/flash/media/frames/src/asinc/photo_rippededge_horizontal.T1.code.editoff.as
+   A /trunk/flash/media/frames/src/asinc/photo_rippededge_horizontal.T1.code.init.as
+   A /trunk/flash/media/frames/src/asinc/photo_rippededge_horizontal.T1.code.load.as
+   A /trunk/flash/media/frames/src/asinc/photo_rippededge_horizontal.T1.code.loadimage.as
+   A /trunk/flash/media/frames/src/asinc/photo_rippededge_horizontal.T1.code.loadloop.as
+   A /trunk/flash/media/frames/src/asinc/photo_rippededge_horizontal.T1.code.repoon.as
+   A /trunk/flash/media/frames/src/asinc/photo_rippededge_horizontal.T1.code.reset.as
+   A /trunk/flash/media/frames/src/asinc/photo_rippededge_horizontal.T1.code.savedat.as
+   A /trunk/flash/media/frames/src/asinc/photo_rippededge_horizontal.T1.code.setup.as
+   A /trunk/flash/media/frames/src/asinc/photo_rippededge_horizontal.T1.code.updatestyle.as
+   A /trunk/flash/media/frames/src/asinc/photo_rippededge_vertical.T1.code.F1.as
+   A /trunk/flash/media/frames/src/asinc/photo_rippededge_vertical.T1.code.F13.as
+   A /trunk/flash/media/frames/src/asinc/photo_rippededge_vertical.T1.code.F2.as
+   A /trunk/flash/media/frames/src/asinc/photo_rippededge_vertical.T1.code.F9.as
+   A /trunk/flash/media/frames/src/asinc/photo_rippededge_vertical.T1.code.decode.as
+   A /trunk/flash/media/frames/src/asinc/photo_rippededge_vertical.T1.code.decodeloop.as
+   A /trunk/flash/media/frames/src/asinc/photo_rippededge_vertical.T1.code.display.as
+   A /trunk/flash/media/frames/src/asinc/photo_rippededge_vertical.T1.code.dodata.as
+   A /trunk/flash/media/frames/src/asinc/photo_rippededge_vertical.T1.code.editoff.as
+   A /trunk/flash/media/frames/src/asinc/photo_rippededge_vertical.T1.code.init.as
+   A /trunk/flash/media/frames/src/asinc/photo_rippededge_vertical.T1.code.load.as
+   A /trunk/flash/media/frames/src/asinc/photo_rippededge_vertical.T1.code.loadimage.as
+   A /trunk/flash/media/frames/src/asinc/photo_rippededge_vertical.T1.code.loadloop.as
+   A /trunk/flash/media/frames/src/asinc/photo_rippededge_vertical.T1.code.repoon.as
+   A /trunk/flash/media/frames/src/asinc/photo_rippededge_vertical.T1.code.reset.as
+   A /trunk/flash/media/frames/src/asinc/photo_rippededge_vertical.T1.code.savedat.as
+   A /trunk/flash/media/frames/src/asinc/photo_rippededge_vertical.T1.code.setup.as
+   A /trunk/flash/media/frames/src/asinc/photo_rippededge_vertical.T1.code.updatestyle.as
+   A /trunk/flash/media/frames/src/asinc/photo_vertical.T1.code.F1.as
+   A /trunk/flash/media/frames/src/asinc/photo_vertical.T1.code.F13.as
+   A /trunk/flash/media/frames/src/asinc/photo_vertical.T1.code.F2.as
+   A /trunk/flash/media/frames/src/asinc/photo_vertical.T1.code.F9.as
+   A /trunk/flash/media/frames/src/asinc/photo_vertical.T1.code.decode.as
+   A /trunk/flash/media/frames/src/asinc/photo_vertical.T1.code.decodeloop.as
+   A /trunk/flash/media/frames/src/asinc/photo_vertical.T1.code.display.as
+   A /trunk/flash/media/frames/src/asinc/photo_vertical.T1.code.dodata.as
+   A /trunk/flash/media/frames/src/asinc/photo_vertical.T1.code.editoff.as
+   A /trunk/flash/media/frames/src/asinc/photo_vertical.T1.code.init.as
+   A /trunk/flash/media/frames/src/asinc/photo_vertical.T1.code.load.as
+   A /trunk/flash/media/frames/src/asinc/photo_vertical.T1.code.loadimage.as
+   A /trunk/flash/media/frames/src/asinc/photo_vertical.T1.code.loadloop.as
+   A /trunk/flash/media/frames/src/asinc/photo_vertical.T1.code.repoon.as
+   A /trunk/flash/media/frames/src/asinc/photo_vertical.T1.code.reset.as
+   A /trunk/flash/media/frames/src/asinc/photo_vertical.T1.code.savedat.as
+   A /trunk/flash/media/frames/src/asinc/photo_vertical.T1.code.setup.as
+   A /trunk/flash/media/frames/src/asinc/photo_vertical.T1.code.updatestyle.as
+   A /trunk/flash/media/frames/src/asinc/photo_withcorners_horizontal.T1.code.F1.as
+   A /trunk/flash/media/frames/src/asinc/photo_withcorners_horizontal.T1.code.F13.as
+   A /trunk/flash/media/frames/src/asinc/photo_withcorners_horizontal.T1.code.F2.as
+   A /trunk/flash/media/frames/src/asinc/photo_withcorners_horizontal.T1.code.F9.as
+   A /trunk/flash/media/frames/src/asinc/photo_withcorners_horizontal.T1.code.decode.as
+   A /trunk/flash/media/frames/src/asinc/photo_withcorners_horizontal.T1.code.decodeloop.as
+   A /trunk/flash/media/frames/src/asinc/photo_withcorners_horizontal.T1.code.display.as
+   A /trunk/flash/media/frames/src/asinc/photo_withcorners_horizontal.T1.code.dodata.as
+   A /trunk/flash/media/frames/src/asinc/photo_withcorners_horizontal.T1.code.editoff.as
+   A /trunk/flash/media/frames/src/asinc/photo_withcorners_horizontal.T1.code.init.as
+   A /trunk/flash/media/frames/src/asinc/photo_withcorners_horizontal.T1.code.load.as
+   A /trunk/flash/media/frames/src/asinc/photo_withcorners_horizontal.T1.code.loadimage.as
+   A /trunk/flash/media/frames/src/asinc/photo_withcorners_horizontal.T1.code.loadloop.as
+   A /trunk/flash/media/frames/src/asinc/photo_withcorners_horizontal.T1.code.repoon.as
+   A /trunk/flash/media/frames/src/asinc/photo_withcorners_horizontal.T1.code.reset.as
+   A /trunk/flash/media/frames/src/asinc/photo_withcorners_horizontal.T1.code.savedat.as
+   A /trunk/flash/media/frames/src/asinc/photo_withcorners_horizontal.T1.code.setup.as
+   A /trunk/flash/media/frames/src/asinc/photo_withcorners_horizontal.T1.code.updatestyle.as
+   A /trunk/flash/media/frames/src/asinc/photo_withcorners_vertical.T1.code.F1.as
+   A /trunk/flash/media/frames/src/asinc/photo_withcorners_vertical.T1.code.F13.as
+   A /trunk/flash/media/frames/src/asinc/photo_withcorners_vertical.T1.code.F2.as
+   A /trunk/flash/media/frames/src/asinc/photo_withcorners_vertical.T1.code.F9.as
+   A /trunk/flash/media/frames/src/asinc/photo_withcorners_vertical.T1.code.decode.as
+   A /trunk/flash/media/frames/src/asinc/photo_withcorners_vertical.T1.code.decodeloop.as
+   A /trunk/flash/media/frames/src/asinc/photo_withcorners_vertical.T1.code.display.as
+   A /trunk/flash/media/frames/src/asinc/photo_withcorners_vertical.T1.code.dodata.as
+   A /trunk/flash/media/frames/src/asinc/photo_withcorners_vertical.T1.code.editoff.as
+   A /trunk/flash/media/frames/src/asinc/photo_withcorners_vertical.T1.code.init.as
+   A /trunk/flash/media/frames/src/asinc/photo_withcorners_vertical.T1.code.load.as
+   A /trunk/flash/media/frames/src/asinc/photo_withcorners_vertical.T1.code.loadimage.as
+   A /trunk/flash/media/frames/src/asinc/photo_withcorners_vertical.T1.code.loadloop.as
+   A /trunk/flash/media/frames/src/asinc/photo_withcorners_vertical.T1.code.repoon.as
+   A /trunk/flash/media/frames/src/asinc/photo_withcorners_vertical.T1.code.reset.as
+   A /trunk/flash/media/frames/src/asinc/photo_withcorners_vertical.T1.code.savedat.as
+   A /trunk/flash/media/frames/src/asinc/photo_withcorners_vertical.T1.code.setup.as
+   A /trunk/flash/media/frames/src/asinc/photo_withcorners_vertical.T1.code.updatestyle.as
+   A /trunk/flash/media/frames/src/asinc/polaroid_frame.T1.code.F1.as
+   A /trunk/flash/media/frames/src/asinc/polaroid_frame.T1.code.F13.as
+   A /trunk/flash/media/frames/src/asinc/polaroid_frame.T1.code.F2.as
+   A /trunk/flash/media/frames/src/asinc/polaroid_frame.T1.code.F9.as
+   A /trunk/flash/media/frames/src/asinc/polaroid_frame.T1.code.decode.as
+   A /trunk/flash/media/frames/src/asinc/polaroid_frame.T1.code.decodeloop.as
+   A /trunk/flash/media/frames/src/asinc/polaroid_frame.T1.code.display.as
+   A /trunk/flash/media/frames/src/asinc/polaroid_frame.T1.code.dodata.as
+   A /trunk/flash/media/frames/src/asinc/polaroid_frame.T1.code.editoff.as
+   A /trunk/flash/media/frames/src/asinc/polaroid_frame.T1.code.init.as
+   A /trunk/flash/media/frames/src/asinc/polaroid_frame.T1.code.load.as
+   A /trunk/flash/media/frames/src/asinc/polaroid_frame.T1.code.loadimage.as
+   A /trunk/flash/media/frames/src/asinc/polaroid_frame.T1.code.loadloop.as
+   A /trunk/flash/media/frames/src/asinc/polaroid_frame.T1.code.repoon.as
+   A /trunk/flash/media/frames/src/asinc/polaroid_frame.T1.code.reset.as
+   A /trunk/flash/media/frames/src/asinc/polaroid_frame.T1.code.savedat.as
+   A /trunk/flash/media/frames/src/asinc/polaroid_frame.T1.code.setup.as
+   A /trunk/flash/media/frames/src/asinc/polaroid_frame.T1.code.updatestyle.as
+   A /trunk/flash/media/frames/src/asinc/polaroid_frame_fr.T1.code.F1.as
+   A /trunk/flash/media/frames/src/asinc/polaroid_frame_fr.T1.code.F13.as
+   A /trunk/flash/media/frames/src/asinc/polaroid_frame_fr.T1.code.F2.as
+   A /trunk/flash/media/frames/src/asinc/polaroid_frame_fr.T1.code.F9.as
+   A /trunk/flash/media/frames/src/asinc/polaroid_frame_fr.T1.code.decode.as
+   A /trunk/flash/media/frames/src/asinc/polaroid_frame_fr.T1.code.decodeloop.as
+   A /trunk/flash/media/frames/src/asinc/polaroid_frame_fr.T1.code.display.as
+   A /trunk/flash/media/frames/src/asinc/polaroid_frame_fr.T1.code.dodata.as
+   A /trunk/flash/media/frames/src/asinc/polaroid_frame_fr.T1.code.editoff.as
+   A /trunk/flash/media/frames/src/asinc/polaroid_frame_fr.T1.code.init.as
+   A /trunk/flash/media/frames/src/asinc/polaroid_frame_fr.T1.code.load.as
+   A /trunk/flash/media/frames/src/asinc/polaroid_frame_fr.T1.code.loadimage.as
+   A /trunk/flash/media/frames/src/asinc/polaroid_frame_fr.T1.code.loadloop.as
+   A /trunk/flash/media/frames/src/asinc/polaroid_frame_fr.T1.code.repoon.as
+   A /trunk/flash/media/frames/src/asinc/polaroid_frame_fr.T1.code.reset.as
+   A /trunk/flash/media/frames/src/asinc/polaroid_frame_fr.T1.code.savedat.as
+   A /trunk/flash/media/frames/src/asinc/polaroid_frame_fr.T1.code.setup.as
+   A /trunk/flash/media/frames/src/asinc/polaroid_frame_fr.T1.code.updatestyle.as
+   A /trunk/flash/media/frames/src/asinc/roundedsquare_frames.T1.code.F1.as
+   A /trunk/flash/media/frames/src/asinc/roundedsquare_frames.T1.code.F13.as
+   A /trunk/flash/media/frames/src/asinc/roundedsquare_frames.T1.code.F2.as
+   A /trunk/flash/media/frames/src/asinc/roundedsquare_frames.T1.code.F9.as
+   A /trunk/flash/media/frames/src/asinc/roundedsquare_frames.T1.code.decode.as
+   A /trunk/flash/media/frames/src/asinc/roundedsquare_frames.T1.code.decodeloop.as
+   A /trunk/flash/media/frames/src/asinc/roundedsquare_frames.T1.code.display.as
+   A /trunk/flash/media/frames/src/asinc/roundedsquare_frames.T1.code.dodata.as
+   A /trunk/flash/media/frames/src/asinc/roundedsquare_frames.T1.code.editoff.as
+   A /trunk/flash/media/frames/src/asinc/roundedsquare_frames.T1.code.init.as
+   A /trunk/flash/media/frames/src/asinc/roundedsquare_frames.T1.code.load.as
+   A /trunk/flash/media/frames/src/asinc/roundedsquare_frames.T1.code.loadimage.as
+   A /trunk/flash/media/frames/src/asinc/roundedsquare_frames.T1.code.loadloop.as
+   A /trunk/flash/media/frames/src/asinc/roundedsquare_frames.T1.code.repoon.as
+   A /trunk/flash/media/frames/src/asinc/roundedsquare_frames.T1.code.reset.as
+   A /trunk/flash/media/frames/src/asinc/roundedsquare_frames.T1.code.savedat.as
+   A /trunk/flash/media/frames/src/asinc/roundedsquare_frames.T1.code.setup.as
+   A /trunk/flash/media/frames/src/asinc/roundedsquare_frames.T1.code.updatestyle.as
+   A /trunk/flash/media/frames/src/asinc/roundedsquare_frames_fr.T1.code.F1.as
+   A /trunk/flash/media/frames/src/asinc/roundedsquare_frames_fr.T1.code.F13.as
+   A /trunk/flash/media/frames/src/asinc/roundedsquare_frames_fr.T1.code.F2.as
+   A /trunk/flash/media/frames/src/asinc/roundedsquare_frames_fr.T1.code.F9.as
+   A /trunk/flash/media/frames/src/asinc/roundedsquare_frames_fr.T1.code.decode.as
+   A /trunk/flash/media/frames/src/asinc/roundedsquare_frames_fr.T1.code.decodeloop.as
+   A /trunk/flash/media/frames/src/asinc/roundedsquare_frames_fr.T1.code.display.as
+   A /trunk/flash/media/frames/src/asinc/roundedsquare_frames_fr.T1.code.dodata.as
+   A /trunk/flash/media/frames/src/asinc/roundedsquare_frames_fr.T1.code.editoff.as
+   A /trunk/flash/media/frames/src/asinc/roundedsquare_frames_fr.T1.code.init.as
+   A /trunk/flash/media/frames/src/asinc/roundedsquare_frames_fr.T1.code.load.as
+   A /trunk/flash/media/frames/src/asinc/roundedsquare_frames_fr.T1.code.loadimage.as
+   A /trunk/flash/media/frames/src/asinc/roundedsquare_frames_fr.T1.code.loadloop.as
+   A /trunk/flash/media/frames/src/asinc/roundedsquare_frames_fr.T1.code.repoon.as
+   A /trunk/flash/media/frames/src/asinc/roundedsquare_frames_fr.T1.code.reset.as
+   A /trunk/flash/media/frames/src/asinc/roundedsquare_frames_fr.T1.code.savedat.as
+   A /trunk/flash/media/frames/src/asinc/roundedsquare_frames_fr.T1.code.setup.as
+   A /trunk/flash/media/frames/src/asinc/roundedsquare_frames_fr.T1.code.updatestyle.as
+   A /trunk/flash/media/frames/src/asinc/simple_panoramic_horizontal.T1.code.F1.as
+   A /trunk/flash/media/frames/src/asinc/simple_panoramic_horizontal.T1.code.F13.as
+   A /trunk/flash/media/frames/src/asinc/simple_panoramic_horizontal.T1.code.F2.as
+   A /trunk/flash/media/frames/src/asinc/simple_panoramic_horizontal.T1.code.F9.as
+   A /trunk/flash/media/frames/src/asinc/simple_panoramic_horizontal.T1.code.decode.as
+   A /trunk/flash/media/frames/src/asinc/simple_panoramic_horizontal.T1.code.decodeloop.as
+   A /trunk/flash/media/frames/src/asinc/simple_panoramic_horizontal.T1.code.display.as
+   A /trunk/flash/media/frames/src/asinc/simple_panoramic_horizontal.T1.code.dodata.as
+   A /trunk/flash/media/frames/src/asinc/simple_panoramic_horizontal.T1.code.editoff.as
+   A /trunk/flash/media/frames/src/asinc/simple_panoramic_horizontal.T1.code.init.as
+   A /trunk/flash/media/frames/src/asinc/simple_panoramic_horizontal.T1.code.load.as
+   A /trunk/flash/media/frames/src/asinc/simple_panoramic_horizontal.T1.code.loadimage.as
+   A /trunk/flash/media/frames/src/asinc/simple_panoramic_horizontal.T1.code.loadloop.as
+   A /trunk/flash/media/frames/src/asinc/simple_panoramic_horizontal.T1.code.repoon.as
+   A /trunk/flash/media/frames/src/asinc/simple_panoramic_horizontal.T1.code.reset.as
+   A /trunk/flash/media/frames/src/asinc/simple_panoramic_horizontal.T1.code.savedat.as
+   A /trunk/flash/media/frames/src/asinc/simple_panoramic_horizontal.T1.code.setup.as
+   A /trunk/flash/media/frames/src/asinc/simple_panoramic_horizontal.T1.code.updatestyle.as
+   A /trunk/flash/media/frames/src/asinc/simple_small_horizontal.T1.code.F1.as
+   A /trunk/flash/media/frames/src/asinc/simple_small_horizontal.T1.code.F13.as
+   A /trunk/flash/media/frames/src/asinc/simple_small_horizontal.T1.code.F2.as
+   A /trunk/flash/media/frames/src/asinc/simple_small_horizontal.T1.code.F9.as
+   A /trunk/flash/media/frames/src/asinc/simple_small_horizontal.T1.code.decode.as
+   A /trunk/flash/media/frames/src/asinc/simple_small_horizontal.T1.code.decodeloop.as
+   A /trunk/flash/media/frames/src/asinc/simple_small_horizontal.T1.code.display.as
+   A /trunk/flash/media/frames/src/asinc/simple_small_horizontal.T1.code.dodata.as
+   A /trunk/flash/media/frames/src/asinc/simple_small_horizontal.T1.code.editoff.as
+   A /trunk/flash/media/frames/src/asinc/simple_small_horizontal.T1.code.init.as
+   A /trunk/flash/media/frames/src/asinc/simple_small_horizontal.T1.code.load.as
+   A /trunk/flash/media/frames/src/asinc/simple_small_horizontal.T1.code.loadimage.as
+   A /trunk/flash/media/frames/src/asinc/simple_small_horizontal.T1.code.loadloop.as
+   A /trunk/flash/media/frames/src/asinc/simple_small_horizontal.T1.code.repoon.as
+   A /trunk/flash/media/frames/src/asinc/simple_small_horizontal.T1.code.reset.as
+   A /trunk/flash/media/frames/src/asinc/simple_small_horizontal.T1.code.savedat.as
+   A /trunk/flash/media/frames/src/asinc/simple_small_horizontal.T1.code.setup.as
+   A /trunk/flash/media/frames/src/asinc/simple_small_horizontal.T1.code.updatestyle.as
+   A /trunk/flash/media/frames/src/asinc/simple_small_vertical.T1.code.F1.as
+   A /trunk/flash/media/frames/src/asinc/simple_small_vertical.T1.code.F13.as
+   A /trunk/flash/media/frames/src/asinc/simple_small_vertical.T1.code.F2.as
+   A /trunk/flash/media/frames/src/asinc/simple_small_vertical.T1.code.F9.as
+   A /trunk/flash/media/frames/src/asinc/simple_small_vertical.T1.code.decode.as
+   A /trunk/flash/media/frames/src/asinc/simple_small_vertical.T1.code.decodeloop.as
+   A /trunk/flash/media/frames/src/asinc/simple_small_vertical.T1.code.display.as
+   A /trunk/flash/media/frames/src/asinc/simple_small_vertical.T1.code.dodata.as
+   A /trunk/flash/media/frames/src/asinc/simple_small_vertical.T1.code.editoff.as
+   A /trunk/flash/media/frames/src/asinc/simple_small_vertical.T1.code.init.as
+   A /trunk/flash/media/frames/src/asinc/simple_small_vertical.T1.code.load.as
+   A /trunk/flash/media/frames/src/asinc/simple_small_vertical.T1.code.loadimage.as
+   A /trunk/flash/media/frames/src/asinc/simple_small_vertical.T1.code.loadloop.as
+   A /trunk/flash/media/frames/src/asinc/simple_small_vertical.T1.code.repoon.as
+   A /trunk/flash/media/frames/src/asinc/simple_small_vertical.T1.code.reset.as
+   A /trunk/flash/media/frames/src/asinc/simple_small_vertical.T1.code.savedat.as
+   A /trunk/flash/media/frames/src/asinc/simple_small_vertical.T1.code.setup.as
+   A /trunk/flash/media/frames/src/asinc/simple_small_vertical.T1.code.updatestyle.as
+   A /trunk/flash/media/frames/src/asinc/simple_wide_horizontal.T1.code.F1.as
+   A /trunk/flash/media/frames/src/asinc/simple_wide_horizontal.T1.code.F13.as
+   A /trunk/flash/media/frames/src/asinc/simple_wide_horizontal.T1.code.F2.as
+   A /trunk/flash/media/frames/src/asinc/simple_wide_horizontal.T1.code.F9.as
+   A /trunk/flash/media/frames/src/asinc/simple_wide_horizontal.T1.code.decode.as
+   A /trunk/flash/media/frames/src/asinc/simple_wide_horizontal.T1.code.decodeloop.as
+   A /trunk/flash/media/frames/src/asinc/simple_wide_horizontal.T1.code.display.as
+   A /trunk/flash/media/frames/src/asinc/simple_wide_horizontal.T1.code.dodata.as
+   A /trunk/flash/media/frames/src/asinc/simple_wide_horizontal.T1.code.editoff.as
+   A /trunk/flash/media/frames/src/asinc/simple_wide_horizontal.T1.code.init.as
+   A /trunk/flash/media/frames/src/asinc/simple_wide_horizontal.T1.code.load.as
+   A /trunk/flash/media/frames/src/asinc/simple_wide_horizontal.T1.code.loadimage.as
+   A /trunk/flash/media/frames/src/asinc/simple_wide_horizontal.T1.code.loadloop.as
+   A /trunk/flash/media/frames/src/asinc/simple_wide_horizontal.T1.code.repoon.as
+   A /trunk/flash/media/frames/src/asinc/simple_wide_horizontal.T1.code.reset.as
+   A /trunk/flash/media/frames/src/asinc/simple_wide_horizontal.T1.code.savedat.as
+   A /trunk/flash/media/frames/src/asinc/simple_wide_horizontal.T1.code.setup.as
+   A /trunk/flash/media/frames/src/asinc/simple_wide_horizontal.T1.code.updatestyle.as
+   A /trunk/flash/media/frames/src/asinc/square_frames.T1.code.F1.as
+   A /trunk/flash/media/frames/src/asinc/square_frames.T1.code.F13.as
+   A /trunk/flash/media/frames/src/asinc/square_frames.T1.code.F2.as
+   A /trunk/flash/media/frames/src/asinc/square_frames.T1.code.F9.as
+   A /trunk/flash/media/frames/src/asinc/square_frames.T1.code.decode.as
+   A /trunk/flash/media/frames/src/asinc/square_frames.T1.code.decodeloop.as
+   A /trunk/flash/media/frames/src/asinc/square_frames.T1.code.display.as
+   A /trunk/flash/media/frames/src/asinc/square_frames.T1.code.dodata.as
+   A /trunk/flash/media/frames/src/asinc/square_frames.T1.code.editoff.as
+   A /trunk/flash/media/frames/src/asinc/square_frames.T1.code.init.as
+   A /trunk/flash/media/frames/src/asinc/square_frames.T1.code.load.as
+   A /trunk/flash/media/frames/src/asinc/square_frames.T1.code.loadimage.as
+   A /trunk/flash/media/frames/src/asinc/square_frames.T1.code.loadloop.as
+   A /trunk/flash/media/frames/src/asinc/square_frames.T1.code.repoon.as
+   A /trunk/flash/media/frames/src/asinc/square_frames.T1.code.reset.as
+   A /trunk/flash/media/frames/src/asinc/square_frames.T1.code.savedat.as
+   A /trunk/flash/media/frames/src/asinc/square_frames.T1.code.setup.as
+   A /trunk/flash/media/frames/src/asinc/square_frames.T1.code.updatestyle.as
+   A /trunk/flash/media/frames/src/asinc/square_frames_fr.T1.code.F1.as
+   A /trunk/flash/media/frames/src/asinc/square_frames_fr.T1.code.F13.as
+   A /trunk/flash/media/frames/src/asinc/square_frames_fr.T1.code.F2.as
+   A /trunk/flash/media/frames/src/asinc/square_frames_fr.T1.code.F9.as
+   A /trunk/flash/media/frames/src/asinc/square_frames_fr.T1.code.decode.as
+   A /trunk/flash/media/frames/src/asinc/square_frames_fr.T1.code.decodeloop.as
+   A /trunk/flash/media/frames/src/asinc/square_frames_fr.T1.code.display.as
+   A /trunk/flash/media/frames/src/asinc/square_frames_fr.T1.code.dodata.as
+   A /trunk/flash/media/frames/src/asinc/square_frames_fr.T1.code.editoff.as
+   A /trunk/flash/media/frames/src/asinc/square_frames_fr.T1.code.init.as
+   A /trunk/flash/media/frames/src/asinc/square_frames_fr.T1.code.load.as
+   A /trunk/flash/media/frames/src/asinc/square_frames_fr.T1.code.loadimage.as
+   A /trunk/flash/media/frames/src/asinc/square_frames_fr.T1.code.loadloop.as
+   A /trunk/flash/media/frames/src/asinc/square_frames_fr.T1.code.repoon.as
+   A /trunk/flash/media/frames/src/asinc/square_frames_fr.T1.code.reset.as
+   A /trunk/flash/media/frames/src/asinc/square_frames_fr.T1.code.savedat.as
+   A /trunk/flash/media/frames/src/asinc/square_frames_fr.T1.code.setup.as
+   A /trunk/flash/media/frames/src/asinc/square_frames_fr.T1.code.updatestyle.as
+   A /trunk/flash/media/frames/src/asinc/star_frames.T1.code.F1.as
+   A /trunk/flash/media/frames/src/asinc/star_frames.T1.code.F13.as
+   A /trunk/flash/media/frames/src/asinc/star_frames.T1.code.F2.as
+   A /trunk/flash/media/frames/src/asinc/star_frames.T1.code.F9.as
+   A /trunk/flash/media/frames/src/asinc/star_frames.T1.code.decode.as
+   A /trunk/flash/media/frames/src/asinc/star_frames.T1.code.decodeloop.as
+   A /trunk/flash/media/frames/src/asinc/star_frames.T1.code.display.as
+   A /trunk/flash/media/frames/src/asinc/star_frames.T1.code.dodata.as
+   A /trunk/flash/media/frames/src/asinc/star_frames.T1.code.editoff.as
+   A /trunk/flash/media/frames/src/asinc/star_frames.T1.code.init.as
+   A /trunk/flash/media/frames/src/asinc/star_frames.T1.code.load.as
+   A /trunk/flash/media/frames/src/asinc/star_frames.T1.code.loadimage.as
+   A /trunk/flash/media/frames/src/asinc/star_frames.T1.code.loadloop.as
+   A /trunk/flash/media/frames/src/asinc/star_frames.T1.code.repoon.as
+   A /trunk/flash/media/frames/src/asinc/star_frames.T1.code.reset.as
+   A /trunk/flash/media/frames/src/asinc/star_frames.T1.code.savedat.as
+   A /trunk/flash/media/frames/src/asinc/star_frames.T1.code.setup.as
+   A /trunk/flash/media/frames/src/asinc/star_frames.T1.code.updatestyle.as
+   A /trunk/flash/media/frames/src/asinc/star_frames_fr.T1.code.F1.as
+   A /trunk/flash/media/frames/src/asinc/star_frames_fr.T1.code.F13.as
+   A /trunk/flash/media/frames/src/asinc/star_frames_fr.T1.code.F2.as
+   A /trunk/flash/media/frames/src/asinc/star_frames_fr.T1.code.F9.as
+   A /trunk/flash/media/frames/src/asinc/star_frames_fr.T1.code.decode.as
+   A /trunk/flash/media/frames/src/asinc/star_frames_fr.T1.code.decodeloop.as
+   A /trunk/flash/media/frames/src/asinc/star_frames_fr.T1.code.display.as
+   A /trunk/flash/media/frames/src/asinc/star_frames_fr.T1.code.dodata.as
+   A /trunk/flash/media/frames/src/asinc/star_frames_fr.T1.code.editoff.as
+   A /trunk/flash/media/frames/src/asinc/star_frames_fr.T1.code.init.as
+   A /trunk/flash/media/frames/src/asinc/star_frames_fr.T1.code.load.as
+   A /trunk/flash/media/frames/src/asinc/star_frames_fr.T1.code.loadimage.as
+   A /trunk/flash/media/frames/src/asinc/star_frames_fr.T1.code.loadloop.as
+   A /trunk/flash/media/frames/src/asinc/star_frames_fr.T1.code.repoon.as
+   A /trunk/flash/media/frames/src/asinc/star_frames_fr.T1.code.reset.as
+   A /trunk/flash/media/frames/src/asinc/star_frames_fr.T1.code.savedat.as
+   A /trunk/flash/media/frames/src/asinc/star_frames_fr.T1.code.setup.as
+   A /trunk/flash/media/frames/src/asinc/star_frames_fr.T1.code.updatestyle.as
+   M /trunk/flash/media/frames/src/fla/circle_frames.fla
+   M /trunk/flash/media/frames/src/fla/oval_frames.fla
+   M /trunk/flash/media/frames/src/fla/ovalwide_frames.fla
+   M /trunk/flash/media/frames/src/fla/polaroid_frame.fla
+   M /trunk/flash/media/frames/src/fla/roundedsquare_frames.fla
+   M /trunk/flash/media/frames/src/fla/square_frames.fla
+   M /trunk/flash/media/frames/src/fla/star_frames.fla
+
+Extracted ActionScript code from media/frames remaining English versions, main timeline, all frames, all layers; added all ActionScript extracts including those missing from SVN r9478
+
+
+
+
+------------------------------------------------------------------------
+r9480 | adam | 2008-05-20 13:01:39 +0100 (Tue, 20 May 2008) | 9 lines
+Changed paths:
+   M /trunk/sitemaker/perl/test/IDomainService.t
+
+Domain test refactor. Now uses objects for Externalisable, shd make Ian Happy :-)
+WIP/proof of concept of using Serialisable Objects with JSON. Need to ratify
+object names to ensure there are no conflicts between perl & flash before
+extending the concept further.
+May need some way to distinguish these transfer objects from other perl objects?
+
+Working on email tests, will have to hardcode an existing domain as
+newly-created domains can't have email set up.
+
+------------------------------------------------------------------------
+r9481 | adam | 2008-05-20 13:23:30 +0100 (Tue, 20 May 2008) | 2 lines
+Changed paths:
+   M /trunk/sitemaker/perl/modules/GandiAPI.pm
+
+Doh! Typo on GandiAPI language fix
+
+------------------------------------------------------------------------
+r9482 | chris | 2008-05-20 13:52:51 +0100 (Tue, 20 May 2008) | 3 lines
+Changed paths:
+   D /trunk/flash/media/frames/src/asinc/button.T1.code.F13.as
+   D /trunk/flash/media/frames/src/asinc/button.T1.code.F2.as
+   D /trunk/flash/media/frames/src/asinc/button.T1.code.F9.as
+   D /trunk/flash/media/frames/src/asinc/button.T1.code.decode.as
+   D /trunk/flash/media/frames/src/asinc/button.T1.code.decodeloop.as
+   D /trunk/flash/media/frames/src/asinc/button.T1.code.display.as
+   D /trunk/flash/media/frames/src/asinc/button.T1.code.dodata.as
+   D /trunk/flash/media/frames/src/asinc/button.T1.code.editoff.as
+   D /trunk/flash/media/frames/src/asinc/button.T1.code.init.as
+   D /trunk/flash/media/frames/src/asinc/button.T1.code.load.as
+   D /trunk/flash/media/frames/src/asinc/button.T1.code.loadimage.as
+   D /trunk/flash/media/frames/src/asinc/button.T1.code.loadloop.as
+   D /trunk/flash/media/frames/src/asinc/button.T1.code.repoon.as
+   D /trunk/flash/media/frames/src/asinc/button.T1.code.reset.as
+   D /trunk/flash/media/frames/src/asinc/button.T1.code.savedat.as
+   D /trunk/flash/media/frames/src/asinc/button.T1.code.setup.as
+   D /trunk/flash/media/frames/src/asinc/button.T1.code.updatestyle.as
+   D /trunk/flash/media/frames/src/asinc/button_heart.T1.code.F13.as
+   D /trunk/flash/media/frames/src/asinc/button_heart.T1.code.F2.as
+   D /trunk/flash/media/frames/src/asinc/button_heart.T1.code.F9.as
+   D /trunk/flash/media/frames/src/asinc/button_heart.T1.code.decode.as
+   D /trunk/flash/media/frames/src/asinc/button_heart.T1.code.decodeloop.as
+   D /trunk/flash/media/frames/src/asinc/button_heart.T1.code.display.as
+   D /trunk/flash/media/frames/src/asinc/button_heart.T1.code.dodata.as
+   D /trunk/flash/media/frames/src/asinc/button_heart.T1.code.editoff.as
+   D /trunk/flash/media/frames/src/asinc/button_heart.T1.code.init.as
+   D /trunk/flash/media/frames/src/asinc/button_heart.T1.code.load.as
+   D /trunk/flash/media/frames/src/asinc/button_heart.T1.code.loadimage.as
+   D /trunk/flash/media/frames/src/asinc/button_heart.T1.code.loadloop.as
+   D /trunk/flash/media/frames/src/asinc/button_heart.T1.code.repoon.as
+   D /trunk/flash/media/frames/src/asinc/button_heart.T1.code.reset.as
+   D /trunk/flash/media/frames/src/asinc/button_heart.T1.code.savedat.as
+   D /trunk/flash/media/frames/src/asinc/button_heart.T1.code.setup.as
+   D /trunk/flash/media/frames/src/asinc/button_heart.T1.code.updatestyle.as
+   D /trunk/flash/media/frames/src/asinc/button_square.T1.code.F13.as
+   D /trunk/flash/media/frames/src/asinc/button_square.T1.code.F2.as
+   D /trunk/flash/media/frames/src/asinc/button_square.T1.code.F9.as
+   D /trunk/flash/media/frames/src/asinc/button_square.T1.code.decode.as
+   D /trunk/flash/media/frames/src/asinc/button_square.T1.code.decodeloop.as
+   D /trunk/flash/media/frames/src/asinc/button_square.T1.code.display.as
+   D /trunk/flash/media/frames/src/asinc/button_square.T1.code.dodata.as
+   D /trunk/flash/media/frames/src/asinc/button_square.T1.code.editoff.as
+   D /trunk/flash/media/frames/src/asinc/button_square.T1.code.init.as
+   D /trunk/flash/media/frames/src/asinc/button_square.T1.code.load.as
+   D /trunk/flash/media/frames/src/asinc/button_square.T1.code.loadimage.as
+   D /trunk/flash/media/frames/src/asinc/button_square.T1.code.loadloop.as
+   D /trunk/flash/media/frames/src/asinc/button_square.T1.code.repoon.as
+   D /trunk/flash/media/frames/src/asinc/button_square.T1.code.reset.as
+   D /trunk/flash/media/frames/src/asinc/button_square.T1.code.savedat.as
+   D /trunk/flash/media/frames/src/asinc/button_square.T1.code.setup.as
+   D /trunk/flash/media/frames/src/asinc/button_square.T1.code.updatestyle.as
+   A /trunk/flash/media/frames/src/asinc/frames.T1.code.F13.as (from /trunk/flash/media/frames/src/asinc/button.T1.code.F13.as:9479)
+   A /trunk/flash/media/frames/src/asinc/frames.T1.code.F2.as (from /trunk/flash/media/frames/src/asinc/button.T1.code.F2.as:9479)
+   A /trunk/flash/media/frames/src/asinc/frames.T1.code.F9.as (from /trunk/flash/media/frames/src/asinc/button.T1.code.F9.as:9479)
+   A /trunk/flash/media/frames/src/asinc/frames.T1.code.decode.as (from /trunk/flash/media/frames/src/asinc/button.T1.code.decode.as:9479)
+   A /trunk/flash/media/frames/src/asinc/frames.T1.code.decodeloop.as (from /trunk/flash/media/frames/src/asinc/button.T1.code.decodeloop.as:9479)
+   A /trunk/flash/media/frames/src/asinc/frames.T1.code.display.as (from /trunk/flash/media/frames/src/asinc/button.T1.code.display.as:9479)
+   A /trunk/flash/media/frames/src/asinc/frames.T1.code.dodata.as (from /trunk/flash/media/frames/src/asinc/button.T1.code.dodata.as:9479)
+   A /trunk/flash/media/frames/src/asinc/frames.T1.code.editoff.as (from /trunk/flash/media/frames/src/asinc/button.T1.code.editoff.as:9479)
+   A /trunk/flash/media/frames/src/asinc/frames.T1.code.init.as (from /trunk/flash/media/frames/src/asinc/button.T1.code.init.as:9479)
+   A /trunk/flash/media/frames/src/asinc/frames.T1.code.load.as (from /trunk/flash/media/frames/src/asinc/button.T1.code.load.as:9479)
+   A /trunk/flash/media/frames/src/asinc/frames.T1.code.loadimage.as (from /trunk/flash/media/frames/src/asinc/button.T1.code.loadimage.as:9479)
+   A /trunk/flash/media/frames/src/asinc/frames.T1.code.loadloop.as (from /trunk/flash/media/frames/src/asinc/button.T1.code.loadloop.as:9479)
+   A /trunk/flash/media/frames/src/asinc/frames.T1.code.repoon.as (from /trunk/flash/media/frames/src/asinc/button.T1.code.repoon.as:9479)
+   A /trunk/flash/media/frames/src/asinc/frames.T1.code.reset.as (from /trunk/flash/media/frames/src/asinc/button.T1.code.reset.as:9479)
+   A /trunk/flash/media/frames/src/asinc/frames.T1.code.savedat.as (from /trunk/flash/media/frames/src/asinc/button.T1.code.savedat.as:9479)
+   A /trunk/flash/media/frames/src/asinc/frames.T1.code.setup.as (from /trunk/flash/media/frames/src/asinc/button.T1.code.setup.as:9479)
+   A /trunk/flash/media/frames/src/asinc/frames.T1.code.updatestyle.as (from /trunk/flash/media/frames/src/asinc/button.T1.code.updatestyle.as:9479)
+   D /trunk/flash/media/frames/src/asinc/laptop.T1.code.F13.as
+   D /trunk/flash/media/frames/src/asinc/laptop.T1.code.F2.as
+   D /trunk/flash/media/frames/src/asinc/laptop.T1.code.F9.as
+   D /trunk/flash/media/frames/src/asinc/laptop.T1.code.decode.as
+   D /trunk/flash/media/frames/src/asinc/laptop.T1.code.decodeloop.as
+   D /trunk/flash/media/frames/src/asinc/laptop.T1.code.display.as
+   D /trunk/flash/media/frames/src/asinc/laptop.T1.code.dodata.as
+   D /trunk/flash/media/frames/src/asinc/laptop.T1.code.editoff.as
+   D /trunk/flash/media/frames/src/asinc/laptop.T1.code.init.as
+   D /trunk/flash/media/frames/src/asinc/laptop.T1.code.load.as
+   D /trunk/flash/media/frames/src/asinc/laptop.T1.code.loadimage.as
+   D /trunk/flash/media/frames/src/asinc/laptop.T1.code.loadloop.as
+   D /trunk/flash/media/frames/src/asinc/laptop.T1.code.repoon.as
+   D /trunk/flash/media/frames/src/asinc/laptop.T1.code.reset.as
+   D /trunk/flash/media/frames/src/asinc/laptop.T1.code.savedat.as
+   D /trunk/flash/media/frames/src/asinc/laptop.T1.code.setup.as
+   D /trunk/flash/media/frames/src/asinc/laptop.T1.code.updatestyle.as
+   D /trunk/flash/media/frames/src/asinc/photo_horizontal.T1.code.F13.as
+   D /trunk/flash/media/frames/src/asinc/photo_horizontal.T1.code.F2.as
+   D /trunk/flash/media/frames/src/asinc/photo_horizontal.T1.code.F9.as
+   D /trunk/flash/media/frames/src/asinc/photo_horizontal.T1.code.decode.as
+   D /trunk/flash/media/frames/src/asinc/photo_horizontal.T1.code.decodeloop.as
+   D /trunk/flash/media/frames/src/asinc/photo_horizontal.T1.code.display.as
+   D /trunk/flash/media/frames/src/asinc/photo_horizontal.T1.code.dodata.as
+   D /trunk/flash/media/frames/src/asinc/photo_horizontal.T1.code.editoff.as
+   D /trunk/flash/media/frames/src/asinc/photo_horizontal.T1.code.init.as
+   D /trunk/flash/media/frames/src/asinc/photo_horizontal.T1.code.load.as
+   D /trunk/flash/media/frames/src/asinc/photo_horizontal.T1.code.loadimage.as
+   D /trunk/flash/media/frames/src/asinc/photo_horizontal.T1.code.loadloop.as
+   D /trunk/flash/media/frames/src/asinc/photo_horizontal.T1.code.repoon.as
+   D /trunk/flash/media/frames/src/asinc/photo_horizontal.T1.code.reset.as
+   D /trunk/flash/media/frames/src/asinc/photo_horizontal.T1.code.savedat.as
+   D /trunk/flash/media/frames/src/asinc/photo_horizontal.T1.code.setup.as
+   D /trunk/flash/media/frames/src/asinc/photo_horizontal.T1.code.updatestyle.as
+   D /trunk/flash/media/frames/src/asinc/photo_passport.T1.code.F13.as
+   D /trunk/flash/media/frames/src/asinc/photo_passport.T1.code.F2.as
+   D /trunk/flash/media/frames/src/asinc/photo_passport.T1.code.F9.as
+   D /trunk/flash/media/frames/src/asinc/photo_passport.T1.code.decode.as
+   D /trunk/flash/media/frames/src/asinc/photo_passport.T1.code.decodeloop.as
+   D /trunk/flash/media/frames/src/asinc/photo_passport.T1.code.display.as
+   D /trunk/flash/media/frames/src/asinc/photo_passport.T1.code.dodata.as
+   D /trunk/flash/media/frames/src/asinc/photo_passport.T1.code.editoff.as
+   D /trunk/flash/media/frames/src/asinc/photo_passport.T1.code.init.as
+   D /trunk/flash/media/frames/src/asinc/photo_passport.T1.code.load.as
+   D /trunk/flash/media/frames/src/asinc/photo_passport.T1.code.loadimage.as
+   D /trunk/flash/media/frames/src/asinc/photo_passport.T1.code.loadloop.as
+   D /trunk/flash/media/frames/src/asinc/photo_passport.T1.code.repoon.as
+   D /trunk/flash/media/frames/src/asinc/photo_passport.T1.code.reset.as
+   D /trunk/flash/media/frames/src/asinc/photo_passport.T1.code.savedat.as
+   D /trunk/flash/media/frames/src/asinc/photo_passport.T1.code.setup.as
+   D /trunk/flash/media/frames/src/asinc/photo_passport.T1.code.updatestyle.as
+   D /trunk/flash/media/frames/src/asinc/photo_perforated_horizontal.T1.code.F13.as
+   D /trunk/flash/media/frames/src/asinc/photo_perforated_horizontal.T1.code.F2.as
+   D /trunk/flash/media/frames/src/asinc/photo_perforated_horizontal.T1.code.F9.as
+   D /trunk/flash/media/frames/src/asinc/photo_perforated_horizontal.T1.code.decode.as
+   D /trunk/flash/media/frames/src/asinc/photo_perforated_horizontal.T1.code.decodeloop.as
+   D /trunk/flash/media/frames/src/asinc/photo_perforated_horizontal.T1.code.display.as
+   D /trunk/flash/media/frames/src/asinc/photo_perforated_horizontal.T1.code.dodata.as
+   D /trunk/flash/media/frames/src/asinc/photo_perforated_horizontal.T1.code.editoff.as
+   D /trunk/flash/media/frames/src/asinc/photo_perforated_horizontal.T1.code.init.as
+   D /trunk/flash/media/frames/src/asinc/photo_perforated_horizontal.T1.code.load.as
+   D /trunk/flash/media/frames/src/asinc/photo_perforated_horizontal.T1.code.loadimage.as
+   D /trunk/flash/media/frames/src/asinc/photo_perforated_horizontal.T1.code.loadloop.as
+   D /trunk/flash/media/frames/src/asinc/photo_perforated_horizontal.T1.code.repoon.as
+   D /trunk/flash/media/frames/src/asinc/photo_perforated_horizontal.T1.code.reset.as
+   D /trunk/flash/media/frames/src/asinc/photo_perforated_horizontal.T1.code.savedat.as
+   D /trunk/flash/media/frames/src/asinc/photo_perforated_horizontal.T1.code.setup.as
+   D /trunk/flash/media/frames/src/asinc/photo_perforated_horizontal.T1.code.updatestyle.as
+   D /trunk/flash/media/frames/src/asinc/photo_perforated_vertical.T1.code.F13.as
+   D /trunk/flash/media/frames/src/asinc/photo_perforated_vertical.T1.code.F2.as
+   D /trunk/flash/media/frames/src/asinc/photo_perforated_vertical.T1.code.F9.as
+   D /trunk/flash/media/frames/src/asinc/photo_perforated_vertical.T1.code.decode.as
+   D /trunk/flash/media/frames/src/asinc/photo_perforated_vertical.T1.code.decodeloop.as
+   D /trunk/flash/media/frames/src/asinc/photo_perforated_vertical.T1.code.display.as
+   D /trunk/flash/media/frames/src/asinc/photo_perforated_vertical.T1.code.dodata.as
+   D /trunk/flash/media/frames/src/asinc/photo_perforated_vertical.T1.code.editoff.as
+   D /trunk/flash/media/frames/src/asinc/photo_perforated_vertical.T1.code.init.as
+   D /trunk/flash/media/frames/src/asinc/photo_perforated_vertical.T1.code.load.as
+   D /trunk/flash/media/frames/src/asinc/photo_perforated_vertical.T1.code.loadimage.as
+   D /trunk/flash/media/frames/src/asinc/photo_perforated_vertical.T1.code.loadloop.as
+   D /trunk/flash/media/frames/src/asinc/photo_perforated_vertical.T1.code.repoon.as
+   D /trunk/flash/media/frames/src/asinc/photo_perforated_vertical.T1.code.reset.as
+   D /trunk/flash/media/frames/src/asinc/photo_perforated_vertical.T1.code.savedat.as
+   D /trunk/flash/media/frames/src/asinc/photo_perforated_vertical.T1.code.setup.as
+   D /trunk/flash/media/frames/src/asinc/photo_perforated_vertical.T1.code.updatestyle.as
+   D /trunk/flash/media/frames/src/asinc/photo_rippededge_horizontal.T1.code.F13.as
+   D /trunk/flash/media/frames/src/asinc/photo_rippededge_horizontal.T1.code.F2.as
+   D /trunk/flash/media/frames/src/asinc/photo_rippededge_horizontal.T1.code.F9.as
+   D /trunk/flash/media/frames/src/asinc/photo_rippededge_horizontal.T1.code.decode.as
+   D /trunk/flash/media/frames/src/asinc/photo_rippededge_horizontal.T1.code.decodeloop.as
+   D /trunk/flash/media/frames/src/asinc/photo_rippededge_horizontal.T1.code.display.as
+   D /trunk/flash/media/frames/src/asinc/photo_rippededge_horizontal.T1.code.dodata.as
+   D /trunk/flash/media/frames/src/asinc/photo_rippededge_horizontal.T1.code.editoff.as
+   D /trunk/flash/media/frames/src/asinc/photo_rippededge_horizontal.T1.code.init.as
+   D /trunk/flash/media/frames/src/asinc/photo_rippededge_horizontal.T1.code.load.as
+   D /trunk/flash/media/frames/src/asinc/photo_rippededge_horizontal.T1.code.loadimage.as
+   D /trunk/flash/media/frames/src/asinc/photo_rippededge_horizontal.T1.code.loadloop.as
+   D /trunk/flash/media/frames/src/asinc/photo_rippededge_horizontal.T1.code.repoon.as
+   D /trunk/flash/media/frames/src/asinc/photo_rippededge_horizontal.T1.code.reset.as
+   D /trunk/flash/media/frames/src/asinc/photo_rippededge_horizontal.T1.code.savedat.as
+   D /trunk/flash/media/frames/src/asinc/photo_rippededge_horizontal.T1.code.setup.as
+   D /trunk/flash/media/frames/src/asinc/photo_rippededge_horizontal.T1.code.updatestyle.as
+   D /trunk/flash/media/frames/src/asinc/photo_rippededge_vertical.T1.code.F13.as
+   D /trunk/flash/media/frames/src/asinc/photo_rippededge_vertical.T1.code.F2.as
+   D /trunk/flash/media/frames/src/asinc/photo_rippededge_vertical.T1.code.F9.as
+   D /trunk/flash/media/frames/src/asinc/photo_rippededge_vertical.T1.code.decode.as
+   D /trunk/flash/media/frames/src/asinc/photo_rippededge_vertical.T1.code.decodeloop.as
+   D /trunk/flash/media/frames/src/asinc/photo_rippededge_vertical.T1.code.display.as
+   D /trunk/flash/media/frames/src/asinc/photo_rippededge_vertical.T1.code.dodata.as
+   D /trunk/flash/media/frames/src/asinc/photo_rippededge_vertical.T1.code.editoff.as
+   D /trunk/flash/media/frames/src/asinc/photo_rippededge_vertical.T1.code.init.as
+   D /trunk/flash/media/frames/src/asinc/photo_rippededge_vertical.T1.code.load.as
+   D /trunk/flash/media/frames/src/asinc/photo_rippededge_vertical.T1.code.loadimage.as
+   D /trunk/flash/media/frames/src/asinc/photo_rippededge_vertical.T1.code.loadloop.as
+   D /trunk/flash/media/frames/src/asinc/photo_rippededge_vertical.T1.code.repoon.as
+   D /trunk/flash/media/frames/src/asinc/photo_rippededge_vertical.T1.code.reset.as
+   D /trunk/flash/media/frames/src/asinc/photo_rippededge_vertical.T1.code.savedat.as
+   D /trunk/flash/media/frames/src/asinc/photo_rippededge_vertical.T1.code.setup.as
+   D /trunk/flash/media/frames/src/asinc/photo_rippededge_vertical.T1.code.updatestyle.as
+   D /trunk/flash/media/frames/src/asinc/photo_vertical.T1.code.F13.as
+   D /trunk/flash/media/frames/src/asinc/photo_vertical.T1.code.F2.as
+   D /trunk/flash/media/frames/src/asinc/photo_vertical.T1.code.F9.as
+   D /trunk/flash/media/frames/src/asinc/photo_vertical.T1.code.decode.as
+   D /trunk/flash/media/frames/src/asinc/photo_vertical.T1.code.decodeloop.as
+   D /trunk/flash/media/frames/src/asinc/photo_vertical.T1.code.display.as
+   D /trunk/flash/media/frames/src/asinc/photo_vertical.T1.code.dodata.as
+   D /trunk/flash/media/frames/src/asinc/photo_vertical.T1.code.editoff.as
+   D /trunk/flash/media/frames/src/asinc/photo_vertical.T1.code.init.as
+   D /trunk/flash/media/frames/src/asinc/photo_vertical.T1.code.load.as
+   D /trunk/flash/media/frames/src/asinc/photo_vertical.T1.code.loadimage.as
+   D /trunk/flash/media/frames/src/asinc/photo_vertical.T1.code.loadloop.as
+   D /trunk/flash/media/frames/src/asinc/photo_vertical.T1.code.repoon.as
+   D /trunk/flash/media/frames/src/asinc/photo_vertical.T1.code.reset.as
+   D /trunk/flash/media/frames/src/asinc/photo_vertical.T1.code.savedat.as
+   D /trunk/flash/media/frames/src/asinc/photo_vertical.T1.code.setup.as
+   D /trunk/flash/media/frames/src/asinc/photo_vertical.T1.code.updatestyle.as
+   D /trunk/flash/media/frames/src/asinc/photo_withcorners_horizontal.T1.code.F13.as
+   D /trunk/flash/media/frames/src/asinc/photo_withcorners_horizontal.T1.code.F2.as
+   D /trunk/flash/media/frames/src/asinc/photo_withcorners_horizontal.T1.code.F9.as
+   D /trunk/flash/media/frames/src/asinc/photo_withcorners_horizontal.T1.code.decode.as
+   D /trunk/flash/media/frames/src/asinc/photo_withcorners_horizontal.T1.code.decodeloop.as
+   D /trunk/flash/media/frames/src/asinc/photo_withcorners_horizontal.T1.code.display.as
+   D /trunk/flash/media/frames/src/asinc/photo_withcorners_horizontal.T1.code.dodata.as
+   D /trunk/flash/media/frames/src/asinc/photo_withcorners_horizontal.T1.code.editoff.as
+   D /trunk/flash/media/frames/src/asinc/photo_withcorners_horizontal.T1.code.init.as
+   D /trunk/flash/media/frames/src/asinc/photo_withcorners_horizontal.T1.code.load.as
+   D /trunk/flash/media/frames/src/asinc/photo_withcorners_horizontal.T1.code.loadimage.as
+   D /trunk/flash/media/frames/src/asinc/photo_withcorners_horizontal.T1.code.loadloop.as
+   D /trunk/flash/media/frames/src/asinc/photo_withcorners_horizontal.T1.code.repoon.as
+   D /trunk/flash/media/frames/src/asinc/photo_withcorners_horizontal.T1.code.reset.as
+   D /trunk/flash/media/frames/src/asinc/photo_withcorners_horizontal.T1.code.savedat.as
+   D /trunk/flash/media/frames/src/asinc/photo_withcorners_horizontal.T1.code.setup.as
+   D /trunk/flash/media/frames/src/asinc/photo_withcorners_horizontal.T1.code.updatestyle.as
+   D /trunk/flash/media/frames/src/asinc/photo_withcorners_vertical.T1.code.F13.as
+   D /trunk/flash/media/frames/src/asinc/photo_withcorners_vertical.T1.code.F2.as
+   D /trunk/flash/media/frames/src/asinc/photo_withcorners_vertical.T1.code.F9.as
+   D /trunk/flash/media/frames/src/asinc/photo_withcorners_vertical.T1.code.decode.as
+   D /trunk/flash/media/frames/src/asinc/photo_withcorners_vertical.T1.code.decodeloop.as
+   D /trunk/flash/media/frames/src/asinc/photo_withcorners_vertical.T1.code.display.as
+   D /trunk/flash/media/frames/src/asinc/photo_withcorners_vertical.T1.code.dodata.as
+   D /trunk/flash/media/frames/src/asinc/photo_withcorners_vertical.T1.code.editoff.as
+   D /trunk/flash/media/frames/src/asinc/photo_withcorners_vertical.T1.code.init.as
+   D /trunk/flash/media/frames/src/asinc/photo_withcorners_vertical.T1.code.load.as
+   D /trunk/flash/media/frames/src/asinc/photo_withcorners_vertical.T1.code.loadimage.as
+   D /trunk/flash/media/frames/src/asinc/photo_withcorners_vertical.T1.code.loadloop.as
+   D /trunk/flash/media/frames/src/asinc/photo_withcorners_vertical.T1.code.repoon.as
+   D /trunk/flash/media/frames/src/asinc/photo_withcorners_vertical.T1.code.reset.as
+   D /trunk/flash/media/frames/src/asinc/photo_withcorners_vertical.T1.code.savedat.as
+   D /trunk/flash/media/frames/src/asinc/photo_withcorners_vertical.T1.code.setup.as
+   D /trunk/flash/media/frames/src/asinc/photo_withcorners_vertical.T1.code.updatestyle.as
+   D /trunk/flash/media/frames/src/asinc/polaroid_frame.T1.code.F13.as
+   D /trunk/flash/media/frames/src/asinc/polaroid_frame.T1.code.F2.as
+   D /trunk/flash/media/frames/src/asinc/polaroid_frame.T1.code.F9.as
+   D /trunk/flash/media/frames/src/asinc/polaroid_frame.T1.code.decode.as
+   D /trunk/flash/media/frames/src/asinc/polaroid_frame.T1.code.decodeloop.as
+   D /trunk/flash/media/frames/src/asinc/polaroid_frame.T1.code.display.as
+   D /trunk/flash/media/frames/src/asinc/polaroid_frame.T1.code.dodata.as
+   D /trunk/flash/media/frames/src/asinc/polaroid_frame.T1.code.editoff.as
+   D /trunk/flash/media/frames/src/asinc/polaroid_frame.T1.code.init.as
+   D /trunk/flash/media/frames/src/asinc/polaroid_frame.T1.code.load.as
+   D /trunk/flash/media/frames/src/asinc/polaroid_frame.T1.code.loadimage.as
+   D /trunk/flash/media/frames/src/asinc/polaroid_frame.T1.code.loadloop.as
+   D /trunk/flash/media/frames/src/asinc/polaroid_frame.T1.code.repoon.as
+   D /trunk/flash/media/frames/src/asinc/polaroid_frame.T1.code.reset.as
+   D /trunk/flash/media/frames/src/asinc/polaroid_frame.T1.code.savedat.as
+   D /trunk/flash/media/frames/src/asinc/polaroid_frame.T1.code.setup.as
+   D /trunk/flash/media/frames/src/asinc/polaroid_frame.T1.code.updatestyle.as
+   D /trunk/flash/media/frames/src/asinc/polaroid_frame_fr.T1.code.F13.as
+   D /trunk/flash/media/frames/src/asinc/polaroid_frame_fr.T1.code.F2.as
+   D /trunk/flash/media/frames/src/asinc/polaroid_frame_fr.T1.code.F9.as
+   D /trunk/flash/media/frames/src/asinc/polaroid_frame_fr.T1.code.decode.as
+   D /trunk/flash/media/frames/src/asinc/polaroid_frame_fr.T1.code.decodeloop.as
+   D /trunk/flash/media/frames/src/asinc/polaroid_frame_fr.T1.code.display.as
+   D /trunk/flash/media/frames/src/asinc/polaroid_frame_fr.T1.code.dodata.as
+   D /trunk/flash/media/frames/src/asinc/polaroid_frame_fr.T1.code.editoff.as
+   D /trunk/flash/media/frames/src/asinc/polaroid_frame_fr.T1.code.init.as
+   D /trunk/flash/media/frames/src/asinc/polaroid_frame_fr.T1.code.load.as
+   D /trunk/flash/media/frames/src/asinc/polaroid_frame_fr.T1.code.loadimage.as
+   D /trunk/flash/media/frames/src/asinc/polaroid_frame_fr.T1.code.loadloop.as
+   D /trunk/flash/media/frames/src/asinc/polaroid_frame_fr.T1.code.repoon.as
+   D /trunk/flash/media/frames/src/asinc/polaroid_frame_fr.T1.code.reset.as
+   D /trunk/flash/media/frames/src/asinc/polaroid_frame_fr.T1.code.savedat.as
+   D /trunk/flash/media/frames/src/asinc/polaroid_frame_fr.T1.code.setup.as
+   D /trunk/flash/media/frames/src/asinc/polaroid_frame_fr.T1.code.updatestyle.as
+   D /trunk/flash/media/frames/src/asinc/simple_panoramic_horizontal.T1.code.F13.as
+   D /trunk/flash/media/frames/src/asinc/simple_panoramic_horizontal.T1.code.F2.as
+   D /trunk/flash/media/frames/src/asinc/simple_panoramic_horizontal.T1.code.F9.as
+   D /trunk/flash/media/frames/src/asinc/simple_panoramic_horizontal.T1.code.decode.as
+   D /trunk/flash/media/frames/src/asinc/simple_panoramic_horizontal.T1.code.decodeloop.as
+   D /trunk/flash/media/frames/src/asinc/simple_panoramic_horizontal.T1.code.display.as
+   D /trunk/flash/media/frames/src/asinc/simple_panoramic_horizontal.T1.code.dodata.as
+   D /trunk/flash/media/frames/src/asinc/simple_panoramic_horizontal.T1.code.editoff.as
+   D /trunk/flash/media/frames/src/asinc/simple_panoramic_horizontal.T1.code.init.as
+   D /trunk/flash/media/frames/src/asinc/simple_panoramic_horizontal.T1.code.load.as
+   D /trunk/flash/media/frames/src/asinc/simple_panoramic_horizontal.T1.code.loadimage.as
+   D /trunk/flash/media/frames/src/asinc/simple_panoramic_horizontal.T1.code.loadloop.as
+   D /trunk/flash/media/frames/src/asinc/simple_panoramic_horizontal.T1.code.repoon.as
+   D /trunk/flash/media/frames/src/asinc/simple_panoramic_horizontal.T1.code.reset.as
+   D /trunk/flash/media/frames/src/asinc/simple_panoramic_horizontal.T1.code.savedat.as
+   D /trunk/flash/media/frames/src/asinc/simple_panoramic_horizontal.T1.code.setup.as
+   D /trunk/flash/media/frames/src/asinc/simple_panoramic_horizontal.T1.code.updatestyle.as
+   D /trunk/flash/media/frames/src/asinc/simple_small_horizontal.T1.code.F13.as
+   D /trunk/flash/media/frames/src/asinc/simple_small_horizontal.T1.code.F2.as
+   D /trunk/flash/media/frames/src/asinc/simple_small_horizontal.T1.code.F9.as
+   D /trunk/flash/media/frames/src/asinc/simple_small_horizontal.T1.code.decode.as
+   D /trunk/flash/media/frames/src/asinc/simple_small_horizontal.T1.code.decodeloop.as
+   D /trunk/flash/media/frames/src/asinc/simple_small_horizontal.T1.code.display.as
+   D /trunk/flash/media/frames/src/asinc/simple_small_horizontal.T1.code.dodata.as
+   D /trunk/flash/media/frames/src/asinc/simple_small_horizontal.T1.code.editoff.as
+   D /trunk/flash/media/frames/src/asinc/simple_small_horizontal.T1.code.init.as
+   D /trunk/flash/media/frames/src/asinc/simple_small_horizontal.T1.code.load.as
+   D /trunk/flash/media/frames/src/asinc/simple_small_horizontal.T1.code.loadimage.as
+   D /trunk/flash/media/frames/src/asinc/simple_small_horizontal.T1.code.loadloop.as
+   D /trunk/flash/media/frames/src/asinc/simple_small_horizontal.T1.code.repoon.as
+   D /trunk/flash/media/frames/src/asinc/simple_small_horizontal.T1.code.reset.as
+   D /trunk/flash/media/frames/src/asinc/simple_small_horizontal.T1.code.savedat.as
+   D /trunk/flash/media/frames/src/asinc/simple_small_horizontal.T1.code.setup.as
+   D /trunk/flash/media/frames/src/asinc/simple_small_horizontal.T1.code.updatestyle.as
+   D /trunk/flash/media/frames/src/asinc/simple_small_vertical.T1.code.F13.as
+   D /trunk/flash/media/frames/src/asinc/simple_small_vertical.T1.code.F2.as
+   D /trunk/flash/media/frames/src/asinc/simple_small_vertical.T1.code.F9.as
+   D /trunk/flash/media/frames/src/asinc/simple_small_vertical.T1.code.decode.as
+   D /trunk/flash/media/frames/src/asinc/simple_small_vertical.T1.code.decodeloop.as
+   D /trunk/flash/media/frames/src/asinc/simple_small_vertical.T1.code.display.as
+   D /trunk/flash/media/frames/src/asinc/simple_small_vertical.T1.code.dodata.as
+   D /trunk/flash/media/frames/src/asinc/simple_small_vertical.T1.code.editoff.as
+   D /trunk/flash/media/frames/src/asinc/simple_small_vertical.T1.code.init.as
+   D /trunk/flash/media/frames/src/asinc/simple_small_vertical.T1.code.load.as
+   D /trunk/flash/media/frames/src/asinc/simple_small_vertical.T1.code.loadimage.as
+   D /trunk/flash/media/frames/src/asinc/simple_small_vertical.T1.code.loadloop.as
+   D /trunk/flash/media/frames/src/asinc/simple_small_vertical.T1.code.repoon.as
+   D /trunk/flash/media/frames/src/asinc/simple_small_vertical.T1.code.reset.as
+   D /trunk/flash/media/frames/src/asinc/simple_small_vertical.T1.code.savedat.as
+   D /trunk/flash/media/frames/src/asinc/simple_small_vertical.T1.code.setup.as
+   D /trunk/flash/media/frames/src/asinc/simple_small_vertical.T1.code.updatestyle.as
+   D /trunk/flash/media/frames/src/asinc/simple_wide_horizontal.T1.code.F13.as
+   D /trunk/flash/media/frames/src/asinc/simple_wide_horizontal.T1.code.F2.as
+   D /trunk/flash/media/frames/src/asinc/simple_wide_horizontal.T1.code.F9.as
+   D /trunk/flash/media/frames/src/asinc/simple_wide_horizontal.T1.code.decode.as
+   D /trunk/flash/media/frames/src/asinc/simple_wide_horizontal.T1.code.decodeloop.as
+   D /trunk/flash/media/frames/src/asinc/simple_wide_horizontal.T1.code.display.as
+   D /trunk/flash/media/frames/src/asinc/simple_wide_horizontal.T1.code.dodata.as
+   D /trunk/flash/media/frames/src/asinc/simple_wide_horizontal.T1.code.editoff.as
+   D /trunk/flash/media/frames/src/asinc/simple_wide_horizontal.T1.code.init.as
+   D /trunk/flash/media/frames/src/asinc/simple_wide_horizontal.T1.code.load.as
+   D /trunk/flash/media/frames/src/asinc/simple_wide_horizontal.T1.code.loadimage.as
+   D /trunk/flash/media/frames/src/asinc/simple_wide_horizontal.T1.code.loadloop.as
+   D /trunk/flash/media/frames/src/asinc/simple_wide_horizontal.T1.code.repoon.as
+   D /trunk/flash/media/frames/src/asinc/simple_wide_horizontal.T1.code.reset.as
+   D /trunk/flash/media/frames/src/asinc/simple_wide_horizontal.T1.code.savedat.as
+   D /trunk/flash/media/frames/src/asinc/simple_wide_horizontal.T1.code.setup.as
+   D /trunk/flash/media/frames/src/asinc/simple_wide_horizontal.T1.code.updatestyle.as
+   M /trunk/flash/media/frames/src/fla/button.fla
+   M /trunk/flash/media/frames/src/fla/button_heart.fla
+   M /trunk/flash/media/frames/src/fla/button_square.fla
+   M /trunk/flash/media/frames/src/fla/circle_frames.fla
+   M /trunk/flash/media/frames/src/fla/circle_frames_fr.fla
+   M /trunk/flash/media/frames/src/fla/laptop.fla
+   M /trunk/flash/media/frames/src/fla/oval_frames.fla
+   M /trunk/flash/media/frames/src/fla/oval_frames_fr.fla
+   M /trunk/flash/media/frames/src/fla/ovalwide_frames.fla
+   M /trunk/flash/media/frames/src/fla/ovalwide_frames_fr.fla
+   M /trunk/flash/media/frames/src/fla/photo_horizontal.fla
+   M /trunk/flash/media/frames/src/fla/photo_passport.fla
+   M /trunk/flash/media/frames/src/fla/photo_perforated_horizontal.fla
+   M /trunk/flash/media/frames/src/fla/photo_perforated_vertical.fla
+   M /trunk/flash/media/frames/src/fla/photo_rippededge_horizontal.fla
+   M /trunk/flash/media/frames/src/fla/photo_rippededge_vertical.fla
+   M /trunk/flash/media/frames/src/fla/photo_vertical.fla
+   M /trunk/flash/media/frames/src/fla/photo_withcorners_horizontal.fla
+   M /trunk/flash/media/frames/src/fla/photo_withcorners_vertical.fla
+   M /trunk/flash/media/frames/src/fla/polaroid_frame.fla
+   M /trunk/flash/media/frames/src/fla/polaroid_frame_fr.fla
+   M /trunk/flash/media/frames/src/fla/roundedsquare_frames.fla
+   M /trunk/flash/media/frames/src/fla/roundedsquare_frames_fr.fla
+   M /trunk/flash/media/frames/src/fla/simple_panoramic_horizontal.fla
+   M /trunk/flash/media/frames/src/fla/simple_small_horizontal.fla
+   M /trunk/flash/media/frames/src/fla/simple_small_vertical.fla
+   M /trunk/flash/media/frames/src/fla/simple_wide_horizontal.fla
+   M /trunk/flash/media/frames/src/fla/square_frames.fla
+   M /trunk/flash/media/frames/src/fla/square_frames_fr.fla
+   M /trunk/flash/media/frames/src/fla/star_frames.fla
+   M /trunk/flash/media/frames/src/fla/star_frames_fr.fla
+
+media/frames: Converted includes to common (frames.T1.code.XX) where the same (or display, square_frames.fla and square_frames_fr.fla: just comments and debug differ)
+
+
+------------------------------------------------------------------------
+r9483 | adam | 2008-05-20 14:36:19 +0100 (Tue, 20 May 2008) | 2 lines
+Changed paths:
+   M /trunk/sitemaker/perl/modules/Sitemaker/Handler/IDomainService.pm
+   M /trunk/sitemaker/perl/modules/Sitewide.pm
+   M /trunk/sitemaker/perl/test/IDomainService.t
+
+Domain Email forwarding + tests
+
+------------------------------------------------------------------------
+r9484 | chris | 2008-05-20 14:47:53 +0100 (Tue, 20 May 2008) | 3 lines
+Changed paths:
+   D /trunk/flash/media/frames/src/asinc/circle_frames.T1.code.F13.as
+   D /trunk/flash/media/frames/src/asinc/circle_frames.T1.code.F2.as
+   D /trunk/flash/media/frames/src/asinc/circle_frames.T1.code.F9.as
+   D /trunk/flash/media/frames/src/asinc/circle_frames.T1.code.decode.as
+   D /trunk/flash/media/frames/src/asinc/circle_frames.T1.code.decodeloop.as
+   D /trunk/flash/media/frames/src/asinc/circle_frames.T1.code.display.as
+   D /trunk/flash/media/frames/src/asinc/circle_frames.T1.code.dodata.as
+   D /trunk/flash/media/frames/src/asinc/circle_frames.T1.code.editoff.as
+   D /trunk/flash/media/frames/src/asinc/circle_frames.T1.code.init.as
+   D /trunk/flash/media/frames/src/asinc/circle_frames.T1.code.load.as
+   D /trunk/flash/media/frames/src/asinc/circle_frames.T1.code.loadimage.as
+   D /trunk/flash/media/frames/src/asinc/circle_frames.T1.code.loadloop.as
+   D /trunk/flash/media/frames/src/asinc/circle_frames.T1.code.repoon.as
+   D /trunk/flash/media/frames/src/asinc/circle_frames.T1.code.reset.as
+   D /trunk/flash/media/frames/src/asinc/circle_frames.T1.code.savedat.as
+   D /trunk/flash/media/frames/src/asinc/circle_frames.T1.code.setup.as
+   D /trunk/flash/media/frames/src/asinc/circle_frames.T1.code.updatestyle.as
+   D /trunk/flash/media/frames/src/asinc/circle_frames_fr.T1.code.F13.as
+   D /trunk/flash/media/frames/src/asinc/circle_frames_fr.T1.code.F2.as
+   D /trunk/flash/media/frames/src/asinc/circle_frames_fr.T1.code.F9.as
+   D /trunk/flash/media/frames/src/asinc/circle_frames_fr.T1.code.decode.as
+   D /trunk/flash/media/frames/src/asinc/circle_frames_fr.T1.code.decodeloop.as
+   D /trunk/flash/media/frames/src/asinc/circle_frames_fr.T1.code.display.as
+   D /trunk/flash/media/frames/src/asinc/circle_frames_fr.T1.code.dodata.as
+   D /trunk/flash/media/frames/src/asinc/circle_frames_fr.T1.code.editoff.as
+   D /trunk/flash/media/frames/src/asinc/circle_frames_fr.T1.code.init.as
+   D /trunk/flash/media/frames/src/asinc/circle_frames_fr.T1.code.load.as
+   D /trunk/flash/media/frames/src/asinc/circle_frames_fr.T1.code.loadimage.as
+   D /trunk/flash/media/frames/src/asinc/circle_frames_fr.T1.code.loadloop.as
+   D /trunk/flash/media/frames/src/asinc/circle_frames_fr.T1.code.repoon.as
+   D /trunk/flash/media/frames/src/asinc/circle_frames_fr.T1.code.reset.as
+   D /trunk/flash/media/frames/src/asinc/circle_frames_fr.T1.code.savedat.as
+   D /trunk/flash/media/frames/src/asinc/circle_frames_fr.T1.code.setup.as
+   D /trunk/flash/media/frames/src/asinc/circle_frames_fr.T1.code.updatestyle.as
+   D /trunk/flash/media/frames/src/asinc/oval_frames.T1.code.F13.as
+   D /trunk/flash/media/frames/src/asinc/oval_frames.T1.code.F2.as
+   D /trunk/flash/media/frames/src/asinc/oval_frames.T1.code.F9.as
+   D /trunk/flash/media/frames/src/asinc/oval_frames.T1.code.decode.as
+   D /trunk/flash/media/frames/src/asinc/oval_frames.T1.code.decodeloop.as
+   D /trunk/flash/media/frames/src/asinc/oval_frames.T1.code.display.as
+   D /trunk/flash/media/frames/src/asinc/oval_frames.T1.code.dodata.as
+   D /trunk/flash/media/frames/src/asinc/oval_frames.T1.code.editoff.as
+   D /trunk/flash/media/frames/src/asinc/oval_frames.T1.code.init.as
+   D /trunk/flash/media/frames/src/asinc/oval_frames.T1.code.load.as
+   D /trunk/flash/media/frames/src/asinc/oval_frames.T1.code.loadimage.as
+   D /trunk/flash/media/frames/src/asinc/oval_frames.T1.code.loadloop.as
+   D /trunk/flash/media/frames/src/asinc/oval_frames.T1.code.repoon.as
+   D /trunk/flash/media/frames/src/asinc/oval_frames.T1.code.reset.as
+   D /trunk/flash/media/frames/src/asinc/oval_frames.T1.code.savedat.as
+   D /trunk/flash/media/frames/src/asinc/oval_frames.T1.code.setup.as
+   D /trunk/flash/media/frames/src/asinc/oval_frames.T1.code.updatestyle.as
+   D /trunk/flash/media/frames/src/asinc/oval_frames_fr.T1.code.F13.as
+   D /trunk/flash/media/frames/src/asinc/oval_frames_fr.T1.code.F2.as
+   D /trunk/flash/media/frames/src/asinc/oval_frames_fr.T1.code.F9.as
+   D /trunk/flash/media/frames/src/asinc/oval_frames_fr.T1.code.decode.as
+   D /trunk/flash/media/frames/src/asinc/oval_frames_fr.T1.code.decodeloop.as
+   D /trunk/flash/media/frames/src/asinc/oval_frames_fr.T1.code.display.as
+   D /trunk/flash/media/frames/src/asinc/oval_frames_fr.T1.code.dodata.as
+   D /trunk/flash/media/frames/src/asinc/oval_frames_fr.T1.code.editoff.as
+   D /trunk/flash/media/frames/src/asinc/oval_frames_fr.T1.code.init.as
+   D /trunk/flash/media/frames/src/asinc/oval_frames_fr.T1.code.load.as
+   D /trunk/flash/media/frames/src/asinc/oval_frames_fr.T1.code.loadimage.as
+   D /trunk/flash/media/frames/src/asinc/oval_frames_fr.T1.code.loadloop.as
+   D /trunk/flash/media/frames/src/asinc/oval_frames_fr.T1.code.repoon.as
+   D /trunk/flash/media/frames/src/asinc/oval_frames_fr.T1.code.reset.as
+   D /trunk/flash/media/frames/src/asinc/oval_frames_fr.T1.code.savedat.as
+   D /trunk/flash/media/frames/src/asinc/oval_frames_fr.T1.code.setup.as
+   D /trunk/flash/media/frames/src/asinc/oval_frames_fr.T1.code.updatestyle.as
+   D /trunk/flash/media/frames/src/asinc/ovalwide_frames.T1.code.F13.as
+   D /trunk/flash/media/frames/src/asinc/ovalwide_frames.T1.code.F2.as
+   D /trunk/flash/media/frames/src/asinc/ovalwide_frames.T1.code.F9.as
+   D /trunk/flash/media/frames/src/asinc/ovalwide_frames.T1.code.decode.as
+   D /trunk/flash/media/frames/src/asinc/ovalwide_frames.T1.code.decodeloop.as
+   D /trunk/flash/media/frames/src/asinc/ovalwide_frames.T1.code.display.as
+   D /trunk/flash/media/frames/src/asinc/ovalwide_frames.T1.code.dodata.as
+   D /trunk/flash/media/frames/src/asinc/ovalwide_frames.T1.code.editoff.as
+   D /trunk/flash/media/frames/src/asinc/ovalwide_frames.T1.code.init.as
+   D /trunk/flash/media/frames/src/asinc/ovalwide_frames.T1.code.load.as
+   D /trunk/flash/media/frames/src/asinc/ovalwide_frames.T1.code.loadimage.as
+   D /trunk/flash/media/frames/src/asinc/ovalwide_frames.T1.code.loadloop.as
+   D /trunk/flash/media/frames/src/asinc/ovalwide_frames.T1.code.repoon.as
+   D /trunk/flash/media/frames/src/asinc/ovalwide_frames.T1.code.reset.as
+   D /trunk/flash/media/frames/src/asinc/ovalwide_frames.T1.code.savedat.as
+   D /trunk/flash/media/frames/src/asinc/ovalwide_frames.T1.code.setup.as
+   D /trunk/flash/media/frames/src/asinc/ovalwide_frames.T1.code.updatestyle.as
+   D /trunk/flash/media/frames/src/asinc/ovalwide_frames_fr.T1.code.F13.as
+   D /trunk/flash/media/frames/src/asinc/ovalwide_frames_fr.T1.code.F2.as
+   D /trunk/flash/media/frames/src/asinc/ovalwide_frames_fr.T1.code.F9.as
+   D /trunk/flash/media/frames/src/asinc/ovalwide_frames_fr.T1.code.decode.as
+   D /trunk/flash/media/frames/src/asinc/ovalwide_frames_fr.T1.code.decodeloop.as
+   D /trunk/flash/media/frames/src/asinc/ovalwide_frames_fr.T1.code.display.as
+   D /trunk/flash/media/frames/src/asinc/ovalwide_frames_fr.T1.code.dodata.as
+   D /trunk/flash/media/frames/src/asinc/ovalwide_frames_fr.T1.code.editoff.as
+   D /trunk/flash/media/frames/src/asinc/ovalwide_frames_fr.T1.code.init.as
+   D /trunk/flash/media/frames/src/asinc/ovalwide_frames_fr.T1.code.load.as
+   D /trunk/flash/media/frames/src/asinc/ovalwide_frames_fr.T1.code.loadimage.as
+   D /trunk/flash/media/frames/src/asinc/ovalwide_frames_fr.T1.code.loadloop.as
+   D /trunk/flash/media/frames/src/asinc/ovalwide_frames_fr.T1.code.repoon.as
+   D /trunk/flash/media/frames/src/asinc/ovalwide_frames_fr.T1.code.reset.as
+   D /trunk/flash/media/frames/src/asinc/ovalwide_frames_fr.T1.code.savedat.as
+   D /trunk/flash/media/frames/src/asinc/ovalwide_frames_fr.T1.code.setup.as
+   D /trunk/flash/media/frames/src/asinc/ovalwide_frames_fr.T1.code.updatestyle.as
+   D /trunk/flash/media/frames/src/asinc/roundedsquare_frames.T1.code.F13.as
+   D /trunk/flash/media/frames/src/asinc/roundedsquare_frames.T1.code.F2.as
+   D /trunk/flash/media/frames/src/asinc/roundedsquare_frames.T1.code.F9.as
+   D /trunk/flash/media/frames/src/asinc/roundedsquare_frames.T1.code.decode.as
+   D /trunk/flash/media/frames/src/asinc/roundedsquare_frames.T1.code.decodeloop.as
+   D /trunk/flash/media/frames/src/asinc/roundedsquare_frames.T1.code.display.as
+   D /trunk/flash/media/frames/src/asinc/roundedsquare_frames.T1.code.dodata.as
+   D /trunk/flash/media/frames/src/asinc/roundedsquare_frames.T1.code.editoff.as
+   D /trunk/flash/media/frames/src/asinc/roundedsquare_frames.T1.code.init.as
+   D /trunk/flash/media/frames/src/asinc/roundedsquare_frames.T1.code.load.as
+   D /trunk/flash/media/frames/src/asinc/roundedsquare_frames.T1.code.loadimage.as
+   D /trunk/flash/media/frames/src/asinc/roundedsquare_frames.T1.code.loadloop.as
+   D /trunk/flash/media/frames/src/asinc/roundedsquare_frames.T1.code.repoon.as
+   D /trunk/flash/media/frames/src/asinc/roundedsquare_frames.T1.code.reset.as
+   D /trunk/flash/media/frames/src/asinc/roundedsquare_frames.T1.code.savedat.as
+   D /trunk/flash/media/frames/src/asinc/roundedsquare_frames.T1.code.setup.as
+   D /trunk/flash/media/frames/src/asinc/roundedsquare_frames.T1.code.updatestyle.as
+   D /trunk/flash/media/frames/src/asinc/roundedsquare_frames_fr.T1.code.F13.as
+   D /trunk/flash/media/frames/src/asinc/roundedsquare_frames_fr.T1.code.F2.as
+   D /trunk/flash/media/frames/src/asinc/roundedsquare_frames_fr.T1.code.F9.as
+   D /trunk/flash/media/frames/src/asinc/roundedsquare_frames_fr.T1.code.decode.as
+   D /trunk/flash/media/frames/src/asinc/roundedsquare_frames_fr.T1.code.decodeloop.as
+   D /trunk/flash/media/frames/src/asinc/roundedsquare_frames_fr.T1.code.display.as
+   D /trunk/flash/media/frames/src/asinc/roundedsquare_frames_fr.T1.code.dodata.as
+   D /trunk/flash/media/frames/src/asinc/roundedsquare_frames_fr.T1.code.editoff.as
+   D /trunk/flash/media/frames/src/asinc/roundedsquare_frames_fr.T1.code.init.as
+   D /trunk/flash/media/frames/src/asinc/roundedsquare_frames_fr.T1.code.load.as
+   D /trunk/flash/media/frames/src/asinc/roundedsquare_frames_fr.T1.code.loadimage.as
+   D /trunk/flash/media/frames/src/asinc/roundedsquare_frames_fr.T1.code.loadloop.as
+   D /trunk/flash/media/frames/src/asinc/roundedsquare_frames_fr.T1.code.repoon.as
+   D /trunk/flash/media/frames/src/asinc/roundedsquare_frames_fr.T1.code.reset.as
+   D /trunk/flash/media/frames/src/asinc/roundedsquare_frames_fr.T1.code.savedat.as
+   D /trunk/flash/media/frames/src/asinc/roundedsquare_frames_fr.T1.code.setup.as
+   D /trunk/flash/media/frames/src/asinc/roundedsquare_frames_fr.T1.code.updatestyle.as
+   D /trunk/flash/media/frames/src/asinc/square_frames.T1.code.F13.as
+   D /trunk/flash/media/frames/src/asinc/square_frames.T1.code.F2.as
+   D /trunk/flash/media/frames/src/asinc/square_frames.T1.code.F9.as
+   D /trunk/flash/media/frames/src/asinc/square_frames.T1.code.decode.as
+   D /trunk/flash/media/frames/src/asinc/square_frames.T1.code.decodeloop.as
+   D /trunk/flash/media/frames/src/asinc/square_frames.T1.code.display.as
+   D /trunk/flash/media/frames/src/asinc/square_frames.T1.code.dodata.as
+   D /trunk/flash/media/frames/src/asinc/square_frames.T1.code.editoff.as
+   D /trunk/flash/media/frames/src/asinc/square_frames.T1.code.init.as
+   D /trunk/flash/media/frames/src/asinc/square_frames.T1.code.load.as
+   D /trunk/flash/media/frames/src/asinc/square_frames.T1.code.loadimage.as
+   D /trunk/flash/media/frames/src/asinc/square_frames.T1.code.loadloop.as
+   D /trunk/flash/media/frames/src/asinc/square_frames.T1.code.repoon.as
+   D /trunk/flash/media/frames/src/asinc/square_frames.T1.code.reset.as
+   D /trunk/flash/media/frames/src/asinc/square_frames.T1.code.savedat.as
+   D /trunk/flash/media/frames/src/asinc/square_frames.T1.code.setup.as
+   D /trunk/flash/media/frames/src/asinc/square_frames.T1.code.updatestyle.as
+   D /trunk/flash/media/frames/src/asinc/square_frames_fr.T1.code.F13.as
+   D /trunk/flash/media/frames/src/asinc/square_frames_fr.T1.code.F2.as
+   D /trunk/flash/media/frames/src/asinc/square_frames_fr.T1.code.F9.as
+   D /trunk/flash/media/frames/src/asinc/square_frames_fr.T1.code.decode.as
+   D /trunk/flash/media/frames/src/asinc/square_frames_fr.T1.code.decodeloop.as
+   D /trunk/flash/media/frames/src/asinc/square_frames_fr.T1.code.display.as
+   D /trunk/flash/media/frames/src/asinc/square_frames_fr.T1.code.dodata.as
+   D /trunk/flash/media/frames/src/asinc/square_frames_fr.T1.code.editoff.as
+   D /trunk/flash/media/frames/src/asinc/square_frames_fr.T1.code.init.as
+   D /trunk/flash/media/frames/src/asinc/square_frames_fr.T1.code.load.as
+   D /trunk/flash/media/frames/src/asinc/square_frames_fr.T1.code.loadimage.as
+   D /trunk/flash/media/frames/src/asinc/square_frames_fr.T1.code.loadloop.as
+   D /trunk/flash/media/frames/src/asinc/square_frames_fr.T1.code.repoon.as
+   D /trunk/flash/media/frames/src/asinc/square_frames_fr.T1.code.reset.as
+   D /trunk/flash/media/frames/src/asinc/square_frames_fr.T1.code.savedat.as
+   D /trunk/flash/media/frames/src/asinc/square_frames_fr.T1.code.setup.as
+   D /trunk/flash/media/frames/src/asinc/square_frames_fr.T1.code.updatestyle.as
+   D /trunk/flash/media/frames/src/asinc/star_frames.T1.code.F13.as
+   D /trunk/flash/media/frames/src/asinc/star_frames.T1.code.F2.as
+   D /trunk/flash/media/frames/src/asinc/star_frames.T1.code.F9.as
+   D /trunk/flash/media/frames/src/asinc/star_frames.T1.code.decode.as
+   D /trunk/flash/media/frames/src/asinc/star_frames.T1.code.decodeloop.as
+   D /trunk/flash/media/frames/src/asinc/star_frames.T1.code.display.as
+   D /trunk/flash/media/frames/src/asinc/star_frames.T1.code.dodata.as
+   D /trunk/flash/media/frames/src/asinc/star_frames.T1.code.editoff.as
+   D /trunk/flash/media/frames/src/asinc/star_frames.T1.code.init.as
+   D /trunk/flash/media/frames/src/asinc/star_frames.T1.code.load.as
+   D /trunk/flash/media/frames/src/asinc/star_frames.T1.code.loadimage.as
+   D /trunk/flash/media/frames/src/asinc/star_frames.T1.code.loadloop.as
+   D /trunk/flash/media/frames/src/asinc/star_frames.T1.code.repoon.as
+   D /trunk/flash/media/frames/src/asinc/star_frames.T1.code.reset.as
+   D /trunk/flash/media/frames/src/asinc/star_frames.T1.code.savedat.as
+   D /trunk/flash/media/frames/src/asinc/star_frames.T1.code.setup.as
+   D /trunk/flash/media/frames/src/asinc/star_frames.T1.code.updatestyle.as
+   D /trunk/flash/media/frames/src/asinc/star_frames_fr.T1.code.F13.as
+   D /trunk/flash/media/frames/src/asinc/star_frames_fr.T1.code.F2.as
+   D /trunk/flash/media/frames/src/asinc/star_frames_fr.T1.code.F9.as
+   D /trunk/flash/media/frames/src/asinc/star_frames_fr.T1.code.decode.as
+   D /trunk/flash/media/frames/src/asinc/star_frames_fr.T1.code.decodeloop.as
+   D /trunk/flash/media/frames/src/asinc/star_frames_fr.T1.code.display.as
+   D /trunk/flash/media/frames/src/asinc/star_frames_fr.T1.code.dodata.as
+   D /trunk/flash/media/frames/src/asinc/star_frames_fr.T1.code.editoff.as
+   D /trunk/flash/media/frames/src/asinc/star_frames_fr.T1.code.init.as
+   D /trunk/flash/media/frames/src/asinc/star_frames_fr.T1.code.load.as
+   D /trunk/flash/media/frames/src/asinc/star_frames_fr.T1.code.loadimage.as
+   D /trunk/flash/media/frames/src/asinc/star_frames_fr.T1.code.loadloop.as
+   D /trunk/flash/media/frames/src/asinc/star_frames_fr.T1.code.repoon.as
+   D /trunk/flash/media/frames/src/asinc/star_frames_fr.T1.code.reset.as
+   D /trunk/flash/media/frames/src/asinc/star_frames_fr.T1.code.savedat.as
+   D /trunk/flash/media/frames/src/asinc/star_frames_fr.T1.code.setup.as
+   D /trunk/flash/media/frames/src/asinc/star_frames_fr.T1.code.updatestyle.as
+
+media/frames: Remove remaining includes (missed from SVN r9482 as they had the text "frames" within their file names)
+
+
+------------------------------------------------------------------------
+r9485 | chris | 2008-05-20 15:15:41 +0100 (Tue, 20 May 2008) | 3 lines
+Changed paths:
+   M /trunk/flash/media/frames/src/asinc/button.T1.code.F1.as
+   M /trunk/flash/media/frames/src/asinc/button_heart.T1.code.F1.as
+   M /trunk/flash/media/frames/src/asinc/button_square.T1.code.F1.as
+   M /trunk/flash/media/frames/src/asinc/circle_frames.T1.code.F1.as
+   M /trunk/flash/media/frames/src/asinc/circle_frames_fr.T1.code.F1.as
+   A /trunk/flash/media/frames/src/asinc/frames.T1.code.F1.as (from /trunk/flash/media/frames/src/asinc/button.T1.code.F1.as:9479)
+   M /trunk/flash/media/frames/src/asinc/laptop.T1.code.F1.as
+   M /trunk/flash/media/frames/src/asinc/oval_frames.T1.code.F1.as
+   M /trunk/flash/media/frames/src/asinc/oval_frames_fr.T1.code.F1.as
+   M /trunk/flash/media/frames/src/asinc/ovalwide_frames.T1.code.F1.as
+   M /trunk/flash/media/frames/src/asinc/ovalwide_frames_fr.T1.code.F1.as
+   M /trunk/flash/media/frames/src/asinc/photo_horizontal.T1.code.F1.as
+   M /trunk/flash/media/frames/src/asinc/photo_passport.T1.code.F1.as
+   M /trunk/flash/media/frames/src/asinc/photo_perforated_horizontal.T1.code.F1.as
+   M /trunk/flash/media/frames/src/asinc/photo_perforated_vertical.T1.code.F1.as
+   M /trunk/flash/media/frames/src/asinc/photo_rippededge_horizontal.T1.code.F1.as
+   M /trunk/flash/media/frames/src/asinc/photo_rippededge_vertical.T1.code.F1.as
+   M /trunk/flash/media/frames/src/asinc/photo_vertical.T1.code.F1.as
+   M /trunk/flash/media/frames/src/asinc/photo_withcorners_horizontal.T1.code.F1.as
+   M /trunk/flash/media/frames/src/asinc/photo_withcorners_vertical.T1.code.F1.as
+   M /trunk/flash/media/frames/src/asinc/polaroid_frame.T1.code.F1.as
+   M /trunk/flash/media/frames/src/asinc/polaroid_frame_fr.T1.code.F1.as
+   M /trunk/flash/media/frames/src/asinc/roundedsquare_frames.T1.code.F1.as
+   M /trunk/flash/media/frames/src/asinc/roundedsquare_frames_fr.T1.code.F1.as
+   M /trunk/flash/media/frames/src/asinc/simple_panoramic_horizontal.T1.code.F1.as
+   M /trunk/flash/media/frames/src/asinc/simple_small_horizontal.T1.code.F1.as
+   M /trunk/flash/media/frames/src/asinc/simple_small_vertical.T1.code.F1.as
+   M /trunk/flash/media/frames/src/asinc/simple_wide_horizontal.T1.code.F1.as
+   M /trunk/flash/media/frames/src/asinc/square_frames.T1.code.F1.as
+   M /trunk/flash/media/frames/src/asinc/square_frames_fr.T1.code.F1.as
+   M /trunk/flash/media/frames/src/asinc/star_frames.T1.code.F1.as
+   M /trunk/flash/media/frames/src/asinc/star_frames_fr.T1.code.F1.as
+
+media/frames: Converted Frame 1 code to use common (frames.T1.code.F1.as) include after local changes
+
+
+------------------------------------------------------------------------
+r9486 | chris | 2008-05-20 16:02:36 +0100 (Tue, 20 May 2008) | 23 lines
+Changed paths:
+   M /trunk/flash/media/frames/src/asinc/frames.T1.code.decodeloop.as
+   M /trunk/flash/media/frames/src/asinc/frames.T1.code.load.as
+   M /trunk/flash/media/frames/src/asinc/frames.T1.code.loadimage.as
+   M /trunk/flash/media/frames/src/asinc/frames.T1.code.savedat.as
+   M /trunk/flash/media/frames/src/fla/button.fla
+   M /trunk/flash/media/frames/src/fla/button_heart.fla
+   M /trunk/flash/media/frames/src/fla/button_square.fla
+   M /trunk/flash/media/frames/src/fla/circle_frames.fla
+   M /trunk/flash/media/frames/src/fla/circle_frames_fr.fla
+   M /trunk/flash/media/frames/src/fla/laptop.fla
+   M /trunk/flash/media/frames/src/fla/oval_frames.fla
+   M /trunk/flash/media/frames/src/fla/oval_frames_fr.fla
+   M /trunk/flash/media/frames/src/fla/ovalwide_frames.fla
+   M /trunk/flash/media/frames/src/fla/ovalwide_frames_fr.fla
+   M /trunk/flash/media/frames/src/fla/photo_horizontal.fla
+   M /trunk/flash/media/frames/src/fla/photo_passport.fla
+   M /trunk/flash/media/frames/src/fla/photo_perforated_horizontal.fla
+   M /trunk/flash/media/frames/src/fla/photo_perforated_vertical.fla
+   M /trunk/flash/media/frames/src/fla/photo_rippededge_horizontal.fla
+   M /trunk/flash/media/frames/src/fla/photo_rippededge_vertical.fla
+   M /trunk/flash/media/frames/src/fla/photo_vertical.fla
+   M /trunk/flash/media/frames/src/fla/photo_withcorners_horizontal.fla
+   M /trunk/flash/media/frames/src/fla/photo_withcorners_vertical.fla
+   M /trunk/flash/media/frames/src/fla/polaroid_frame.fla
+   M /trunk/flash/media/frames/src/fla/polaroid_frame_fr.fla
+   M /trunk/flash/media/frames/src/fla/roundedsquare_frames.fla
+   M /trunk/flash/media/frames/src/fla/roundedsquare_frames_fr.fla
+   M /trunk/flash/media/frames/src/fla/simple_panoramic_horizontal.fla
+   M /trunk/flash/media/frames/src/fla/simple_small_horizontal.fla
+   M /trunk/flash/media/frames/src/fla/simple_small_vertical.fla
+   M /trunk/flash/media/frames/src/fla/simple_wide_horizontal.fla
+   M /trunk/flash/media/frames/src/fla/square_frames.fla
+   M /trunk/flash/media/frames/src/fla/square_frames_fr.fla
+   M /trunk/flash/media/frames/src/fla/star_frames.fla
+   M /trunk/flash/media/frames/src/fla/star_frames_fr.fla
+
+Updated media/frames to target Flash Player 8, cf bug 2386
+
+TESTING:
+  Check that code still works as there have been extensive changes
+  Comfirm PNG and GIF can be displayed
+  Check that image smoothing is active
+  NOTE: Both English and French should be tested
+
+Related to bug 2386: Images effects do not display PNG or GIF files
+
+frames.T1.code.decodeloop.as:
+  Replaced retired add operator with plus
+frames.T1.code.load.as:
+  Replaced retired add operator with plus
+  Updated onLoadInit to force image smoothing
+frames.T1.code.loadimage.as:
+  Replaced retired add operator with plus
+frames.T1.code.savedat.as
+  Replaced retired add operator with plus
+
+button.fla, etc:
+  Updated publish profile to target Flash Player 8
+
+------------------------------------------------------------------------
+r9487 | adam | 2008-05-20 17:55:10 +0100 (Tue, 20 May 2008) | 2 lines
+Changed paths:
+   M /trunk/sitemaker/perl/modules/Sitemaker/Handler/Container.pm
+   M /trunk/sitemaker/perl/modules/Sitemaker/Handler/Corefunc.pm
+   M /trunk/sitemaker/perl/modules/Sitemaker/Handler/Email.pm
+   M /trunk/sitemaker/perl/modules/Sitemaker/Handler/Login.pm
+   M /trunk/sitemaker/perl/modules/Sitemaker/Handler/Media.pm
+   M /trunk/sitemaker/perl/modules/Sitemaker/Handler/Partner.pm
+   M /trunk/sitemaker/perl/modules/Sitemaker/Handler/User.pm
+
+Rationalise GEN_API handlers - remove unused main() function
+
+------------------------------------------------------------------------
+r9488 | eirik | 2008-05-20 19:08:36 +0100 (Tue, 20 May 2008) | 1 line
+Changed paths:
+   M /trunk/partner/en/newlaunch/config/newlaunch.sql
+   M /trunk/partner/en/qxmaker/config/qxmaker.sql
+   M /trunk/partner/en/surfstudio/config/surfstudio.sql
+   M /trunk/partner/en/thlwebdesign/config/thlwebdesign.sql
+   D /trunk/partner/en/thlwebdesign/html/images/Thumbs.db
+
+CONFIG: Partner setup SQL fixed for output parameter, removed spurious Thumbs.db
+------------------------------------------------------------------------
+r9489 | adam | 2008-05-21 08:32:03 +0100 (Wed, 21 May 2008) | 3 lines
+Changed paths:
+   M /trunk/sitemaker/perl/cgi/private/pricemgr.cgi
+
+Charlie: allow setting of AdWords voucher value on products
+trac 35, 36
+
+------------------------------------------------------------------------
+r9490 | adam | 2008-05-21 09:22:58 +0100 (Wed, 21 May 2008) | 2 lines
+Changed paths:
+   M /trunk/sitemaker/perl/scripts/faqindex.pl
+
+perltidy on faq builder script
+
+------------------------------------------------------------------------
+r9491 | chris | 2008-05-21 09:27:49 +0100 (Wed, 21 May 2008) | 6 lines
+Changed paths:
+   M /trunk/flash/util/src/jsfl/com/greekattic/build/ActionScriptExportApplication.jsfl
+
+ActionScriptExportApplication.jsfl: Added ability to supply common name for include files
+
+ActionScriptExportApplication.jsfl:
+  Added setCommonFile to generate name for include file
+  Updated report to allow replacement of action script with a common include
+
+------------------------------------------------------------------------
+r9492 | adam | 2008-05-21 10:25:39 +0100 (Wed, 21 May 2008) | 2 lines
+Changed paths:
+   M /trunk/sitemaker/perl/cgi/private/usermgr.cgi
+
+Partial fix for bug 2365 -search by order id
+
+------------------------------------------------------------------------
+r9493 | gruff | 2008-05-21 10:40:36 +0100 (Wed, 21 May 2008) | 1 line
+Changed paths:
+   M /trunk/sitemaker/db/alter/WIP/adwords_vouchers/import_vouchers.xls
+
+adwords voucher import helper
+
+------------------------------------------------------------------------
+r9495 | kevin | 2008-05-21 10:59:51 +0100 (Wed, 21 May 2008) | 1 line
+Changed paths:
+   M /trunk/partner/fr/webliberte/config/partner.css
+
+changed partner.css to match colours of new french partner webliberte
+------------------------------------------------------------------------
+r9496 | kevin | 2008-05-21 11:01:12 +0100 (Wed, 21 May 2008) | 1 line
+Changed paths:
+   M /trunk/partner/en/moonfruit/html/images/promoGoogleVoucher.jpg
+
+minor design change to promoGoogleVoucher.jpg for mf.com
+------------------------------------------------------------------------
+r9497 | adam | 2008-05-21 11:07:06 +0100 (Wed, 21 May 2008) | 2 lines
+Changed paths:
+   M /trunk/sitemaker/perl/cgi/private/usermgr.cgi
+
+Bug 2283 - charlie enhancement to email search results page
+
+------------------------------------------------------------------------
+r9498 | adam | 2008-05-21 11:20:34 +0100 (Wed, 21 May 2008) | 3 lines
+Changed paths:
+   M /trunk/sitemaker/perl/cgi/private/usermgr.cgi
+
+Bug 2229 - updating user in charlie sets age/occupation.
+Can now set as 'not set', too
+
+------------------------------------------------------------------------
+r9499 | adam | 2008-05-21 12:37:19 +0100 (Wed, 21 May 2008) | 2 lines
+Changed paths:
+   M /trunk/sitemaker/perl/cgi/private/usermgr.cgi
+
+bug 2177 - show community count in email search list, linked to communities section
+
+------------------------------------------------------------------------
+r9500 | chris | 2008-05-21 13:24:39 +0100 (Wed, 21 May 2008) | 74 lines
+Changed paths:
+   M /trunk/flash/media/frames/src/asinc/button.T1.code.F1.as
+   M /trunk/flash/media/frames/src/asinc/button_heart.T1.code.F1.as
+   M /trunk/flash/media/frames/src/asinc/button_square.T1.code.F1.as
+   M /trunk/flash/media/frames/src/asinc/circle_frames.T1.code.F1.as
+   M /trunk/flash/media/frames/src/asinc/circle_frames_fr.T1.code.F1.as
+   M /trunk/flash/media/frames/src/asinc/frames.T1.code.F1.as
+   M /trunk/flash/media/frames/src/asinc/laptop.T1.code.F1.as
+   M /trunk/flash/media/frames/src/asinc/oval_frames.T1.code.F1.as
+   M /trunk/flash/media/frames/src/asinc/oval_frames_fr.T1.code.F1.as
+   M /trunk/flash/media/frames/src/asinc/ovalwide_frames.T1.code.F1.as
+   M /trunk/flash/media/frames/src/asinc/ovalwide_frames_fr.T1.code.F1.as
+   M /trunk/flash/media/frames/src/asinc/photo_horizontal.T1.code.F1.as
+   M /trunk/flash/media/frames/src/asinc/photo_passport.T1.code.F1.as
+   M /trunk/flash/media/frames/src/asinc/photo_perforated_horizontal.T1.code.F1.as
+   M /trunk/flash/media/frames/src/asinc/photo_perforated_vertical.T1.code.F1.as
+   M /trunk/flash/media/frames/src/asinc/photo_rippededge_horizontal.T1.code.F1.as
+   M /trunk/flash/media/frames/src/asinc/photo_rippededge_vertical.T1.code.F1.as
+   M /trunk/flash/media/frames/src/asinc/photo_vertical.T1.code.F1.as
+   M /trunk/flash/media/frames/src/asinc/photo_withcorners_horizontal.T1.code.F1.as
+   M /trunk/flash/media/frames/src/asinc/photo_withcorners_vertical.T1.code.F1.as
+   M /trunk/flash/media/frames/src/asinc/polaroid_frame.T1.code.F1.as
+   M /trunk/flash/media/frames/src/asinc/polaroid_frame_fr.T1.code.F1.as
+   M /trunk/flash/media/frames/src/asinc/roundedsquare_frames.T1.code.F1.as
+   M /trunk/flash/media/frames/src/asinc/roundedsquare_frames_fr.T1.code.F1.as
+   M /trunk/flash/media/frames/src/asinc/simple_panoramic_horizontal.T1.code.F1.as
+   M /trunk/flash/media/frames/src/asinc/simple_small_horizontal.T1.code.F1.as
+   M /trunk/flash/media/frames/src/asinc/simple_small_vertical.T1.code.F1.as
+   M /trunk/flash/media/frames/src/asinc/simple_wide_horizontal.T1.code.F1.as
+   M /trunk/flash/media/frames/src/asinc/square_frames.T1.code.F1.as
+   M /trunk/flash/media/frames/src/asinc/square_frames_fr.T1.code.F1.as
+   M /trunk/flash/media/frames/src/asinc/star_frames.T1.code.F1.as
+   M /trunk/flash/media/frames/src/asinc/star_frames_fr.T1.code.F1.as
+
+media/frames: Fix up "options" data incorrectly removed when moving to common code.
+
+TESTING: The correct number of styles are available (was just three)
+
+button.T1.code.F1.as:
+  Added options 3
+button_heart.T1.code.F1.as:
+  Added options 3
+button_square.T1.code.F1.as:
+  Added options 3
+circle_frames.T1.code.F1.as:
+  Added options 15
+circle_frames_fr.T1.code.F1.as:
+  Added options 15
+frames.T1.code.F1.as:
+  Updated comments
+  Moved options up with the description of the other options
+laptop.T1.code.F1.as:
+  Added options 3
+oval_frames.T1.code.F1.as:
+  Added options 16
+oval_frames_fr.T1.code.F1.as:
+  Added options 16
+ovalwide_frames.T1.code.F1.as:
+  Added options 16
+ovalwide_frames_fr.T1.code.F1.as:
+  Added options 16
+photo_horizontal.T1.code.F1.as:
+  Added options 3
+photo_passport.T1.code.F1.as:
+  Added options 3
+photo_perforated_horizontal.T1.code.F1.as:
+  Added options 3
+photo_perforated_vertical.T1.code.F1.as:
+  Added options 3
+photo_rippededge_horizontal.T1.code.F1.as:
+  Added options 3
+photo_rippededge_vertical.T1.code.F1.as:
+  Added options 3
+photo_vertical.T1.code.F1.as:
+  Added options 3
+photo_withcorners_horizontal.T1.code.F1.as:
+  Added options 3
+photo_withcorners_vertical.T1.code.F1.as:
+  Added options 3
+polaroid_frame.T1.code.F1.as:
+  Added options 3
+polaroid_frame_fr.T1.code.F1.as:
+  Added options 3
+roundedsquare_frames.T1.code.F1.as:
+  Added options 16
+roundedsquare_frames_fr.T1.code.F1.as:
+  Added options 16
+simple_panoramic_horizontal.T1.code.F1.as:
+  Added options 3
+simple_small_horizontal.T1.code.F1.as:
+  Added options 3
+simple_small_vertical.T1.code.F1.as:
+  Added options 3
+simple_wide_horizontal.T1.code.F1.as:
+  Added options 3
+square_frames.T1.code.F1.as:
+  Added options 16
+square_frames_fr.T1.code.F1.as:
+  Added options 16
+star_frames.T1.code.F1.as:
+  Added options 16
+star_frames_fr.T1.code.F1.as:
+  Added options 16
+
+
+
+
+
+
+------------------------------------------------------------------------
+r9503 | adam | 2008-05-21 14:44:11 +0100 (Wed, 21 May 2008) | 2 lines
+Changed paths:
+   M /trunk/sitemaker/perl/cgi/private/usermgr.cgi
+
+Tweaks to charlie search results page
+
+------------------------------------------------------------------------
+r9504 | adam | 2008-05-21 15:01:13 +0100 (Wed, 21 May 2008) | 2 lines
+Changed paths:
+   M /trunk/sitemaker/perl/modules/Sitemaker/Handler/Community.pm
+   M /trunk/sitemaker/perl/modules/Sitemaker/Handler/Custom.pm
+   M /trunk/sitemaker/perl/modules/Sitemaker/Handler/Directory.pm
+   M /trunk/sitemaker/perl/modules/Sitemaker/Handler/Events.pm
+   M /trunk/sitemaker/perl/modules/Sitemaker/Handler/Forum.pm
+   M /trunk/sitemaker/perl/modules/Sitemaker/Handler/News.pm
+   M /trunk/sitemaker/perl/modules/Sitemaker/Handler/Page.pm
+   M /trunk/sitemaker/perl/modules/Sitemaker/Handler/Widget.pm
+   M /trunk/sitemaker/perl/modules/Sitemaker/Handler/Wizard.pm
+
+Update AUTH_API style handlers to remove deprecated main() entry point
+
+------------------------------------------------------------------------
+r9505 | adam | 2008-05-21 15:20:59 +0100 (Wed, 21 May 2008) | 2 lines
+Changed paths:
+   M /trunk/sitemaker/perl/modules/Component.pm
+
+Prevent some undef warnings in Component.pm
+
+------------------------------------------------------------------------
+r9506 | adam | 2008-05-21 15:50:41 +0100 (Wed, 21 May 2008) | 2 lines
+Changed paths:
+   M /trunk/sitemaker/perl/modules/Sitemaker/Handler/Media.pm
+   M /trunk/sitemaker/perl/modules/Userfile.pm
+
+Fix undef warnings and use of <=> rather than cmp in sorts for media handler
+
+------------------------------------------------------------------------
+r9507 | adam | 2008-05-21 16:38:51 +0100 (Wed, 21 May 2008) | 2 lines
+Changed paths:
+   M /trunk/sitemaker/perl/modules/Email.pm
+   M /trunk/sitemaker/perl/modules/Sitemaker/Handler/User.pm
+   M /trunk/sitemaker/perl/modules/Sitewide.pm
+
+Standardise on using Email::check_email_addr for email address checking
+
+------------------------------------------------------------------------
+r9508 | ossie | 2008-05-21 17:24:22 +0100 (Wed, 21 May 2008) | 6 lines
+Changed paths:
+   M /trunk/flash/sitemaker/domains/src/as/com/greekattic/domains/DomainsModule.as
+   M /trunk/flash/sitemaker/domains/src/as/com/greekattic/domains/IDomainService.as
+   M /trunk/flash/sitemaker/domains/src/as/com/greekattic/domains/manage/ManageController.as
+   A /trunk/flash/sitemaker/domains/src/as/com/greekattic/domains/manage/action/GetDomainEmailForwards.as (from /trunk/flash/sitemaker/domains/src/as/com/greekattic/domains/manage/action/GoManage.as:9484)
+   D /trunk/flash/sitemaker/domains/src/as/com/greekattic/domains/manage/action/GoManage.as
+   M /trunk/flash/sitemaker/domains/src/as/com/greekattic/domains/manage/action/InitDomainRefresh.as
+   A /trunk/flash/sitemaker/domains/src/as/com/greekattic/domains/manage/action/SetDomainEmailForwards.as
+   M /trunk/flash/sitemaker/domains/src/as/com/greekattic/domains/manage/action/UpdateDomainSettings.as
+   M /trunk/flash/sitemaker/domains/src/as/com/greekattic/domains/manage/action/VerifyNewAlias.as
+   M /trunk/flash/sitemaker/domains/src/as/com/greekattic/domains/manage/model/DomainItem.as
+   A /trunk/flash/sitemaker/domains/src/as/com/greekattic/domains/manage/model/MailForward.as
+   M /trunk/flash/sitemaker/domains/src/as/com/greekattic/domains/manage/view/DomainListItem.as
+   A /trunk/flash/sitemaker/domains/src/as/com/greekattic/domains/manage/view/EmailContainer.as (from /trunk/flash/sitemaker/domains/src/as/com/greekattic/domains/manage/view/MailBoxContainer.as:9460)
+   M /trunk/flash/sitemaker/domains/src/as/com/greekattic/domains/manage/view/ListDomains.as
+   D /trunk/flash/sitemaker/domains/src/as/com/greekattic/domains/manage/view/MailBoxContainer.as
+   M /trunk/flash/sitemaker/domains/src/as/com/greekattic/domains/manage/view/MailBoxView.as
+   M /trunk/flash/sitemaker/domains/src/as/com/greekattic/domains/manage/view/ManageDomain.as
+   M /trunk/flash/sitemaker/domains/src/as/com/greekattic/domains/manage/view/NoDomains.as
+   M /trunk/flash/sitemaker/domains/src/as/com/greekattic/domains/manage/view/WebmailView.as
+   M /trunk/flash/sitemaker/domains/src/as/com/greekattic/domains/register/action/CheckDomains.as
+   M /trunk/flash/sitemaker/domains/src/fla/DomainsModule.fla
+
+As a domain owner, I can setup AND update forwarded email address on my domain
+---
+
+* Now making calls to get email forwarding settings whenever a domain is chosen for management
+* Calling to set email forwarding settings after updating domain settings
+
+------------------------------------------------------------------------
+r9509 | chris | 2008-05-22 09:19:10 +0100 (Thu, 22 May 2008) | 6 lines
+Changed paths:
+   M /trunk/sitemaker/res/email/fr/NEWS_CL.xml
+
+news email: replaced missing space between "sur" and site leaders name
+ - missing from translation memory?
+
+NEWS_CL.xml:
+  Replaced missing space between "sur" and site name
+
+------------------------------------------------------------------------
+r9510 | gruff | 2008-05-22 10:30:10 +0100 (Thu, 22 May 2008) | 1 line
+Changed paths:
+   A /trunk/sitemaker/db/alter/WIP/report_class_as_rank (from /trunk/sitemaker/db/alter/WIP/ReportClassAsRank:9369)
+   M /trunk/sitemaker/db/alter/WIP/report_class_as_rank/ReportClassRankAs.sql
+
+just file/folder renaming to comply with conventions
+------------------------------------------------------------------------
+r9511 | gruff | 2008-05-22 10:30:55 +0100 (Thu, 22 May 2008) | 1 line
+Changed paths:
+   D /trunk/sitemaker/db/alter/WIP/ReportClassAsRank
+
+old folder delete
+------------------------------------------------------------------------
+r9512 | gruff | 2008-05-22 10:31:50 +0100 (Thu, 22 May 2008) | 1 line
+Changed paths:
+   D /trunk/sitemaker/db/alter/WIP/R4.21_general
+   D /trunk/sitemaker/db/alter/WIP/primary_keys
+
+committing deleted files/folders
+------------------------------------------------------------------------
+r9513 | eirik | 2008-05-22 11:25:37 +0100 (Thu, 22 May 2008) | 11 lines
+Changed paths:
+   M /trunk/sitemaker/perl/Sitemaker-Model-Pricing/lib/Sitemaker/Model/Product.pm
+   M /trunk/sitemaker/perl/cgi/private/pricemgr.cgi
+   M /trunk/sitemaker/perl/modules/Sitemaker/Handler/Payments.pm
+
+Incomplete - bug 2399: Column headings not showing on Handzon's Pricing Module 
+http://bugzilla.greekattic.local/show_bug.cgi?id=2399
+
+* Extracted hardcoded adwords voucher values from price manager and
+	put look up table in S::M::Products.pm
+* Changed the use of 'NULL' to '-' as value in CGI so that we can order the labels
+	in the drop down easily
+* Updated Payments.pm to return only the necessary columns for the Pricing Module
+* No longer sending 'product_id' - dependent on change in front end to use 'rank'
+	to look up strings in text bundle (instead of semi-generic package ids)
+
+------------------------------------------------------------------------
+r9514 | gruff | 2008-05-22 12:05:36 +0100 (Thu, 22 May 2008) | 1 line
+Changed paths:
+   D /trunk/sitemaker/db/alter/WIP/report_class_as_rank/ReportClassRankAs.sql
+   A /trunk/sitemaker/db/alter/WIP/report_class_as_rank/report_class_as_rank.sql (from /trunk/sitemaker/db/alter/WIP/report_class_as_rank/ReportClassRankAs.sql:9510)
+
+working version ready for testing reports 
+------------------------------------------------------------------------
+r9515 | adam | 2008-05-22 12:17:41 +0100 (Thu, 22 May 2008) | 4 lines
+Changed paths:
+   M /trunk/sitemaker/perl/cgi/private/communitymgr.cgi
+   M /trunk/sitemaker/perl/modules/Component.pm
+   M /trunk/sitemaker/perl/modules/Serialise.pm
+   M /trunk/sitemaker/perl/modules/Sitemaker/Handler/Community.pm
+   M /trunk/sitemaker/perl/modules/Sitemaker/Handler/Container.pm
+   M /trunk/sitemaker/perl/modules/Sitemaker/Handler/Index.pm
+   M /trunk/sitemaker/perl/modules/Sitemaker/Handler/Wizard.pm
+
+Update Component with retrieve($session, $pageid) and retrieve_all($session)
+to replace new() complexity.
+Updated all calls to use retrieve_all
+
+------------------------------------------------------------------------
+r9516 | adam | 2008-05-22 12:21:07 +0100 (Thu, 22 May 2008) | 2 lines
+Changed paths:
+   M /trunk/sitemaker/perl/modules/Sitemaker/Handler/Community.pm
+
+A rogue Component->retrieve_all slipped through the net...
+
+------------------------------------------------------------------------
+r9517 | eirik | 2008-05-22 12:49:00 +0100 (Thu, 22 May 2008) | 1 line
+Changed paths:
+   M /trunk/sitemaker/perl/modules/Sitemaker/Handler/Payments.pm
+
+Oops - forgot adsense data
+------------------------------------------------------------------------
+r9518 | adam | 2008-05-22 13:08:32 +0100 (Thu, 22 May 2008) | 3 lines
+Changed paths:
+   M /trunk/sitemaker/perl/cgi/private/communitymgr.cgi
+   M /trunk/sitemaker/perl/modules/Component/Unserialise.pm
+   M /trunk/sitemaker/perl/modules/Component.pm
+   M /trunk/sitemaker/perl/modules/Fonts.pm
+   M /trunk/sitemaker/perl/modules/Session.pm
+   M /trunk/sitemaker/perl/modules/Sitemaker/Handler/Community.pm
+   M /trunk/sitemaker/perl/modules/Sitemaker/Handler/Container.pm
+   M /trunk/sitemaker/perl/modules/Sitemaker/Handler/GenHTML.pm
+   M /trunk/sitemaker/perl/modules/Sitemaker/Handler/Index.pm
+   M /trunk/sitemaker/perl/modules/Sitemaker/Handler/Login.pm
+   M /trunk/sitemaker/perl/modules/Sitemaker/Handler/Page.pm
+   M /trunk/sitemaker/perl/modules/Sitemaker/Handler/User.pm
+   M /trunk/sitemaker/perl/modules/Sitemaker/Handler/Wizard.pm
+
+Rest of Component refactor - everything using retrieve() or retrieve_all now.
+Component will now barf if new() is used for anything other than creation.
+
+------------------------------------------------------------------------
+r9519 | adam | 2008-05-22 14:03:00 +0100 (Thu, 22 May 2008) | 2 lines
+Changed paths:
+   M /trunk/sitemaker/perl/modules/GandiAPI.pm
+   M /trunk/sitemaker/perl/modules/Sitemaker/Handler/IDomainService.pm
+   M /trunk/sitemaker/perl/test/IDomainService.t
+
+Bug 2396 - take gandi webmail locale from serverspecific setting
+
+------------------------------------------------------------------------
+r9520 | kevin | 2008-05-22 15:08:12 +0100 (Thu, 22 May 2008) | 1 line
+Changed paths:
+   M /trunk/partner/en/handzon/config/partner.css
+
+changed headingbar text colour in Handzon partner.css to Black.
+------------------------------------------------------------------------
+r9521 | ossie | 2008-05-22 15:59:42 +0100 (Thu, 22 May 2008) | 21 lines
+Changed paths:
+   M /trunk/flash/sitemaker/common/src/as/com/greekattic/service/cgi/CGIGetPackageListRequest.as
+   M /trunk/flash/sitemaker/portal/src/as/com/greekattic/pricing/FeaturesView.as
+   M /trunk/flash/sitemaker/portal/src/as/com/greekattic/pricing/PackageFeature.as
+   M /trunk/flash/sitemaker/portal/src/fla/PricingModule.fla
+   M /trunk/flash/util/src/as/com/greekattic/core/PaymentInfo.as
+
+Fix for Bug 2399 Column headings not showing on Handzon's Pricing Module
+---
+
+Picking out new rank variable from package info JSON object and mapping that to textbundle names from products
+
+Trac: Update pricing module to show Adwords voucher values
+---
+
+* CGIGetPackageListRequest.as
+- Now pulling out the adwords voucher price variable and storing in PaymentInfo object
+
+* PaymentInfo.as
+- Now storing adwords price 
+
+* PackageFeature.as
+- Now holds a 'rank' variable to identify the product
+- advertsFree is now formatted using rank variable
+
+* PricingModule.fla
+- Changed some textbundle entries to correctly map the SiteMaker Product names
+
+------------------------------------------------------------------------
+r9522 | ossie | 2008-05-22 16:02:50 +0100 (Thu, 22 May 2008) | 2 lines
+Changed paths:
+   M /trunk/flash/util/src/as/com/greekattic/util/EmailValidator.as
+
+* EmailValidator.as
+  - Now checks for the presence of space character in email address and identifies it as an illegal character
+------------------------------------------------------------------------
+r9523 | ossie | 2008-05-22 16:09:50 +0100 (Thu, 22 May 2008) | 1 line
+Changed paths:
+   M /trunk/flash/sitemaker/portal/src/fla/PricingModule.fla
+
+Changed an incorrect textbundle key entry from free to SMFree
+------------------------------------------------------------------------
+r9524 | chris | 2008-05-22 17:26:07 +0100 (Thu, 22 May 2008) | 1 line
+Changed paths:
+   M /trunk/flash/media/features/src/fla/newsv4.fla
+
+newsv4.fla: Converted to target Flash Player 8; TODO: add smoothing to image display
+------------------------------------------------------------------------
+r9525 | chris | 2008-05-22 17:40:57 +0100 (Thu, 22 May 2008) | 1 line
+Changed paths:
+   A /trunk/flash/media/features/src/asinc
+   A /trunk/flash/media/features/src/asinc/newsv4.Lloadimage.Layer2.F2.as
+   A /trunk/flash/media/features/src/asinc/newsv4.T1.Layer37.F1.as
+   A /trunk/flash/media/features/src/asinc/newsv4.T1.actions.addimage.as
+   A /trunk/flash/media/features/src/asinc/newsv4.T1.actions.setimage.as
+   M /trunk/flash/media/features/src/fla/newsv4.fla
+
+newsv4.fla: Extracted code including LoadMovie (needs to be converted for smoothing of images when targeted for Flash Player 8)
+------------------------------------------------------------------------
+r9526 | gruff | 2008-05-22 18:03:06 +0100 (Thu, 22 May 2008) | 1 line
+Changed paths:
+   A /trunk/sitemaker/db/alter/34_up_report_class_and_rank_as.sql
+   D /trunk/sitemaker/db/alter/WIP/report_class_as_rank/report_class_as_rank.sql
+
+Tested version of "report class/rank as".
+------------------------------------------------------------------------
+r9527 | ossie | 2008-05-22 18:03:49 +0100 (Thu, 22 May 2008) | 1 line
+Changed paths:
+   M /trunk/flash/framework/components/src/as/com/greekattic/components/V4InputFieldAdapter.as
+
+Sending a flag into setEnabled() to say if input field is being used from Portal. Disabling input field in portal should leave background white but gray out text.
+------------------------------------------------------------------------
+r9528 | gruff | 2008-05-22 18:06:14 +0100 (Thu, 22 May 2008) | 1 line
+Changed paths:
+   D /trunk/sitemaker/db/alter/WIP/report_class_as_rank
+
+tidy up
+------------------------------------------------------------------------
+r9529 | ossie | 2008-05-22 18:31:29 +0100 (Thu, 22 May 2008) | 9 lines
+Changed paths:
+   M /trunk/flash/sitemaker/domains/src/as/com/greekattic/domains/register/view/PrimaryDetails.as
+   M /trunk/flash/sitemaker/domains/src/fla/DomainsModule.fla
+
+Fix for Bug 2391 First name and last name fields should not accept input if details already exist
+---
+
+* PrimaryDetails.as
+ - Checks if the user has a Gandi handle and therefore disables first and last name fields so user cannot edit them. This is because 
+   Gandi API does not accept changes first and last names.
+
+* DomainsModule.fla
+ - Corrected textbundle entry: noCity, to say 'you must enter a city' instead of 'post code'
+------------------------------------------------------------------------
+r9530 | chris | 2008-05-22 18:46:17 +0100 (Thu, 22 May 2008) | 1 line
+Changed paths:
+   M /trunk/flash/media/features/src/fla/newsv4.fla
+
+newsv4.fla: Fixed bad Layer37 path
+------------------------------------------------------------------------
+r9531 | chris | 2008-05-22 20:56:08 +0100 (Thu, 22 May 2008) | 20 lines
+Changed paths:
+   M /trunk/flash/media/features/src/asinc/newsv4.Lloadimage.Layer2.F2.as
+   M /trunk/flash/media/features/src/asinc/newsv4.T1.Layer37.F1.as
+   M /trunk/flash/media/features/src/asinc/newsv4.T1.actions.addimage.as
+   M /trunk/flash/media/features/src/asinc/newsv4.T1.actions.setimage.as
+
+newsv4: Updated to smooth image display
+
+TESTING: Check that display of images in news/blog have been smoothed
+
+newsv4.Lloadimage.Layer2.F2.as:
+  Converted to use MovieClipLoader
+  Added onLoadInit to apply forceSmoothing on target
+newsv4.T1.actions.addimage.as:
+  Converted to use MovieClipLoader
+  Added onLoadInit to apply forceSmoothing on target
+newsv4.T1.actions.setimage.as:
+  Converted to use MovieClipLoader
+  Added onLoadInit to apply forceSmoothing on target
+newsv4.T1.Layer37.F1.as:
+  Updated logging
+  Fixed generation of storytoshow
+  Fixed swfname - should be taken from xml.attributes.swf
+  Converted to use MovieClipLoader
+  Added onLoadInit to apply forceSmoothing on target
+
+------------------------------------------------------------------------
+r9532 | adam | 2008-05-23 09:34:06 +0100 (Fri, 23 May 2008) | 2 lines
+Changed paths:
+   M /trunk/sitemaker/perl/scripts/DomainsLifecycle.pl
+
+Domains Lifecycle: send message to nabaztag rabbit on domain registration
+
+------------------------------------------------------------------------
+r9533 | eirik | 2008-05-23 11:34:23 +0100 (Fri, 23 May 2008) | 1 line
+Changed paths:
+   A /trunk/partner/fr/webliberte/config/designCategories.xml
+   A /trunk/partner/fr/webliberte/config/templateCategories.xml
+
+Added design and site templates to webliberte partner so they don't get overwritten by generic (which breaks on the Paris servers)
+------------------------------------------------------------------------
+r9534 | dan | 2008-05-23 12:13:12 +0100 (Fri, 23 May 2008) | 2 lines
+Changed paths:
+   M /trunk/sitemaker/res/html/common/sm-swfaddress.js
+
+Bug 2401 - Redirection still occurs if javascript enabled but no flash found.
+
+------------------------------------------------------------------------
+r9535 | eirik | 2008-05-23 13:12:43 +0100 (Fri, 23 May 2008) | 1 line
+Changed paths:
+   A /trunk/partner/en/webfeeder
+   A /trunk/partner/en/webfeeder/build.properties
+   A /trunk/partner/en/webfeeder/config
+   A /trunk/partner/en/webfeeder/config/partner.css
+   A /trunk/partner/en/webfeeder/config/webfeeder.sql
+
+New partner WebFeeder
+------------------------------------------------------------------------
+r9536 | adam | 2008-05-23 14:04:12 +0100 (Fri, 23 May 2008) | 2 lines
+Changed paths:
+   M /trunk/sitemaker/perl/scripts/DomainsLifecycle.pl
+
+Domains Lifecycle: auto-assign domains if user only has one site (trac #100)
+
+------------------------------------------------------------------------
+r9537 | gruff | 2008-05-23 15:13:48 +0100 (Fri, 23 May 2008) | 1 line
+Changed paths:
+   A /trunk/sitemaker/db/alter/WIP/general
+   A /trunk/sitemaker/db/alter/WIP/general/R4.22_general_up.sql
+
+Refactor sp_get_user_community_list to return a single result set
+------------------------------------------------------------------------
+r9538 | dan | 2008-05-23 15:43:29 +0100 (Fri, 23 May 2008) | 2 lines
+Changed paths:
+   M /trunk/sitemaker/perl/Sitemaker-Data/lib/Sitemaker/Render/HTML.pm
+
+HTML Rendering: Textboxes with a single strong with an em inside, and between 4 and 128 characters are now be rendered as a h3. (see regexp)
+
+------------------------------------------------------------------------
+r9539 | dan | 2008-05-23 16:14:53 +0100 (Fri, 23 May 2008) | 2 lines
+Changed paths:
+   M /trunk/sitemaker/perl/Sitemaker-Data/lib/Sitemaker/Render/HTML/Group.pm
+
+HTML Rendering: stopped Groups from adding a comment saying Group Head into the HTML, as it's a pointless waste of space.
+
+------------------------------------------------------------------------
+r9540 | AndySiddons | 2008-05-23 16:21:50 +0100 (Fri, 23 May 2008) | 1 line
+Changed paths:
+   M /trunk/partner/en/thlwebdesign/html/aboutus.html
+   M /trunk/partner/en/thlwebdesign/html/build.html
+   A /trunk/partner/en/thlwebdesign/html/images/altdomainregabout.jpg
+   A /trunk/partner/en/thlwebdesign/html/images/domainregabout.jpg
+   M /trunk/partner/en/thlwebdesign/html/index.html
+   M /trunk/partner/en/thlwebdesign/html/pricing.html
+   M /trunk/partner/en/thlwebdesign/html/tour.html
+   M /trunk/partner/en/thlwebdesign/html/youraccount.html
+
+changed about us tab to domain registration/ domains
+------------------------------------------------------------------------
+r9541 | adam | 2008-05-23 16:28:03 +0100 (Fri, 23 May 2008) | 2 lines
+Changed paths:
+   M /trunk/sitemaker/perl/Sitemaker-DAO/lib/Sitemaker/CommunityDAO.pm
+   M /trunk/sitemaker/perl/Sitemaker-DAO/lib/Sitemaker/SybaseDAO/Community.pm
+   M /trunk/sitemaker/perl/modules/Sitemaker/Handler/Corefunc.pm
+   M /trunk/sitemaker/perl/test/corefunc.t
+
+Migrate sp_search_communities to use DAO
+
+------------------------------------------------------------------------
+r9542 | ossie | 2008-05-23 17:26:05 +0100 (Fri, 23 May 2008) | 10 lines
+Changed paths:
+   M /trunk/flash/sitemaker/account/src/as/com/greekattic/accounts/ExtrasView.as
+   M /trunk/flash/sitemaker/account/src/as/com/greekattic/accounts/adwords/ClaimedGoogleVoucherView.as
+   M /trunk/flash/sitemaker/account/src/as/com/greekattic/accounts/adwords/UnclaimedGoogleVoucherView.as
+   M /trunk/flash/sitemaker/account/src/fla/AccountExtras.fla
+
+* ExtrasView.as
+ - Added more vertical spacing to layout manager
+
+* ClaimedVoucherView.as and UnclaimedGoogleVoucherView.as
+ - Added reference to the Google logo button and made it clickable to go to the AdWords website
+
+* AccountExtras.fla
+ - Now using a smaller Google AdWords logo
+ - Aligned Google text to match up with hyper submit text
+ - Made Hypersubmit text size 12 
+------------------------------------------------------------------------
+r9543 | adam | 2008-05-23 17:38:04 +0100 (Fri, 23 May 2008) | 7 lines
+Changed paths:
+   M /trunk/sitemaker/perl/test/IDomainService.t
+   M /trunk/sitemaker/perl/test/TestSMCGI.pm
+   M /trunk/sitemaker/perl/test/comment.pl
+
+More test refactoring to use Externalisable objects.
+Removed package definitions from IDomainService.t - now in
+TestSMCGI.pm
+Updated comment.pl to use objects directly
+Refactored readExternalisable to use HashTable or object.
+removed writeExternalisable - not needed now we have TO_JSON

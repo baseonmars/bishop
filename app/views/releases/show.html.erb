@@ -1,0 +1,25 @@
+<p>
+  <b>Updated at:</b>
+  <%=h @release.updated_at %>
+</p>
+
+<p>
+  <b>Created at:</b>
+  <%=h @release.created_at %>
+</p>
+
+<p>
+  <b>Name:</b>
+  <%=h @release.name %>
+</p>
+
+<p>
+  <b>Comments:</b>
+  <%=h @release.comments %>
+</p>
+
+<h2>Going in</h2>
+<%= %>
+<%= link_to 'Edit', edit_release_path(@release) %> |
+<%= link_to 'Add commits', new_release_commit_path(@release) %> | 
+<%= link_to 'Back', releases_path %>

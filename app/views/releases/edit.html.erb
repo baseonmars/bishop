@@ -1,0 +1,28 @@
+<h1>Editing release</h1>
+
+<%= error_messages_for :release %>
+
+<% form_for(@release) do |f| %>
+
+  <p>
+    <b>Name</b><br />
+    <%= f.text_field :name %>
+  </p>
+
+  <p>
+    <b>Comments</b><br />
+    <%= f.text_area :comments %>
+  </p>
+
+  <p>
+    <b>Created at</b><br />
+    <%= f.datetime_select :created_at %>
+  </p>
+
+  <p>
+    <%= f.submit "Update" %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @release %> |
+<%= link_to 'Back', releases_path %>

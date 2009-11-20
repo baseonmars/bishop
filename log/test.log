@@ -1,0 +1,93 @@
+# Logfile created on Mon Nov 24 17:01:35 +0000 2008  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "commits" [0m
+
+
+Processing CommitsController#create (for 0.0.0.0 at 2008-11-24 17:04:24) [POST]
+  Parameters: {"commit"=>{}}
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "commits" [0m
+  [4;36;1mCommit Load (0.3ms)[0m   [0;1mSELECT * FROM "commits" WHERE ("commits"."id" = 953125641) [0m
+
+
+Processing CommitsController#destroy (for 0.0.0.0 at 2008-11-24 17:04:24) [DELETE]
+  Parameters: {"id"=>"953125641"}
+  [4;35;1mCommit Load (0.4ms)[0m   [0mSELECT * FROM "commits" WHERE ("commits"."id" = 953125641) [0m
+
+
+Processing CommitsController#edit (for 0.0.0.0 at 2008-11-24 17:04:24) [GET]
+  Parameters: {"id"=>"953125641"}
+
+
+Processing CommitsController#index (for 0.0.0.0 at 2008-11-24 17:04:24) [GET]
+
+
+Processing CommitsController#new (for 0.0.0.0 at 2008-11-24 17:04:24) [GET]
+  [4;36;1mCommit Load (0.4ms)[0m   [0;1mSELECT * FROM "commits" WHERE ("commits"."id" = 953125641) [0m
+
+
+Processing CommitsController#show (for 0.0.0.0 at 2008-11-24 17:04:24) [GET]
+  Parameters: {"id"=>"953125641"}
+  [4;35;1mCommit Load (0.3ms)[0m   [0mSELECT * FROM "commits" WHERE ("commits"."id" = 953125641) [0m
+
+
+Processing CommitsController#update (for 0.0.0.0 at 2008-11-24 17:04:24) [PUT]
+  Parameters: {"commit"=>{}, "id"=>"953125641"}
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "releases" [0m
+
+
+Processing ReleasesController#create (for 0.0.0.0 at 2008-11-24 17:04:24) [POST]
+  Parameters: {"release"=>{}}
+  [4;35;1mRelease Create (0.4ms)[0m   [0mINSERT INTO "releases" ("name", "updated_at", "comments", "testing_text", "changes_text", "created_at") VALUES(NULL, '2008-11-24 17:04:24', NULL, NULL, NULL, '2008-11-24 17:04:24')[0m
+Redirected to http://test.host/releases/3/commits/new
+Completed in 5ms (DB: 4) | 302 Found [http://test.host/releases?]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "releases" [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "releases" [0m
+  [4;36;1mRelease Load (0.2ms)[0m   [0;1mSELECT * FROM "releases" WHERE ("releases"."id" = 1) [0m
+
+
+Processing ReleasesController#destroy (for 0.0.0.0 at 2008-11-24 17:04:24) [DELETE]
+  Parameters: {"id"=>"1"}
+  [4;35;1mRelease Load (0.2ms)[0m   [0mSELECT * FROM "releases" WHERE ("releases"."id" = 1) [0m
+  [4;36;1mRelease Destroy (0.2ms)[0m   [0;1mDELETE FROM "releases" WHERE "id" = 1[0m
+Redirected to http://test.host/releases
+Completed in 1ms (DB: 1) | 302 Found [http://test.host/releases/1]
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM "releases" [0m
+  [4;36;1mRelease Load (0.3ms)[0m   [0;1mSELECT * FROM "releases" WHERE ("releases"."id" = 1) [0m
+
+
+Processing ReleasesController#edit (for 0.0.0.0 at 2008-11-24 17:04:24) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mRelease Load (0.2ms)[0m   [0mSELECT * FROM "releases" WHERE ("releases"."id" = 1) [0m
+Rendering template within layouts/releases
+Rendering releases/edit
+Completed in 7ms (View: 6, DB: 1) | 200 OK [http://test.host/releases/1/edit]
+
+
+Processing ReleasesController#index (for 0.0.0.0 at 2008-11-24 17:04:24) [GET]
+  [4;36;1mRelease Load (0.4ms)[0m   [0;1mSELECT * FROM "releases" [0m
+Rendering template within layouts/releases
+Rendering releases/index
+Completed in 2ms (View: 1, DB: 0) | 200 OK [http://test.host/releases]
+
+
+Processing ReleasesController#new (for 0.0.0.0 at 2008-11-24 17:04:24) [GET]
+Rendering template within layouts/releases
+Rendering releases/new
+Completed in 1ms (View: 1, DB: 0) | 200 OK [http://test.host/releases/new]
+  [4;35;1mRelease Load (0.3ms)[0m   [0mSELECT * FROM "releases" WHERE ("releases"."id" = 1) [0m
+
+
+Processing ReleasesController#show (for 0.0.0.0 at 2008-11-24 17:04:24) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mRelease Load (0.2ms)[0m   [0;1mSELECT * FROM "releases" WHERE ("releases"."id" = 1) [0m
+  [4;35;1mCommit Load (0.3ms)[0m   [0mSELECT * FROM "commits" WHERE ("commits".release_id = 1 AND (status = 'goes_in')) [0m
+  [4;36;1mCommit Load (0.1ms)[0m   [0;1mSELECT * FROM "commits" WHERE ("commits".release_id = 1 AND (status = 'blocked')) [0m
+Rendering template within layouts/releases
+Rendering releases/show
+Completed in 3ms (View: 1, DB: 1) | 200 OK [http://test.host/releases/1]
+  [4;35;1mRelease Load (0.3ms)[0m   [0mSELECT * FROM "releases" WHERE ("releases"."id" = 1) [0m
+
+
+Processing ReleasesController#update (for 0.0.0.0 at 2008-11-24 17:04:24) [PUT]
+  Parameters: {"id"=>"1", "release"=>{}}
+  [4;36;1mRelease Load (0.2ms)[0m   [0;1mSELECT * FROM "releases" WHERE ("releases"."id" = 1) [0m
+Redirected to #<Release:0x33741e8>
+Completed in 1ms (DB: 0) | 302 Found [http://test.host/releases/1?]

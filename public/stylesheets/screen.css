@@ -1,0 +1,349 @@
+body {
+color: #666;
+font-size: 62.5%;
+font-family: "Lucida Grande",Arial,sans-serif;
+}
+h1,h2,h3,h4,h5,h6 {
+font-weight: normal;
+}
+h1 {
+font-size: 3.6em;
+}
+h2 {
+font-size: 2.4em;
+}
+h3 {
+font-size: 1.8em;
+}
+h4 {
+font-size: 1.4em;
+}
+h5 {
+font-size: 1.2em;
+font-style: italic;
+}
+h6 {
+font-size: 1.2em;
+text-decoration: underline;
+}
+#commits {
+}
+.commit {
+border-bottom: 2px solid #eee;
+margin: 10px 0;
+padding: 10px;
+max-width: 800px;
+position: relative;
+}
+.commit .summary {
+border-bottom: 4px solid #111;
+padding-bottom: 6px;
+padding-left: 12px;
+margin-left: -12px;
+}
+.commit .summary textarea {
+display: block;
+}
+.commit pre {
+background: transparent;
+font-family: "Lucida Grande",Arial,sans-serif;
+margin: 1em 0;
+padding: 0;
+overflow: hidden;
+font-size: 1.2em;
+}
+.commit .controls {
+position: absolute;
+top: 12px;
+right: 12px;
+padding-top: 3.6em;
+margin-top: 12px;
+text-align: right;
+}
+.commit .controls form {
+float: right;
+}
+.commit .controls input[type="checkbox"] {
+vertical-align: middle;
+}
+.controls .update-messages {/* float:left;*/
+}
+.commit h2 {
+font-family: Georgia,serif;
+font-size: 6em;
+color: #111;
+position: absolute;
+top: 24px;
+margin: 0;
+}
+.commit .revision-no {
+}
+.commit .user {
+text-transform: Capitalize;
+}
+.commit .date {
+font-size: 1.8em;
+color: #111;
+padding-top: 3.333em;
+margin-top: 0px;
+}
+.commit .release-note {
+}
+.commit.processed-true .summary h2,.commit.processed-true .summary .date {
+color: #aaa !important;
+}
+.commit.processed-true .summary {
+border-bottom: 4px solid #aaa;
+}
+.commit.processed-true .details {
+display: none;
+}
+.accordion_content.filled-false {
+background-color: #eee;
+color: #777;
+}
+.toggle-link {
+margin: 0 auto 0 auto;
+}
+#stats {
+font-size: 7em;
+text-align: left;
+margin: 0;
+padding: 0;
+line-height: 1em;
+}
+.accordion_content {
+overflow: hidden;
+width: 100% !important;
+}
+.accordion_toggle {
+}
+.accordion_toggle_active {
+background-color: red;
+}
+.commit .release-note form {
+}
+.commit .release-note textarea {
+border: none;
+margin: 6px 0;
+display: block;
+width: 100%;
+background-color: #eee;
+}
+.commit .files {
+background-image: url(../images/icons/arrow_down.gif);
+background-repeat: no-repeat;
+background-position: bottom right;
+background-color: #ccc;
+color: #333;
+max-height: 5.5em;
+overflow: hidden;
+font-size: 1.8em;
+padding: 12px 0 12px 12px ;
+margin: 12px 0 12px -12px;
+list-style: none;
+font-family: Monaco,Courier,"Courier New",fixed;
+}
+.commit .files.maximized {
+	background-image: url(../images/icons/arrow_up.gif);
+}
+.commit .files li {
+line-height: 1.1;
+}
+.commit .files strong {
+color: #4c36f5;
+}
+.commit .comments {
+color: #111;
+font-size: 1.8em;
+padding: 0;
+margin: 10px 0 0 0;
+}
+.commit .status {
+font-size: 3.6em;
+position: absolute;
+padding-right: 48px;
+top: 12px;
+right: 12px;
+color: #111;
+font-family: Georgia,serif;
+background-repeat: no-repeat;
+background-position: top right;
+min-height: 36px;
+line-height: 100%;
+}
+.commit h3 {
+font-family: Georgia,serif;
+color: #111;
+background-color: #ccc;
+padding: 6px 0px 6px 12px;
+margin: 0 0 0 -12px;
+font-size: 1.8em;
+border-bottom: 1px solid white;
+}
+.status-unset .status {
+background-image: url(/images/icons/unset-36x36.png);
+}
+.status-goes_in .status {
+background-image: url(/images/icons/goes-in-36x36.png);
+}
+.status-blocked .status {
+background-image: url(/images/icons/blocked-36x36.png);
+}
+.status-unset .status span {
+color: black ;
+}
+.status-goes_in .status span {
+color: green ;
+}
+.status-blocked .status span {
+color: blue ;
+}
+.status-blocked {
+background-color: #dfe3f8;
+}
+.status-goes_in {
+background-color: #e5ffe7;
+}
+/* Stats Graph
+---------------------------------*/
+.release-stats {
+width: 15px;
+height: 100%;
+position: fixed;
+top: 0;
+right: 0;
+z-index: 10;
+}
+.release-stats .unset {
+display: inline-block;
+width: 100%;
+height: 99%;
+background-color: red;
+}
+.release-stats .done {
+display: inline-block;
+width: 100%;
+height: 1%;
+background-color: green;
+}
+
+/* Copy Paste buttons
+---------------------------------*/
+
+#copy-paste {
+border: 1px solid #333;
+background-color: #111;
+padding: 5px;
+text-indent: -7px;
+}
+
+/* Utility Styles
+---------------------------------*/
+.clearfix:after {
+content: ".";
+display: block;
+height: 0;
+clear: both;
+visibility: hidden;
+}
+.clearfix {
+display: inline-block ;
+}
+/* Hide from IE Mac \*/
+.clearfix {
+display: block;
+}
+/* End hide from IE Mac */
+/* WUFOO BUTTON CODE
+---------------------------*/
+/* BUTTONS */
+
+.buttons a, .buttons button {
+display: inline-block;/* float:right;*/
+margin:0 0 0 7px;
+background-color: #f5f5f5;
+background-repeat: no-repeat;
+background-position: 3px 50%;
+border: 1px solid #dedede;
+border-top: 1px solid #eee;
+border-left: 1px solid #eee;
+font-family: "Lucida Grande",Tahoma,Arial,Verdana,sans-serif;
+font-size: 100%;
+line-height: 130%;
+text-decoration: none;
+font-weight: bold;
+color: #565656;
+cursor: pointer;
+padding: 5px 10px 6px 22px;/* Links */
+}
+.buttons button {
+width: auto;
+overflow: visible;
+padding: 4px 10px 3px 7px;/* IE6 */
+}
+.buttons button[type] {
+padding: 5px 10px 5px 24px;/* Firefox */
+line-height:17px;/* Safari */
+}
+*:first-child+html button[type] {
+padding: 4px 10px 3px 22px;/* IE7 */
+}
+.buttons button img,.buttons a img {
+margin: 0 3px -3px 0 !important;
+padding: 0;
+border: none;
+width: 16px;
+height: 16px;
+}
+/* STANDARD */
+.buttons button:hover, .buttons a:hover {
+background-color: #dff4ff;
+border: 1px solid #c2e1ef;
+color: #336699;
+}
+.buttons a:active {
+background-color: #6299c5;
+border: 1px solid #6299c5;
+color: #fff;
+}
+/* POSITIVE */
+button.positive,.buttons a.positive {
+color: #529214;
+}
+.buttons a.positive:hover,button.positive:hover {
+background-color: #E6EFC2;
+border: 1px solid #C6D880;
+color: #529214;
+}
+.buttons a.positive:active {
+background-color: #529214;
+border: 1px solid #529214;
+color: #fff;
+}
+/* NEGATIVE */
+.buttons a.negative,button.negative {
+color: #d12f19;
+}
+.buttons a.negative:hover,button.negative:hover {
+background-color: #fbe3e4;
+border: 1px solid #fbc2c4;
+color: #d12f19;
+}
+.buttons a.negative:active {
+background-color: #d12f19;
+border: 1px solid #d12f19;
+color: #fff;
+}
+/* SPECIFIC */
+.buttons a.goes-in,button.goes-in {
+background-image: url(/images/icons/goes-in-19x19.png);
+}
+.buttons a.blocked,button.blocked {
+background-image: url(/images/icons/blocked-19x19.png);
+}
+.buttons a.blocked,button.unset {
+background-image: url(/images/icons/unset-19x19.png);
+}
+/* End WUFFOO BUTTON CODE
+--------------------------*/

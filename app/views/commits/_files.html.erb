@@ -1,0 +1,11 @@
+<% cache({ :files => 'files', :commit => commit.id }) do -%>
+<ul class="files" id="files-<%= commit.id %>">
+<% commit.files.chomp.each do |f| -%>
+<% file = /([^\/]+$)+(?!.*\1)/.match(f) -%>
+<li title="<%= h f %>"><% if f.length > 35 then -%>
+	<%= excerpt(f, "/trunk", 10, "") -%><% f.gsub!(/([^\/]+$)+(?!.*\1)/, '<strong>\1</strong>') -%><%= excerpt(f, file[0], 15) %>
+</li>
+<% end -%>
+<% end -%>
+</ul>
+<% end -%>
